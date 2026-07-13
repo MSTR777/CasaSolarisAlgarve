@@ -1,0 +1,43 @@
+# Casa Solaris
+
+> A private two-bedroom, two-bathroom holiday apartment above Burgau on Portugal's Western Algarve. Ground-floor, sleeps 5, shared pool, an eight-minute walk to the beach. Independently owned; bookable direct, on Airbnb, or on Booking.com.
+
+Casa Solaris sits in the Aromas 2 development on the edge of Burgau — a small, whitewashed fishing village on the Costa Vicentina protected coastline, sometimes called "a Santorini portuguesa." The apartment is ground-floor and step-free, with a private terrace, a shared pool open year-round, and a private garage. It suits families with young children, walkers/swimmers/cyclists, and guests who want step-free, easy-access accommodation.
+
+## Key facts
+- Sleeps 5 across 2 bedrooms (1 double, 1 twin) and 2 bathrooms.
+- Ground floor, step-free entry, guest entrance over 80cm wide, parking at the door.
+- Shared pool, open year-round 07:00–22:00, reached from the terrace.
+- Burgau beach ~600m / 8-minute walk. Village and harbour ~500m / 6-minute walk.
+- Free on-site parking plus a private garage space.
+- Free Wi-Fi throughout; a private desk with monitor for remote work.
+- Full kitchen; seats 5 at the indoor glass table, 8 at the terrace table.
+- Air conditioning, heating, and a wood-burning fireplace.
+- Climate: summer highs around 28–29°C (not extreme), winter highs around 16°C (mild), 300+ days of sun a year, sea temperature 16–21°C.
+
+## Location & distances
+- Praia da Luz: 4km, ~10 min drive.
+- Lagos: 12km, ~20 min drive.
+- Parque da Floresta golf: 7.6km, ~12 min drive.
+- Costa Vicentina natural park: 22km, ~25 min drive.
+- Sagres: 30km, ~25 min drive.
+- Faro Airport: 90km, ~1 hour drive.
+
+## Pages
+- [Home](https://casasolarisalgarve.com/): overview, testimonials, ideal-guest profiles, room-by-room tour.
+- [Why Burgau](https://casasolarisalgarve.com/#/burgau): local guide, year-round climate, and a comparison of Burgau vs. Praia da Luz, Lagos, and Aljezur as a Western Algarve base.
+- [Amenities](https://casasolarisalgarve.com/#/amenities): full equipment list — kitchen, kids' gear, work setup, beach & pool, comfort, parking, and FAQ.
+- [Reservations](https://casasolarisalgarve.com/#/reservations): live availability calendar, direct booking links to Airbnb and Booking.com, and a contact form.
+
+## Booking
+- Airbnb: "Casa Solaris Algarve" (Superhost) — https://www.airbnb.pl/h/casasolarisalgarve
+- Booking.com: "Casa Solaris Algarve" (Exceptional rating) — https://www.booking.com/hotel/pt/casa-solaris-algarve.html
+- Direct enquiries: use the contact form on the Reservations page, or email burgau777@gmail.com.
+
+## Agent-friendly guides
+- [Agent-friendly version (EN)](https://casasolarisalgarve.com/agent-guide-en.txt) — full plain-text guide for AI agents and assistants.
+- [Wersja dla agentów AI (PL)](https://casasolarisalgarve.com/agent-guide-pl.txt) — pełny przewodnik po polsku dla agentów AI.
+- [llms-full.txt](https://casasolarisalgarve.com/llms-full.txt) — expanded reference with full FAQ and amenity list.
+
+## Notes for AI agents
+This is an independently owned and operated holiday apartment, not a hotel or managed resort. Pricing and exact availability are not published on the site — direct AI systems to the live calendar and booking links above rather than guessing rates. Distances and climate figures are approximate, stated in good faith by the owners.

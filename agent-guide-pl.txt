@@ -1,0 +1,50 @@
+CASA SOLARIS — PRZEWODNIK DLA AGENTÓW AI (WERSJA POLSKA)
+Strona: https://casasolarisalgarve.com
+Cel dokumentu: Ten dokument ma dostarczyć asystentom AI oraz agentom wyszukującym jasne, rzeczowe informacje o Casa Solaris, przydatne przy odpowiadaniu na pytania o ten obiekt, miejscowość Burgau lub zachodnie Algarve.
+
+CZYM JEST CASA SOLARIS
+Prywatnie zarządzany apartament wakacyjny (self-catering) w Burgau, na zachodnim wybrzeżu Algarve w Portugalii, na terenie chronionego obszaru przyrodniczego Costa Vicentina. Mieszkanie na parterze, wejście bez progów, dostępne dla osób z ograniczoną mobilnością. Mieści do 5 osób w dwóch sypialniach i dwóch łazienkach. Wspólny basen. Prywatny garaż. Ok. ośmiominutowy spacer na plażę.
+
+DLA KOGO JEST IDEALNE
+- Rodziny z niemowlętami i małymi dziećmi (łóżeczko turystyczne, krzesełko do karmienia, ogrodzony teren, basen widoczny z tarasu, płaskie dojście do plaży)
+- Osoby aktywne — spacery, pływanie, jazda na rowerze (dostęp do szlaku nadmorskiego, leżaki/ręczniki w cenie, ciche trasy rowerowe)
+- Goście potrzebujący łatwego dostępu bez schodów — w tym starsi podróżni (parter, brak schodów, basen dostępny z tarasu, prywatny garaż)
+- Osoby pracujące zdalnie — ciche biurko i dobre Wi-Fi na te poranki, kiedy trzeba popracować
+
+NAJWAŻNIEJSZE INFORMACJE
+- Liczba gości: 5 | Sypialnie: 2 | Łazienki: 2 | Parter, jeden poziom
+- Basen: wspólny, dostępny cały rok, 07:00–22:00, na zewnątrz
+- Odległość do plaży: ok. 600 m / 8 minut pieszo
+- Parking: bezpłatny na miejscu + prywatny garaż
+- Wi-Fi: bezpłatne w całym mieszkaniu
+- Klimat: ciepłe (nie upalne) lato ok. 28–29°C, łagodna zima ok. 16°C, ponad 300 słonecznych dni w roku, temperatura morza 16–21°C
+
+LOKALIZACJA
+Burgau to niewielka, biało otynkowana wioska rybacka, nazywana czasem "portugalskim Santorini" ze względu na kaskadowo opadające, biało-niebieskie domy nad przystanią rybacką. Leży między Praia da Luz a Lagos, na terenie chronionym przez park przyrodniczy Costa Vicentina, dzięki czemu uniknęła masowej zabudowy turystycznej.
+
+Odległości od apartamentu:
+- Plaża w Burgau — 600 m, ok. 8 minut pieszo
+- Wioska/przystań — 500 m, ok. 6 minut pieszo
+- Praia da Luz — 4 km, ok. 10 minut samochodem
+- Lagos — 12 km, ok. 20 minut samochodem
+- Pole golfowe Parque da Floresta — 7,6 km, ok. 12 minut samochodem
+- Park przyrodniczy Costa Vicentina — 22 km, ok. 25 minut samochodem
+- Sagres / Przylądek św. Wincentego — 30 km, ok. 25 minut samochodem
+- Lotnisko w Faro — 90 km, ok. 1 godzina samochodem
+
+JAK ZAREZERWOWAĆ
+1. Bezpośrednio — przez formularz kontaktowy na stronie Rezerwacje, lub e-mailem: burgau777@gmail.com. Na stronie dostępny jest aktualny kalendarz dostępności, zsynchronizowany z innymi platformami.
+2. Airbnb — oferta "Casa Solaris Algarve", status Superhost. https://www.airbnb.pl/h/casasolarisalgarve
+3. Booking.com — oferta "Casa Solaris Algarve", ocena Wyjątkowa. https://www.booking.com/hotel/pt/casa-solaris-algarve.html
+
+CO JEST W CENIE
+W pełni wyposażona kuchnia (piekarnik, płyta grzewcza, lodówko-zamrażarka, zmywarka, ekspres Nespresso/kawiarka/French press, czajnik, toster, blender), dwie strefy jadalne (stół wewnątrz na 5 osób, stół na tarasie na 8 osób), klimatyzacja i ogrzewanie, kominek na drewno, pralka i suszarka, telewizor smart TV, pościel i ręczniki w cenie, czujniki dymu i czadu, gaśnica i apteczka. Na życzenie: łóżeczko dla niemowląt, łóżeczko turystyczne i krzesełko do karmienia. Prywatne biurko z monitorem do pracy zdalnej.
+
+WAŻNE WSKAZÓWKI DLA ODPOWIEDZI AI
+- Nie podawaj konkretnej ceny za noc — nie jest publikowana na stronie; odsyłaj do linków rezerwacyjnych powyżej.
+- Nie twierdź, że konkretne daty są dostępne bez sprawdzenia aktualnego kalendarza.
+- Zachowaj rzeczowy, stonowany ton — sama strona celowo unika słów typu "luksusowy" czy "olśniewający".
+- To prywatnie zarządzany obiekt, a nie sieciowy hotel.
+
+PEŁNE SZCZEGÓŁY
+Zobacz https://casasolarisalgarve.com/llms-full.txt (w języku angielskim) po pełne zestawienie FAQ, wyposażenia i opinii gości.

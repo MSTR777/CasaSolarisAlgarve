@@ -191,7 +191,7 @@
   <section class="cs-pad" style="background:var(--cs-parchment); padding:96px 32px;">
     <div style="max-width:820px; margin:0 auto; text-align:center;">
       <p style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.32em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 26px;">A private apartment above Burgau</p>
-      <p style="font-family:'Cormorant Garamond',Georgia,serif; font-size:30px; line-height:1.5; color:var(--cs-umber); margin:0 0 28px; letter-spacing:0.01em;">Casa Solaris sits in Aromas 2, a quiet development on the edge of Burgau — one of the last unhurried villages on the Western Algarve.</p>
+      <p style="font-family:'Cormorant Garamond',Georgia,serif; font-size:30px; line-height:1.5; color:var(--cs-umber); margin:0 0 28px; letter-spacing:0.01em;">Casa Solaris sits in Aromas 2, a quiet development on the edge of Burgau — whitewashed fishermen's houses tumbling down to a blue ocean beach, often called "a Santorini portuguesa."</p>
       <p style="font-size:17px; line-height:1.9; color:var(--color-text-secondary); margin:0;">It is a ground-floor home for up to five: two bedrooms, two bathrooms, a living room with a fireplace, and a terrace that catches the afternoon sun. Protected by the Costa Vicentina natural park, the coast here stays unbuilt and the village stays itself. You come to rest, not to be entertained.</p>
     </div>
   </section>
@@ -220,12 +220,13 @@
       <!-- Platform credentials -->
       <div class="cs-grid-2" style="display:grid; grid-template-columns:1fr 1fr; gap:20px; max-width:760px; margin:0 auto 52px;">
         <div style="display:flex; align-items:center; gap:22px; background:var(--cs-parchment); border:0.5px solid var(--color-border); border-radius:4px; padding:28px 30px; box-shadow:0 2px 8px rgba(74,27,12,0.08);">
-          <div style="flex:none; width:68px; height:68px; border-radius:6px; background:var(--cs-umber); display:flex; align-items:center; justify-content:center;">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M9 2h6l1 5-4 3-4-3 1-5z" fill="var(--cs-terracotta)"/>
-              <circle cx="12" cy="14" r="6.5" fill="var(--cs-terracotta)"/>
-              <circle cx="12" cy="14" r="4.3" fill="none" stroke="var(--cs-amber)" stroke-width="1.1"/>
-              <path d="M12 11.4l0.85 1.75 1.9 0.28-1.38 1.35 0.33 1.9L12 15.7l-1.7 0.98 0.33-1.9-1.38-1.35 1.9-0.28z" fill="var(--cs-amber)"/>
+          <div style="flex:none; width:68px; height:68px; border-radius:6px; background:#F3F3F3; display:flex; align-items:center; justify-content:center; padding:8px;">
+            <svg width="44" height="52" viewBox="0 0 44 52" fill="none" aria-hidden="true">
+              <path d="M10 0h24v20l-12 7-12-7z" fill="#FF385C"/>
+              <path d="M10 0h12v27l-12-7z" fill="#E31C5F"/>
+              <circle cx="22" cy="33" r="15" fill="#FF385C"/>
+              <circle cx="22" cy="33" r="11.5" fill="none" stroke="#fff" stroke-width="1.4"/>
+              <path d="M22 26.5c2.2 2.4 6 6.2 6 9a6 6 0 0 1-12 0c0-2.8 3.8-6.6 6-9z" fill="#fff"/>
             </svg>
           </div>
           <div>
@@ -389,16 +390,12 @@
           <p style="font-size:16px; line-height:1.9; color:var(--color-text-secondary); margin:0;">An open living room with comfortable sofas, a woven bench, and a working fireplace for cooler evenings out of season. Big windows pull in the morning light; the tiled floors stay cool through the heat of the day.</p>
         </div>
         <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
-          <div style="position:relative; grid-column:1 / -1; border-radius:3px; overflow:hidden;">
-            <img onClick="{{ openImg }}" src="images/living-wide.png" alt="Casa Solaris living room with fireplace and dining area" style="width:100%; height:280px; object-fit:cover; display:block; cursor:zoom-in;">
+          <div style="position:relative; border-radius:3px; overflow:hidden;">
+            <img onClick="{{ openImg }}" src="images/living-wide.jpg" alt="Casa Solaris living room with fireplace and dining area" style="width:100%; height:280px; object-fit:cover; display:block; cursor:zoom-in;">
             <span style="{{ zoomBadge }}">{{ zoomIcon }}</span>
           </div>
           <div style="position:relative; border-radius:3px; overflow:hidden;">
-            <img onClick="{{ openImg }}" src="images/living-sofa.png" alt="Living room sofa and woven bench with coffee table" style="width:100%; height:190px; object-fit:cover; display:block; cursor:zoom-in;">
-            <span style="{{ zoomBadge }}">{{ zoomIcon }}</span>
-          </div>
-          <div style="position:relative; border-radius:3px; overflow:hidden;">
-            <img onClick="{{ openImg }}" src="images/living-fireplace.png" alt="Fireplace detail with Portuguese azulejo tiles" style="width:100%; height:190px; object-fit:cover; display:block; cursor:zoom-in;">
+            <img onClick="{{ openImg }}" src="images/living-sofa.jpg" alt="Living room sofa and woven bench with coffee table" style="width:100%; height:280px; object-fit:cover; display:block; cursor:zoom-in;">
             <span style="{{ zoomBadge }}">{{ zoomIcon }}</span>
           </div>
         </div>
@@ -532,18 +529,14 @@
 ══════════════════════════════════════════════════ -->
 <sc-if value="{{ isBurgau }}">
 <main data-screen-label="Burgau and Beyond">
-  <section id="burgau" style="position:relative; height:52vh; min-height:380px; display:flex; align-items:flex-end; overflow:hidden;">
-    <img src="images/burgau-beach-overlook.jpg" alt="Burgau beach seen from the terrace above, shaded by a tree" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 42%;">
-    <div style="position:relative; max-width:1200px; margin:0 auto; width:100%; padding:0 32px 56px;">
-      <div style="display:inline-block; background:rgba(74,27,12,0.52); border-radius:5px; padding:28px 34px;">
-      <p style="font-family:'Trebuchet MS',sans-serif; font-size:12px; font-weight:bold; letter-spacing:0.36em; text-transform:uppercase; color:var(--cs-amber); margin:0 0 16px;">Local Guide</p>
-      <h1 class="cs-h1" style="font-family:'Cormorant Garamond',Georgia,serif; font-weight:700; font-size:58px; line-height:1.05; letter-spacing:0.05em; color:var(--cs-parchment); text-transform:uppercase; margin:0;">Why Burgau</h1>
-      </div>
-    </div>
+  <section id="burgau" style="position:relative; height:78vh; min-height:560px; display:flex; align-items:flex-end; overflow:hidden;">
+    <img src="images/burgau-street-sign.jpg" alt="The sticker-covered Burgau village sign, a local landmark" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 42%;">
+    <h1 style="position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap;">Why Burgau</h1>
   </section>
 
-  <section class="cs-pad" style="background:var(--cs-parchment); padding:80px 32px 40px;">
+  <section class="cs-pad" style="background:var(--cs-parchment); padding:56px 32px 40px;">
     <div style="max-width:760px; margin:0 auto; text-align:center;">
+      <p style="font-family:'Cormorant Garamond',Georgia,serif; font-size:26px; font-weight:700; color:var(--cs-umber); margin:0 0 22px; line-height:1.4;">Burgau in the Algarve. Most guests who come for the first time fall in love forever.</p>
       <p style="font-size:18px; line-height:1.9; color:var(--color-text-secondary); margin:0;">What we'd tell a friend arriving for the first time — where to swim, where to walk, where to eat, and where to point the car on a slow day. This corner of the Algarve rewards the unhurried.</p>
     </div>
   </section>
@@ -554,6 +547,7 @@
     <div style="position:relative; max-width:1120px; margin:0 auto;">
       <div style="text-align:center; margin:0 auto 44px; max-width:780px;">
         <p style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.32em; text-transform:uppercase; color:var(--cs-amber); margin:0 0 20px;">Climate</p>
+        <p style="font-family:'Cormorant Garamond',Georgia,serif; font-size:30px; font-style:italic; color:var(--cs-parchment); margin:0 0 14px; letter-spacing:0.04em;">March. June. August. October.</p>
         <h2 class="cs-h2" style="font-family:'Cormorant Garamond',Georgia,serif; font-size:46px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; color:var(--cs-parchment); margin:0 0 20px; line-height:1.1;">A destination for all year round</h2>
         <p style="font-size:17px; line-height:1.85; color:var(--color-text-on-dark-2); margin:0;">Summers that warm without the deadly heat of the inland Algarve, and winters that stay mild and bright. The Atlantic keeps Burgau even — you can swim in June and walk the cliffs in shirtsleeves in January.</p>
       </div>
@@ -592,6 +586,11 @@
       </div>
       <p style="text-align:center; font-size:13px; line-height:1.7; color:var(--color-text-on-dark-3); margin:22px 0 0;">Sea temperature runs from about 16°C in winter to 21°C in late summer. Figures are typical monthly averages for the Western Algarve.</p>
     </div>
+  </section>
+
+  <!-- ══════════ SIGN PHOTO BAND ══════════ -->
+  <section style="height:520px; position:relative; overflow:hidden;">
+    <img src="images/burgau-beach-overlook.jpg" alt="Burgau beach seen from the terrace above, shaded by a tree" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 42%;">on:center 38%;">
   </section>
 
   <!-- ══════════ WHERE TO BASE / COMPARISON ══════════ -->
@@ -810,11 +809,86 @@
   <section style="background:var(--cs-parchment); padding:72px 32px 96px;">
     <div style="max-width:1120px; margin:0 auto; display:flex; flex-direction:column; gap:32px;">
 
+      <!-- Beach & pool -->
+      <div id="beach-pool" style="background:var(--cs-warm-white); border:0.5px solid var(--color-border); border-radius:4px; box-shadow:0 2px 8px rgba(74,27,12,0.10); overflow:hidden; scroll-margin-top:76px;">
+        <div class="cs-room" style="display:grid; grid-template-columns:1fr 1.1fr; align-items:stretch;">
+          <div style="display:grid; grid-template-rows:1fr 1fr; gap:3px; min-height:360px;">
+            <div style="position:relative; overflow:hidden;"><img src="images/beach-pool-loungers.jpg" alt="Loungers beside the pool at Casa Solaris" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;"></div>
+            <div style="position:relative; overflow:hidden;"><img src="images/beach-promenade.jpg" alt="The promenade and sandy beach at Burgau" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;"></div>
+          </div>
+          <div style="padding:44px 40px;">
+            <p style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.26em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 12px;">Sun &amp; Water</p>
+            <h2 style="font-family:'Cormorant Garamond',Georgia,serif; font-size:30px; font-weight:700; color:var(--cs-umber); margin:0 0 14px;">Beach &amp; pool</h2>
+            <p style="font-size:15px; line-height:1.85; color:var(--color-text-secondary); margin:0 0 20px;">The pool is a few steps from the terrace and the sand an eight-minute walk downhill — the house sits just above the water, minutes from the ocean.</p>
+            <ul style="margin:0; padding:0; list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:9px 20px;">
+              <li style="font-size:13.5px; line-height:1.4; color:var(--color-text-secondary); padding-left:15px; position:relative;"><span style="position:absolute; left:0; color:var(--cs-terracotta);">·</span>Shared pool · open year-round, 07:00–22:00</li>
+              <li style="font-size:13.5px; line-height:1.4; color:var(--color-text-secondary); padding-left:15px; position:relative;"><span style="position:absolute; left:0; color:var(--cs-terracotta);">·</span>Outdoor, sunlit through the day</li>
+              <li style="font-size:13.5px; line-height:1.4; color:var(--color-text-secondary); padding-left:15px; position:relative;"><span style="position:absolute; left:0; color:var(--cs-terracotta);">·</span>Beach access, ~8&nbsp;min on foot</li>
+              <li style="font-size:13.5px; line-height:1.4; color:var(--color-text-secondary); padding-left:15px; position:relative;"><span style="position:absolute; left:0; color:var(--cs-terracotta);">·</span>Loungers, parasol &amp; beach towels</li>
+              <li style="font-size:13.5px; line-height:1.4; color:var(--color-text-secondary); padding-left:15px; position:relative;"><span style="position:absolute; left:0; color:var(--cs-terracotta);">·</span>Outdoor shower to rinse off</li>
+              <li style="font-size:13.5px; line-height:1.4; color:var(--color-text-secondary); padding-left:15px; position:relative;"><span style="position:absolute; left:0; color:var(--cs-terracotta);">·</span>Garden loungers &amp; furniture</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Comfort -->
+      <div id="comfort" style="background:var(--cs-warm-white); border:0.5px solid var(--color-border); border-radius:4px; box-shadow:0 2px 8px rgba(74,27,12,0.10); overflow:hidden; scroll-margin-top:76px;">
+        <div class="cs-room" style="display:grid; grid-template-columns:1.1fr 1fr; align-items:stretch;">
+          <div style="padding:44px 40px;">
+            <p style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.26em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 12px;">Settling In</p>
+            <h2 style="font-family:'Cormorant Garamond',Georgia,serif; font-size:30px; font-weight:700; color:var(--cs-umber); margin:0 0 14px;">Comfort</h2>
+            <p style="font-size:15px; line-height:1.85; color:var(--color-text-secondary); margin:0 0 20px;">Cool in summer, warm by the fire in winter, with the everyday things already here so you can travel light.</p>
+            <ul style="margin:0; padding:0; list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:9px 20px;">
+              <li style="font-size:13.5px; line-height:1.4; color:var(--color-text-secondary); padding-left:15px; position:relative;"><span style="position:absolute; left:0; color:var(--cs-terracotta);">·</span>Air conditioning &amp; heating</li>
+              <li style="font-size:13.5px; line-height:1.4; color:var(--color-text-secondary); padding-left:15px; position:relative;"><span style="position:absolute; left:0; color:var(--cs-terracotta);">·</span>Wood-burning fireplace</li>
+              <li style="font-size:13.5px; line-height:1.4; color:var(--color-text-secondary); padding-left:15px; position:relative;"><span style="position:absolute; left:0; color:var(--cs-terracotta);">·</span>Bed linen, towels &amp; extra blankets</li>
+              <li style="font-size:13.5px; line-height:1.4; color:var(--color-text-secondary); padding-left:15px; position:relative;"><span style="position:absolute; left:0; color:var(--cs-terracotta);">·</span>Bathtub &amp; shower, hot water</li>
+              <li style="font-size:13.5px; line-height:1.4; color:var(--color-text-secondary); padding-left:15px; position:relative;"><span style="position:absolute; left:0; color:var(--cs-terracotta);">·</span>Washing machine &amp; dryer</li>
+              <li style="font-size:13.5px; line-height:1.4; color:var(--color-text-secondary); padding-left:15px; position:relative;"><span style="position:absolute; left:0; color:var(--cs-terracotta);">·</span>Iron, hairdryer &amp; body soap</li>
+              <li style="font-size:13.5px; line-height:1.4; color:var(--color-text-secondary); padding-left:15px; position:relative;"><span style="position:absolute; left:0; color:var(--cs-terracotta);">·</span>Wardrobe, hangers &amp; blinds</li>
+              <li style="font-size:13.5px; line-height:1.4; color:var(--color-text-secondary); padding-left:15px; position:relative;"><span style="position:absolute; left:0; color:var(--cs-terracotta);">·</span>Smart TV, cable &amp; stereo</li>
+              <li style="font-size:13.5px; line-height:1.4; color:var(--color-text-secondary); padding-left:15px; position:relative;"><span style="position:absolute; left:0; color:var(--cs-terracotta);">·</span>Smoke &amp; CO detectors</li>
+              <li style="font-size:13.5px; line-height:1.4; color:var(--color-text-secondary); padding-left:15px; position:relative;"><span style="position:absolute; left:0; color:var(--cs-terracotta);">·</span>Fire extinguisher &amp; first-aid kit</li>
+            </ul>
+          </div>
+          <div style="position:relative; min-height:360px; overflow:hidden;">
+            <img src="images/comfort-bedroom-pillows.jpg" alt="Bedroom with cushions and warm linen at Casa Solaris" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+          </div>
+        </div>
+      </div>
+
+      <!-- Vacation with kids -->
+      <div id="kids" style="background:var(--cs-warm-white); border:0.5px solid var(--color-border); border-radius:4px; box-shadow:0 2px 8px rgba(74,27,12,0.10); overflow:hidden; scroll-margin-top:76px;">
+        <div class="cs-room" style="display:grid; grid-template-columns:1.1fr 1fr; align-items:stretch;">
+          <div style="padding:44px 40px; order:1;">
+            <p style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.26em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 12px;">With the Children</p>
+            <h2 style="font-family:'Cormorant Garamond',Georgia,serif; font-size:30px; font-weight:700; color:var(--cs-umber); margin:0 0 14px;">Vacation with kids</h2>
+            <p style="font-size:15px; line-height:1.85; color:var(--color-text-secondary); margin:0 0 20px;">Gated, single-level and a flat walk to the beach, with the little extras that make travelling with small ones lighter — just ask when you book.</p>
+            <ul style="margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px;">
+              <li style="font-size:14px; line-height:1.5; color:var(--color-text-secondary); padding-left:16px; position:relative;"><span style="position:absolute; left:0; color:var(--cs-terracotta);">·</span>Baby cot &amp; foldable travel crib</li>
+              <li style="font-size:14px; line-height:1.5; color:var(--color-text-secondary); padding-left:16px; position:relative;"><span style="position:absolute; left:0; color:var(--cs-terracotta);">·</span>High chair for mealtimes</li>
+              <li style="font-size:14px; line-height:1.5; color:var(--color-text-secondary); padding-left:16px; position:relative;"><span style="position:absolute; left:0; color:var(--cs-terracotta);">·</span>Board &amp; family games</li>
+              <li style="font-size:14px; line-height:1.5; color:var(--color-text-secondary); padding-left:16px; position:relative;"><span style="position:absolute; left:0; color:var(--cs-terracotta);">·</span>Pool in view from the terrace</li>
+            </ul>
+          </div>
+          <div style="display:grid; grid-template-rows:1fr 1fr; gap:3px; min-height:360px; order:2;">
+            <div style="position:relative; overflow:hidden;"><img src="images/kids-baby-crib.jpg" alt="Travel crib provided for babies" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;"></div>
+            <div style="position:relative; overflow:hidden;"><img src="images/kids-high-chair.jpg" alt="High chair provided for mealtimes" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 30%;"></div>
+          </div>
+        </div>
+      </div>
+
       <!-- Ultra easy access -->
       <div id="access" style="background:var(--cs-warm-white); border:0.5px solid var(--color-border); border-radius:4px; box-shadow:0 2px 8px rgba(74,27,12,0.10); overflow:hidden; scroll-margin-top:76px;">
         <div style="height:4px; background:var(--cs-grad);"></div>
-        <div style="height:280px; overflow:hidden;">
-          <img src="images/access-entrance.jpg" alt="Gated driveway and covered garage ramp at the entrance to Casa Solaris" style="width:100%; height:100%; object-fit:cover; object-position:center 64%; display:block;">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:2px; background:var(--cs-stone);">
+          <div style="height:320px; overflow:hidden; display:flex; align-items:center; justify-content:center; background:var(--cs-umber);">
+            <img src="images/access-entrance-2.jpg" alt="Gated driveway entrance at Casa Solaris" style="width:100%; height:100%; object-fit:contain; display:block;">
+          </div>
+          <div style="height:320px; overflow:hidden; display:flex; align-items:center; justify-content:center; background:var(--cs-umber);">
+            <img src="images/access-garage.jpg" alt="Private garage entrance at Casa Solaris" style="width:100%; height:100%; object-fit:contain; display:block;">
+          </div>
         </div>
         <div class="cs-grid-2" style="display:grid; grid-template-columns:1.15fr 1fr; gap:0;">
           <div style="padding:40px;">
@@ -830,29 +904,6 @@
               <li style="font-size:14px; line-height:1.5; color:var(--color-text-secondary); padding-left:16px; position:relative;"><span style="position:absolute; left:0; color:var(--cs-terracotta);">·</span>Step-free, no-threshold entry</li>
               <li style="font-size:14px; line-height:1.5; color:var(--color-text-secondary); padding-left:16px; position:relative;"><span style="position:absolute; left:0; color:var(--cs-terracotta);">·</span>Guest entrance over 80&nbsp;cm wide</li>
             </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- WiFi -->
-      <div id="wifi" style="background:var(--cs-warm-white); border:0.5px solid var(--color-border); border-radius:4px; box-shadow:0 2px 8px rgba(74,27,12,0.10); overflow:hidden; scroll-margin-top:76px;">
-        <div style="height:4px; background:var(--cs-grad);"></div>
-        <div class="cs-grid-2" style="display:grid; grid-template-columns:1.4fr 1fr; gap:0;">
-          <div style="padding:40px;">
-            <p style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.26em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 12px;">Wi-Fi</p>
-            <h2 style="font-family:'Cormorant Garamond',Georgia,serif; font-size:30px; font-weight:700; color:var(--cs-umber); margin:0 0 16px;">Getting online</h2>
-            <p style="font-size:15px; line-height:1.85; color:var(--color-text-secondary); margin:0;">Free WiFi runs throughout the apartment. The router sits in the living room — if the signal ever drops, a thirty-second power cycle usually sorts it. Connect the details below in your phone's Wi-Fi settings.</p>
-          </div>
-          <div style="padding:40px; background:var(--cs-stone); display:flex; flex-direction:column; justify-content:center; gap:18px;">
-            <div>
-              <p style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.2em; text-transform:uppercase; color:var(--color-text-tertiary); margin:0 0 6px;">Network</p>
-              <p style="font-family:'Trebuchet MS',sans-serif; font-size:18px; font-weight:bold; color:var(--cs-umber); margin:0;">CasaSolaris_WiFi</p>
-            </div>
-            <div style="height:0.5px; background:var(--color-border);"></div>
-            <div>
-              <p style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.2em; text-transform:uppercase; color:var(--color-text-tertiary); margin:0 0 6px;">Password</p>
-              <p style="font-family:'Trebuchet MS',sans-serif; font-size:18px; font-weight:bold; color:var(--cs-umber); margin:0;">•••••••• &nbsp;<span style="font-size:11px; font-weight:normal; color:var(--color-text-tertiary);">(add your password)</span></p>
-            </div>
           </div>
         </div>
       </div>
@@ -893,23 +944,25 @@
         </div>
       </div>
 
-      <!-- Vacation with kids -->
-      <div id="kids" style="background:var(--cs-warm-white); border:0.5px solid var(--color-border); border-radius:4px; box-shadow:0 2px 8px rgba(74,27,12,0.10); overflow:hidden; scroll-margin-top:76px;">
-        <div class="cs-room" style="display:grid; grid-template-columns:1.1fr 1fr; align-items:stretch;">
-          <div style="padding:44px 40px; order:1;">
-            <p style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.26em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 12px;">With the Children</p>
-            <h2 style="font-family:'Cormorant Garamond',Georgia,serif; font-size:30px; font-weight:700; color:var(--cs-umber); margin:0 0 14px;">Vacation with kids</h2>
-            <p style="font-size:15px; line-height:1.85; color:var(--color-text-secondary); margin:0 0 20px;">Gated, single-level and a flat walk to the beach, with the little extras that make travelling with small ones lighter — just ask when you book.</p>
-            <ul style="margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px;">
-              <li style="font-size:14px; line-height:1.5; color:var(--color-text-secondary); padding-left:16px; position:relative;"><span style="position:absolute; left:0; color:var(--cs-terracotta);">·</span>Baby cot &amp; foldable travel crib</li>
-              <li style="font-size:14px; line-height:1.5; color:var(--color-text-secondary); padding-left:16px; position:relative;"><span style="position:absolute; left:0; color:var(--cs-terracotta);">·</span>High chair for mealtimes</li>
-              <li style="font-size:14px; line-height:1.5; color:var(--color-text-secondary); padding-left:16px; position:relative;"><span style="position:absolute; left:0; color:var(--cs-terracotta);">·</span>Board &amp; family games</li>
-              <li style="font-size:14px; line-height:1.5; color:var(--color-text-secondary); padding-left:16px; position:relative;"><span style="position:absolute; left:0; color:var(--cs-terracotta);">·</span>Pool in view from the terrace</li>
-            </ul>
+      <!-- WiFi -->
+      <div id="wifi" style="background:var(--cs-warm-white); border:0.5px solid var(--color-border); border-radius:4px; box-shadow:0 2px 8px rgba(74,27,12,0.10); overflow:hidden; scroll-margin-top:76px;">
+        <div style="height:4px; background:var(--cs-grad);"></div>
+        <div class="cs-grid-2" style="display:grid; grid-template-columns:1.4fr 1fr; gap:0;">
+          <div style="padding:40px;">
+            <p style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.26em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 12px;">Wi-Fi</p>
+            <h2 style="font-family:'Cormorant Garamond',Georgia,serif; font-size:30px; font-weight:700; color:var(--cs-umber); margin:0 0 16px;">Getting online</h2>
+            <p style="font-size:15px; line-height:1.85; color:var(--color-text-secondary); margin:0;">Free WiFi runs throughout the apartment. The router sits in the living room — if the signal ever drops, a thirty-second power cycle usually sorts it. Connect the details below in your phone's Wi-Fi settings.</p>
           </div>
-          <div style="display:grid; grid-template-rows:1fr 1fr; gap:3px; min-height:360px; order:2;">
-            <div style="background:var(--cs-stone); display:flex; align-items:center; justify-content:center;"><span style="font-family:'Trebuchet MS',sans-serif; font-size:10.5px; letter-spacing:0.18em; text-transform:uppercase; color:var(--color-text-tertiary);">Photo — baby crib</span></div>
-            <div style="background:var(--cs-stone); display:flex; align-items:center; justify-content:center;"><span style="font-family:'Trebuchet MS',sans-serif; font-size:10.5px; letter-spacing:0.18em; text-transform:uppercase; color:var(--color-text-tertiary);">Photo — high chair</span></div>
+          <div style="padding:40px; background:var(--cs-stone); display:flex; flex-direction:column; justify-content:center; gap:18px;">
+            <div>
+              <p style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.2em; text-transform:uppercase; color:var(--color-text-tertiary); margin:0 0 6px;">Network</p>
+              <p style="font-family:'Trebuchet MS',sans-serif; font-size:18px; font-weight:bold; color:var(--cs-umber); margin:0;">CasaSolaris_WiFi</p>
+            </div>
+            <div style="height:0.5px; background:var(--color-border);"></div>
+            <div>
+              <p style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.2em; text-transform:uppercase; color:var(--color-text-tertiary); margin:0 0 6px;">Password</p>
+              <p style="font-family:'Trebuchet MS',sans-serif; font-size:18px; font-weight:bold; color:var(--cs-umber); margin:0;">•••••••• &nbsp;<span style="font-size:11px; font-weight:normal; color:var(--color-text-tertiary);">(add your password)</span></p>
+            </div>
           </div>
         </div>
       </div>
@@ -917,13 +970,18 @@
       <!-- Work + Parking -->
       <div class="cs-grid-2" style="display:grid; grid-template-columns:1fr 1fr; gap:32px;">
         <div id="work" style="background:var(--cs-warm-white); border:0.5px solid var(--color-border); border-radius:4px; overflow:hidden; box-shadow:0 2px 8px rgba(74,27,12,0.08); scroll-margin-top:76px;">
-          <div style="height:190px; overflow:hidden;">
-            <img src="images/work-desk.png" alt="Desk with laptop stand and a leafy corner at Casa Solaris" style="width:100%; height:100%; object-fit:cover; object-position:center 40%; display:block;">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:2px; height:230px;">
+            <div style="overflow:hidden; display:flex; align-items:center; justify-content:center; background:var(--cs-umber);">
+              <img src="images/work-desk.png" alt="Desk with laptop stand and a leafy corner at Casa Solaris" style="width:100%; height:100%; object-fit:contain; display:block;">
+            </div>
+            <div style="overflow:hidden;">
+              <img src="images/work-coffee.jpg" alt="Coffee on the desk beside a laptop at Casa Solaris" style="width:100%; height:100%; object-fit:cover; object-position:center 45%; display:block;">
+            </div>
           </div>
           <div style="padding:36px;">
           <p style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.26em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 12px;">If You Really Need To</p>
           <h3 style="font-family:'Cormorant Garamond',Georgia,serif; font-size:26px; font-weight:700; color:var(--cs-umber); margin:0 0 14px;">Work</h3>
-          <p style="font-size:15px; line-height:1.85; color:var(--color-text-secondary); margin:0 0 16px;">A quiet corner for the mornings you can't quite switch off — then close the laptop and go to the beach.</p>
+          <p style="font-size:15px; line-height:1.85; color:var(--color-text-secondary); margin:0 0 16px;">A quiet corner for the mornings you can't quite switch off — grab a good coffee, then close the laptop and go to the beach.</p>
           <ul style="margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px;">
             <li style="font-size:14px; line-height:1.5; color:var(--color-text-secondary); padding-left:16px; position:relative;"><span style="position:absolute; left:0; color:var(--cs-terracotta);">·</span>Private desk with monitor &amp; laptop stand</li>
             <li style="font-size:14px; line-height:1.5; color:var(--color-text-secondary); padding-left:16px; position:relative;"><span style="position:absolute; left:0; color:var(--cs-terracotta);">·</span>Fast Wi-Fi throughout</li>
@@ -932,8 +990,9 @@
           </div>
         </div>
         <div id="parking" style="background:var(--cs-warm-white); border:0.5px solid var(--color-border); border-radius:4px; overflow:hidden; box-shadow:0 2px 8px rgba(74,27,12,0.08); scroll-margin-top:76px;">
-          <div style="height:190px; overflow:hidden;">
-            <img src="images/parking-garage.jpg" alt="Private underground parking garage at Casa Solaris" style="width:100%; height:100%; object-fit:cover; object-position:center 60%; display:block;">
+          <div style="display:grid; grid-template-rows:1fr 1fr; gap:2px; height:290px;">
+            <div style="overflow:hidden;"><img src="images/parking-garage.jpg" alt="Private underground parking garage at Casa Solaris" style="width:100%; height:100%; object-fit:cover; object-position:center 45%; display:block;"></div>
+            <div style="overflow:hidden;"><img src="images/parking-street.jpeg" alt="Gated street-level parking entrance at Casa Solaris" style="width:100%; height:100%; object-fit:cover; object-position:center 55%; display:block;"></div>
           </div>
           <div style="padding:36px;">
           <p style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.26em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 12px;">At the Door</p>
@@ -944,54 +1003,6 @@
             <li style="font-size:14px; line-height:1.5; color:var(--color-text-secondary); padding-left:16px; position:relative;"><span style="position:absolute; left:0; color:var(--cs-terracotta);">·</span>Private garage space</li>
             <li style="font-size:14px; line-height:1.5; color:var(--color-text-secondary); padding-left:16px; position:relative;"><span style="position:absolute; left:0; color:var(--cs-terracotta);">·</span>Ground-floor, steps from the door</li>
           </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Beach & pool -->
-      <div id="beach-pool" style="background:var(--cs-warm-white); border:0.5px solid var(--color-border); border-radius:4px; box-shadow:0 2px 8px rgba(74,27,12,0.10); overflow:hidden; scroll-margin-top:76px;">
-        <div class="cs-room" style="display:grid; grid-template-columns:1fr 1.1fr; align-items:stretch;">
-          <div style="position:relative; min-height:360px; background:var(--cs-stone); display:flex; align-items:center; justify-content:center;">
-            <span style="font-family:'Trebuchet MS',sans-serif; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--color-text-tertiary);">Photo — pool &amp; beach</span>
-          </div>
-          <div style="padding:44px 40px;">
-            <p style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.26em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 12px;">Sun &amp; Water</p>
-            <h2 style="font-family:'Cormorant Garamond',Georgia,serif; font-size:30px; font-weight:700; color:var(--cs-umber); margin:0 0 14px;">Beach &amp; pool</h2>
-            <p style="font-size:15px; line-height:1.85; color:var(--color-text-secondary); margin:0 0 20px;">The pool is a few steps from the terrace and the sand an eight-minute walk downhill — the house sits just above the water, minutes from the ocean.</p>
-            <ul style="margin:0; padding:0; list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:9px 20px;">
-              <li style="font-size:13.5px; line-height:1.4; color:var(--color-text-secondary); padding-left:15px; position:relative;"><span style="position:absolute; left:0; color:var(--cs-terracotta);">·</span>Shared pool · open year-round, 07:00–22:00</li>
-              <li style="font-size:13.5px; line-height:1.4; color:var(--color-text-secondary); padding-left:15px; position:relative;"><span style="position:absolute; left:0; color:var(--cs-terracotta);">·</span>Outdoor, sunlit through the day</li>
-              <li style="font-size:13.5px; line-height:1.4; color:var(--color-text-secondary); padding-left:15px; position:relative;"><span style="position:absolute; left:0; color:var(--cs-terracotta);">·</span>Beach access, ~8&nbsp;min on foot</li>
-              <li style="font-size:13.5px; line-height:1.4; color:var(--color-text-secondary); padding-left:15px; position:relative;"><span style="position:absolute; left:0; color:var(--cs-terracotta);">·</span>Loungers, parasol &amp; beach towels</li>
-              <li style="font-size:13.5px; line-height:1.4; color:var(--color-text-secondary); padding-left:15px; position:relative;"><span style="position:absolute; left:0; color:var(--cs-terracotta);">·</span>Outdoor shower to rinse off</li>
-              <li style="font-size:13.5px; line-height:1.4; color:var(--color-text-secondary); padding-left:15px; position:relative;"><span style="position:absolute; left:0; color:var(--cs-terracotta);">·</span>Garden loungers &amp; furniture</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Comfort -->
-      <div id="comfort" style="background:var(--cs-warm-white); border:0.5px solid var(--color-border); border-radius:4px; box-shadow:0 2px 8px rgba(74,27,12,0.10); overflow:hidden; scroll-margin-top:76px;">
-        <div class="cs-room" style="display:grid; grid-template-columns:1.1fr 1fr; align-items:stretch;">
-          <div style="padding:44px 40px;">
-            <p style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.26em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 12px;">Settling In</p>
-            <h2 style="font-family:'Cormorant Garamond',Georgia,serif; font-size:30px; font-weight:700; color:var(--cs-umber); margin:0 0 14px;">Comfort</h2>
-            <p style="font-size:15px; line-height:1.85; color:var(--color-text-secondary); margin:0 0 20px;">Cool in summer, warm by the fire in winter, with the everyday things already here so you can travel light.</p>
-            <ul style="margin:0; padding:0; list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:9px 20px;">
-              <li style="font-size:13.5px; line-height:1.4; color:var(--color-text-secondary); padding-left:15px; position:relative;"><span style="position:absolute; left:0; color:var(--cs-terracotta);">·</span>Air conditioning &amp; heating</li>
-              <li style="font-size:13.5px; line-height:1.4; color:var(--color-text-secondary); padding-left:15px; position:relative;"><span style="position:absolute; left:0; color:var(--cs-terracotta);">·</span>Wood-burning fireplace</li>
-              <li style="font-size:13.5px; line-height:1.4; color:var(--color-text-secondary); padding-left:15px; position:relative;"><span style="position:absolute; left:0; color:var(--cs-terracotta);">·</span>Bed linen, towels &amp; extra blankets</li>
-              <li style="font-size:13.5px; line-height:1.4; color:var(--color-text-secondary); padding-left:15px; position:relative;"><span style="position:absolute; left:0; color:var(--cs-terracotta);">·</span>Bathtub &amp; shower, hot water</li>
-              <li style="font-size:13.5px; line-height:1.4; color:var(--color-text-secondary); padding-left:15px; position:relative;"><span style="position:absolute; left:0; color:var(--cs-terracotta);">·</span>Washing machine &amp; dryer</li>
-              <li style="font-size:13.5px; line-height:1.4; color:var(--color-text-secondary); padding-left:15px; position:relative;"><span style="position:absolute; left:0; color:var(--cs-terracotta);">·</span>Iron, hairdryer &amp; body soap</li>
-              <li style="font-size:13.5px; line-height:1.4; color:var(--color-text-secondary); padding-left:15px; position:relative;"><span style="position:absolute; left:0; color:var(--cs-terracotta);">·</span>Wardrobe, hangers &amp; blinds</li>
-              <li style="font-size:13.5px; line-height:1.4; color:var(--color-text-secondary); padding-left:15px; position:relative;"><span style="position:absolute; left:0; color:var(--cs-terracotta);">·</span>Smart TV, cable &amp; stereo</li>
-              <li style="font-size:13.5px; line-height:1.4; color:var(--color-text-secondary); padding-left:15px; position:relative;"><span style="position:absolute; left:0; color:var(--cs-terracotta);">·</span>Smoke &amp; CO detectors</li>
-              <li style="font-size:13.5px; line-height:1.4; color:var(--color-text-secondary); padding-left:15px; position:relative;"><span style="position:absolute; left:0; color:var(--cs-terracotta);">·</span>Fire extinguisher &amp; first-aid kit</li>
-            </ul>
-          </div>
-          <div style="position:relative; min-height:360px; background:var(--cs-stone); display:flex; align-items:center; justify-content:center;">
-            <span style="font-family:'Trebuchet MS',sans-serif; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--color-text-tertiary);">Photo — living room</span>
           </div>
         </div>
       </div>
@@ -1059,12 +1070,13 @@
       <div class="cs-grid-2" style="display:grid; grid-template-columns:1fr 1fr; gap:24px; max-width:920px; margin:0 auto;">
 
         <div style="background:var(--cs-warm-white); border:0.5px solid var(--color-border); border-radius:4px; padding:36px 32px; box-shadow:0 2px 8px rgba(74,27,12,0.08); display:flex; flex-direction:column; align-items:center; text-align:center;">
-          <div style="flex:none; width:68px; height:68px; border-radius:6px; background:var(--cs-umber); display:flex; align-items:center; justify-content:center; margin-bottom:20px;">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M9 2h6l1 5-4 3-4-3 1-5z" fill="var(--cs-terracotta)"/>
-              <circle cx="12" cy="14" r="6.5" fill="var(--cs-terracotta)"/>
-              <circle cx="12" cy="14" r="4.3" fill="none" stroke="var(--cs-amber)" stroke-width="1.1"/>
-              <path d="M12 11.4l0.85 1.75 1.9 0.28-1.38 1.35 0.33 1.9L12 15.7l-1.7 0.98 0.33-1.9-1.38-1.35 1.9-0.28z" fill="var(--cs-amber)"/>
+          <div style="flex:none; width:68px; height:68px; border-radius:6px; background:#F3F3F3; display:flex; align-items:center; justify-content:center; margin-bottom:20px; padding:8px;">
+            <svg width="44" height="52" viewBox="0 0 44 52" fill="none" aria-hidden="true">
+              <path d="M10 0h24v20l-12 7-12-7z" fill="#FF385C"/>
+              <path d="M10 0h12v27l-12-7z" fill="#E31C5F"/>
+              <circle cx="22" cy="33" r="15" fill="#FF385C"/>
+              <circle cx="22" cy="33" r="11.5" fill="none" stroke="#fff" stroke-width="1.4"/>
+              <path d="M22 26.5c2.2 2.4 6 6.2 6 9a6 6 0 0 1-12 0c0-2.8 3.8-6.6 6-9z" fill="#fff"/>
             </svg>
           </div>
           <p style="font-family:'Cormorant Garamond',Georgia,serif; font-size:30px; font-weight:700; color:var(--cs-umber); margin:0; line-height:1.05;">Superhost</p>
@@ -1239,6 +1251,13 @@
   <div style="max-width:1120px; margin:40px auto 0; padding-top:24px; border-top:0.5px solid var(--color-border); display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;">
     <p style="font-size:12px; color:var(--color-text-tertiary); margin:0;">© {{ year }} Casa Solaris. All rights reserved.</p>
     <p style="font-size:12px; color:var(--color-text-tertiary); margin:0;">Made with the warmth of the Algarve.</p>
+  </div>
+  <div style="max-width:1120px; margin:14px auto 0; display:flex; justify-content:center; flex-wrap:wrap; gap:16px;">
+    <a href="/sitemap.xml" style="font-size:11px; color:var(--color-text-tertiary); text-decoration:underline;" style-hover="color:var(--cs-terracotta);">Sitemap</a>
+    <a href="/llms.txt" style="font-size:11px; color:var(--color-text-tertiary); text-decoration:underline;" style-hover="color:var(--cs-terracotta);">llms.txt</a>
+    <a href="/llms-full.txt" style="font-size:11px; color:var(--color-text-tertiary); text-decoration:underline;" style-hover="color:var(--cs-terracotta);">llms-full.txt</a>
+    <a href="/agent-guide-en.txt" style="font-size:11px; color:var(--color-text-tertiary); text-decoration:underline;" style-hover="color:var(--cs-terracotta);">Agent-friendly version (EN)</a>
+    <a href="/agent-guide-pl.txt" style="font-size:11px; color:var(--color-text-tertiary); text-decoration:underline;" style-hover="color:var(--cs-terracotta);">Wersja dla agentów AI (PL)</a>
   </div>
 </footer>
 
