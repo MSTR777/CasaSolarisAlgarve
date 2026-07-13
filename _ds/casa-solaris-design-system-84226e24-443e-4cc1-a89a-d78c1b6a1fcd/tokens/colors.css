@@ -1,0 +1,53 @@
+/* ================================================================
+   CASA SOLARIS — Color Tokens
+   Warm Algarvian palette: terracotta · sunset · amber · parchment
+   Inspired by the whitewashed walls, terracotta roofs, and Atlantic
+   sunsets of Burgau, Western Algarve.
+   ================================================================ */
+
+:root {
+  /* ── BASE BRAND PALETTE ── */
+  --cs-umber:       #4A1B0C;   /* Richest dark — primary text, deep surfaces */
+  --cs-terracotta:  #993C1D;   /* Brand signature — terracotta roof tile */
+  --cs-sunset:      #D85A30;   /* Warm sienna — Atlantic sunset */
+  --cs-amber:       #E8A33D;   /* Sun gold — midday light, compass centre */
+  --cs-parchment:   #FAF6EE;   /* Aged paper — primary light surface */
+  --cs-sand:        #C8C2B8;   /* Warm dune — page background */
+  --cs-warm-white:  #FFFDF8;   /* Sun-bleached linen — card / paper surface */
+  --cs-stone:       #F2EDE0;   /* Dry stone — tinted card on parchment */
+
+  /* ── GRADIENT ACCENT (terracotta → sunset → amber sweep) ── */
+  /* Usage: 2–3px accent bars, subtle on CTAs. Never as full-bleed bg. */
+  --cs-grad:    linear-gradient(90deg,  #993C1D, #D85A30, #E8A33D); /* @kind other */
+  --cs-grad-v:  linear-gradient(180deg, #993C1D, #D85A30, #E8A33D); /* @kind other */
+  --cs-grad-d:  linear-gradient(135deg, #993C1D, #D85A30, #E8A33D); /* @kind other */
+
+  /* ── SEMANTIC FOREGROUND ── */
+  --color-text-primary:    var(--cs-umber);
+  --color-text-secondary:  rgba(74,27,12,0.60);
+  --color-text-tertiary:   rgba(74,27,12,0.35);
+  --color-text-accent:     var(--cs-terracotta);
+  --color-text-gold:       var(--cs-amber);
+  --color-text-on-dark:    var(--cs-parchment);
+  --color-text-on-dark-2:  rgba(250,246,238,0.65);
+  --color-text-on-dark-3:  rgba(250,246,238,0.38);
+
+  /* ── SEMANTIC BACKGROUND ── */
+  --color-bg:              var(--cs-sand);
+  --color-bg-light:        var(--cs-parchment);
+  --color-bg-dark:         var(--cs-umber);
+  --color-surface:         var(--cs-warm-white);
+  --color-surface-tinted:  var(--cs-stone);
+
+  /* ── BORDERS ── */
+  --color-border:         rgba(153,60,29,0.18);
+  --color-border-light:   rgba(153,60,29,0.10);
+  --color-border-strong:  rgba(74,27,12,0.22);
+  --color-border-dark:    rgba(250,246,238,0.12);
+
+  /* ── TINTS (accent washes for hover states / highlight cards) ── */
+  --cs-terracotta-08: rgba(153,60,29,0.08);
+  --cs-terracotta-14: rgba(153,60,29,0.14);
+  --cs-amber-08:      rgba(232,163,61,0.08);
+  --cs-amber-14:      rgba(232,163,61,0.14);
+}

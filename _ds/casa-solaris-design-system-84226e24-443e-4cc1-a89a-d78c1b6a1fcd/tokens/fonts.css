@@ -1,0 +1,26 @@
+/* ================================================================
+   CASA SOLARIS — Web Fonts
+   Display: Cormorant Garamond (Google Fonts) — always Bold + ALL CAPS
+   Supporting: Trebuchet MS — system font declared via local() below.
+     No external file is shipped; the browser resolves it from the OS.
+   For production use, consider DSType's Andrade Pro (the most authentically
+   Portuguese serif) or Ventura as premium alternatives to Cormorant Garamond.
+   ================================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
+
+/* Trebuchet MS — universal system font.
+   Declared via local() so the compiler can register it.
+   No file is fetched; the OS-installed copy is used directly. */
+@font-face {
+  font-family: 'Trebuchet MS';
+  src: local('Trebuchet MS'), local('TrebuchetMS');
+  font-weight: 400 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Trebuchet MS';
+  src: local('Trebuchet MS Italic'), local('TrebuchetMS-Italic');
+  font-weight: 400 700;
+  font-style: italic;
+}

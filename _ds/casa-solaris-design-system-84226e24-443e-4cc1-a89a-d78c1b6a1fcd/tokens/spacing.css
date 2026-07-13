@@ -1,0 +1,34 @@
+/* ================================================================
+   CASA SOLARIS — Spacing, Radii & Elevation Tokens
+   8pt base grid. Radii are restrained — 2–3px for cards/panels.
+   Shadows are warm-tinted and low-contrast.
+   ================================================================ */
+
+:root {
+  /* ── SPACING (8pt grid) ── */
+  --s-1:   4px;
+  --s-2:   8px;
+  --s-3:   12px;
+  --s-4:   16px;
+  --s-5:   24px;
+  --s-6:   32px;
+  --s-7:   48px;
+  --s-8:   64px;
+  --s-9:   96px;
+  --s-10:  128px;
+
+  /* ── CORNER RADII ── */
+  /* Brand note: very restrained. Stationery uses 2–3px. Never pill-heavy. */
+  --r-xs:   2px;
+  --r-sm:   3px;
+  --r-md:   6px;
+  --r-lg:   12px;
+  --r-xl:   16px;
+  --r-pill: 100px;
+
+  /* ── SHADOWS (warm-tinted, low contrast, umber-based) ── */
+  --shadow-sm:  0 1px 3px rgba(74,27,12,0.10);
+  --shadow-md:  0 2px 8px rgba(74,27,12,0.12);
+  --shadow-lg:  0 3px 12px rgba(74,27,12,0.18);
+  --shadow-xl:  0 8px 32px rgba(74,27,12,0.14);
+}

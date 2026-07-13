@@ -1,0 +1,12 @@
+/* ================================================================
+   CASA SOLARIS — Design System root entry
+   Western Algarve · Burgau · Portugal
+   Single stylesheet for consumers to link.
+   Import order: fonts → colors → type → spacing → motion
+   ================================================================ */
+
+@import url('./tokens/fonts.css');
+@import url('./tokens/colors.css');
+@import url('./tokens/typography.css');
+@import url('./tokens/spacing.css');
+@import url('./tokens/motion.css');

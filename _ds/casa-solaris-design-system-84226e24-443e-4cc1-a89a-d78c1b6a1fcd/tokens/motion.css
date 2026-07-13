@@ -1,0 +1,13 @@
+/* ================================================================
+   CASA SOLARIS — Motion Tokens
+   Calm, restful — no bounces, no springs, no urgency.
+   Ease-out on entry; ease-in-out for state changes.
+   ================================================================ */
+
+:root {
+  --ease:         cubic-bezier(0.22, 0.61, 0.36, 1);   /* @kind other */
+  --ease-in-out:  cubic-bezier(0.65, 0.00, 0.35, 1);   /* @kind other */
+  --dur-fast:     140ms;   /* @kind other */
+  --dur:          220ms;   /* @kind other */
+  --dur-slow:     400ms;   /* @kind other */
+}

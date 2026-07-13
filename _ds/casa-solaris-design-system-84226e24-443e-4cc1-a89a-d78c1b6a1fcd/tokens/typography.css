@@ -1,0 +1,41 @@
+/* ================================================================
+   CASA SOLARIS — Typography Tokens
+   ──────────────────────────────────────────────────────────────
+   RULE: Cormorant Garamond is ALWAYS weight 700 + ALL CAPS.
+         Never set it at regular weight. Never sentence case.
+   RULE: Trebuchet MS is ALWAYS bold + ALL CAPS with generous
+         letter-spacing. Never set it at regular weight.
+   ================================================================ */
+
+:root {
+  /* ── FONT FAMILIES ── */
+  --font-display:   'Cormorant Garamond', Garamond, Georgia, serif;
+  --font-sans:      'Trebuchet MS', 'Gill Sans', Helvetica, sans-serif;
+
+  /* ── LETTER SPACING (tracking) ── */
+  --tracking-display:   0.14em;   /* Cormorant Garamond primary headings */
+  --tracking-label:     0.22em;   /* metadata, section eyebrows */
+  --tracking-location:  0.38em;   /* "WESTERN ALGARVE" style sub-labels */
+  --tracking-wider:     0.50em;   /* "BURGAU" sub-location text */
+
+  /* ── TYPE SCALE ── */
+  --text-2xs: 6px;
+  --text-xs:  7px;
+  --text-sm:  9px;
+  --text-base:11px;
+  --text-md:  13px;
+  --text-lg:  16px;
+  --text-xl:  20px;
+  --text-2xl: 26px;
+  --text-3xl: 36px;
+  --text-4xl: 48px;
+  --text-5xl: 64px;
+  --text-6xl: 80px;
+
+  /* ── LINE HEIGHTS ── */
+  --leading-tight:    1.0;
+  --leading-snug:     1.2;
+  --leading-normal:   1.5;
+  --leading-relaxed:  1.65;
+  --leading-loose:    1.85;
+}
