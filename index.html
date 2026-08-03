@@ -8,6 +8,9 @@
 <body>
 <x-dc>
 <helmet>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KV9BSFQJ');</script>
+  <!-- End Google Tag Manager -->
   <title>Casa Solaris — 2-Bedroom Holiday Apartment in Burgau, Western Algarve</title>
   <meta name="description" content="Casa Solaris is a calm two-bedroom, two-bathroom self-catering holiday apartment above Burgau on Portugal's Western Algarve. Sea views, a shared pool, and an eight-minute walk to the beach. Book direct with the owners.">
   <meta name="keywords" content="Casa Solaris Burgau, holiday apartment in Burgau Algarve, Burgau self-catering accommodation, 2 bedroom apartment Burgau, holiday rentals near Burgau beach, Western Algarve family accommodation, book direct Burgau, Costa Vicentina, sea view apartment Portugal">
@@ -16,7 +19,7 @@
   <meta property="og:url" content="https://www.casasolarisalgarve.com/">
   <meta property="og:title" content="Casa Solaris — 2-Bedroom Holiday Apartment in Burgau, Western Algarve">
   <meta property="og:description" content="A calm two-bedroom self-catering apartment above Burgau. Sea views, shared pool, eight minutes from the beach. Book direct.">
-  <meta property="og:image" content="images/pool-loungers-hero.png">
+  <meta property="og:image" content="images/pool-loungers-hero.jpg">
   <meta property="og:locale" content="en_GB">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="robots" content="index, follow">
@@ -48,6 +51,7 @@
       .cs-teaser-body { padding: 56px 24px !important; }
       .cs-h1 { font-size: 44px !important; }
       .cs-h2 { font-size: 32px !important; }
+      .cs-hero-plate .cs-h1 { font-size: 28px !important; }
     }
     @media (max-width: 600px) {
       .cs-pad { padding-top: 60px !important; padding-bottom: 60px !important; padding-left: 20px !important; padding-right: 20px !important; }
@@ -56,6 +60,9 @@
       .cs-weather-months { grid-template-columns: repeat(4,1fr) !important; row-gap: 22px !important; }
       .cs-h1 { font-size: 34px !important; }
       .cs-h2 { font-size: 26px !important; }
+      .cs-hero-plate { padding: 24px 20px !important; max-width: 100% !important; }
+      .cs-hero-plate .cs-h1 { font-size: 25px !important; line-height: 1.22 !important; letter-spacing: 0.01em !important; margin-bottom: 18px !important; }
+      .cs-hero-plate > p:first-child { font-size: 10px !important; letter-spacing: 0.24em !important; margin-bottom: 12px !important; }
     }
     @media (max-width: 480px) {
       .cs-facts-6 { grid-template-columns: repeat(2,1fr) !important; gap: 26px !important; }
@@ -70,11 +77,11 @@
     "url": "https://www.casasolarisalgarve.com/",
     "identifier": "casa-solaris-burgau",
     "image": [
-      "https://casasolarisalgarve.com/images/pool-loungers-hero.png",
+      "https://casasolarisalgarve.com/images/pool-loungers-hero.jpg",
       "https://casasolarisalgarve.com/images/living-wide.jpg",
       "https://casasolarisalgarve.com/images/kitchen-dining-wide.jpg",
-      "https://casasolarisalgarve.com/images/bedroom-master.png",
-      "https://casasolarisalgarve.com/images/bedroom-twin.png",
+      "https://casasolarisalgarve.com/images/bedroom-master.jpg",
+      "https://casasolarisalgarve.com/images/bedroom-twin.jpg",
       "https://casasolarisalgarve.com/images/terrace-pool.jpg",
       "https://casasolarisalgarve.com/images/beach-promenade.jpg",
       "https://casasolarisalgarve.com/images/access-entrance-2.jpg"
@@ -197,13 +204,12 @@
 <main data-screen-label="Home">
 
   <!-- HERO -->
-  <section id="home" style="position:relative; height:88vh; min-height:600px; display:flex; align-items:flex-end; overflow:hidden;">
-    <img src="images/pool-loungers-hero.png" alt="Sun loungers on the deck beside the blue pool at Casa Solaris in Burgau" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 78%;">
-    <div class="cs-hero-pad" style="position:relative; max-width:1200px; margin:0 auto; width:100%; padding:0 32px 64px;">
-      <div style="display:inline-block; max-width:660px; background:rgba(74,27,12,0.52); border-radius:5px; padding:40px 44px;">
+  <section id="home" style="position:relative; height:88vh; min-height:660px; display:flex; align-items:flex-end; overflow:hidden;">
+    <img src="images/pool-loungers-hero.jpg" alt="Sun loungers on the deck beside the blue pool at Casa Solaris in Burgau" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 78%;">
+    <div class="cs-hero-pad" style="position:relative; max-width:1200px; margin:0 auto; width:100%; padding:0 32px 64px; display:flex; justify-content:flex-end;">
+      <div class="cs-hero-plate" style="display:inline-block; max-width:720px; background:rgba(74,27,12,0.52); border-radius:5px; padding:34px 38px;">
       <p style="font-family:'Trebuchet MS',sans-serif; font-size:12px; font-weight:bold; letter-spacing:0.42em; text-transform:uppercase; color:var(--cs-amber); margin:0 0 18px;">Western Algarve · Burgau · Portugal</p>
-      <h1 class="cs-h1" style="font-family:'Cormorant Garamond',Georgia,serif; font-weight:700; font-size:76px; line-height:1.02; letter-spacing:0.04em; color:var(--cs-parchment); text-transform:uppercase; margin:0 0 22px; max-width:820px;">Where the Algarve stays wild</h1>
-      <p style="font-size:19px; line-height:1.7; color:rgba(250,246,238,0.92); margin:0 0 34px; max-width:560px;">A two-bedroom apartment above the village, with sea views, a shared pool, and the beach eight minutes down the hill.</p>
+      <h1 class="cs-h1" style="font-family:'Cormorant Garamond',Georgia,serif; font-weight:700; font-size:32px; line-height:1.24; letter-spacing:0.02em; color:var(--cs-parchment); text-transform:uppercase; margin:0 0 22px; max-width:820px;">Family and kids-friendly two-bedroom apartment in Burgau, Western Algarve — terrace, pool, and the beach 8 minutes' walk.</h1>
       <div style="display:flex; gap:16px; flex-wrap:wrap;">
         <a href="#/reservations" style="font-family:'Trebuchet MS',sans-serif; font-size:12px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--cs-parchment); background:var(--cs-terracotta); padding:15px 32px; border-radius:3px; cursor:pointer; text-decoration:none;" style-hover="background:var(--cs-sunset);">Check availability</a>
         <a href="#the-space" style="font-family:'Trebuchet MS',sans-serif; font-size:12px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--cs-parchment); border:1px solid rgba(250,246,238,0.6); padding:15px 32px; border-radius:3px;" style-hover="border-color:var(--cs-parchment); background:rgba(250,246,238,0.1);">Explore the house</a>
@@ -438,11 +444,11 @@
       <div class="cs-room" style="display:grid; grid-template-columns:1.15fr 1fr; gap:48px; align-items:center; margin-bottom:88px;">
         <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
           <div style="position:relative; grid-column:1 / -1; border-radius:3px; overflow:hidden;">
-            <img onClick="{{ openImg }}" src="images/kitchen-1.png" alt="Fully equipped kitchen with azulejo tile splashback at Casa Solaris" style="width:100%; height:280px; object-fit:cover; display:block; cursor:zoom-in;">
+            <img onClick="{{ openImg }}" src="images/kitchen-1.jpg" alt="Fully equipped kitchen with azulejo tile splashback at Casa Solaris" style="width:100%; height:280px; object-fit:cover; display:block; cursor:zoom-in;">
             <span style="{{ zoomBadge }}">{{ zoomIcon }}</span>
           </div>
           <div style="position:relative; border-radius:3px; overflow:hidden;">
-            <img onClick="{{ openImg }}" src="images/dining-1.png" alt="Glass dining table with woven pendant light" style="width:100%; height:200px; object-fit:cover; display:block; cursor:zoom-in;">
+            <img onClick="{{ openImg }}" src="images/dining-1.jpg" alt="Glass dining table with woven pendant light" style="width:100%; height:200px; object-fit:cover; display:block; cursor:zoom-in;">
             <span style="{{ zoomBadge }}">{{ zoomIcon }}</span>
           </div>
           <div style="position:relative; border-radius:3px; overflow:hidden;">
@@ -462,7 +468,7 @@
       <div class="cs-grid-2" style="display:grid; grid-template-columns:1fr 1fr; gap:40px; margin-bottom:56px;">
         <div>
           <div style="position:relative; border-radius:3px; overflow:hidden; margin-bottom:22px;">
-            <img onClick="{{ openImg }}" src="images/bedroom-master.png" alt="Master bedroom at Casa Solaris with double bed and sage green wall" style="width:100%; height:320px; object-fit:cover; display:block; cursor:zoom-in;">
+            <img onClick="{{ openImg }}" src="images/bedroom-master.jpg" alt="Master bedroom at Casa Solaris with double bed and sage green wall" style="width:100%; height:320px; object-fit:cover; display:block; cursor:zoom-in;">
             <span style="{{ zoomBadge }}">{{ zoomIcon }}</span>
           </div>
           <p style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.28em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 12px;">Master Bedroom</p>
@@ -471,7 +477,7 @@
         </div>
         <div>
           <div style="position:relative; border-radius:3px; overflow:hidden; margin-bottom:22px;">
-            <img onClick="{{ openImg }}" src="images/bedroom-twin.png" alt="Twin bedroom at Casa Solaris with two single beds and striped throws" style="width:100%; height:320px; object-fit:cover; display:block; cursor:zoom-in;">
+            <img onClick="{{ openImg }}" src="images/bedroom-twin.jpg" alt="Twin bedroom at Casa Solaris with two single beds and striped throws" style="width:100%; height:320px; object-fit:cover; display:block; cursor:zoom-in;">
             <span style="{{ zoomBadge }}">{{ zoomIcon }}</span>
           </div>
           <p style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.28em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 12px;">Twin Bedroom</p>
@@ -484,7 +490,7 @@
       <div class="cs-grid-2" style="display:grid; grid-template-columns:1fr 1fr; gap:40px;">
         <div>
           <div style="position:relative; border-radius:3px; overflow:hidden; margin-bottom:22px;">
-            <img onClick="{{ openImg }}" src="images/bathroom-big.png" alt="Family bathroom with bathtub at Casa Solaris" style="width:100%; height:300px; object-fit:cover; display:block; cursor:zoom-in;">
+            <img onClick="{{ openImg }}" src="images/bathroom-big.jpg" alt="Family bathroom with bathtub at Casa Solaris" style="width:100%; height:300px; object-fit:cover; display:block; cursor:zoom-in;">
             <span style="{{ zoomBadge }}">{{ zoomIcon }}</span>
           </div>
           <p style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.28em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 12px;">Family Bathroom</p>
@@ -492,7 +498,7 @@
         </div>
         <div>
           <div style="position:relative; border-radius:3px; overflow:hidden; margin-bottom:22px;">
-            <img onClick="{{ openImg }}" src="images/bathroom-small.png" alt="Second bathroom with walk-in shower at Casa Solaris" style="width:100%; height:300px; object-fit:cover; display:block; cursor:zoom-in;">
+            <img onClick="{{ openImg }}" src="images/bathroom-small.jpg" alt="Second bathroom with walk-in shower at Casa Solaris" style="width:100%; height:300px; object-fit:cover; display:block; cursor:zoom-in;">
             <span style="{{ zoomBadge }}">{{ zoomIcon }}</span>
           </div>
           <p style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.28em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 12px;">Second Bathroom</p>
@@ -521,7 +527,7 @@
     <div class="cs-room" style="display:grid; grid-template-columns:1fr 1fr; align-items:stretch;">
       <div style="min-height:460px; position:relative; display:grid; grid-template-rows:1.6fr 1fr; gap:3px;">
         <div style="position:relative; overflow:hidden;">
-          <img src="images/view-coast.png" alt="Clifftop view over Burgau village and the Atlantic coastline" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+          <img src="images/view-coast.jpg" alt="Clifftop view over Burgau village and the Atlantic coastline" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
         </div>
         <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:3px;">
           <div style="position:relative; overflow:hidden;">
@@ -776,7 +782,7 @@
 
       <article style="background:var(--cs-warm-white); border:0.5px solid var(--color-border); border-radius:4px; overflow:hidden; box-shadow:0 2px 8px rgba(74,27,12,0.10);">
         <div style="height:5px; background:var(--cs-grad);"></div>
-        <img src="images/view-coast.png" alt="Clifftop coastal path near Burgau" style="width:100%; height:220px; object-fit:cover; display:block;">
+        <img src="images/view-coast.jpg" alt="Clifftop coastal path near Burgau" style="width:100%; height:220px; object-fit:cover; display:block;">
         <div style="padding:32px;">
           <p style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.24em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 12px;">Hiking &amp; Cliffs</p>
           <h3 style="font-family:'Cormorant Garamond',Georgia,serif; font-size:28px; font-weight:700; color:var(--cs-umber); margin:0 0 14px; line-height:1.2;">The unbuilt coast</h3>
@@ -946,10 +952,10 @@
         <div class="cs-room" style="display:grid; grid-template-columns:1fr 1.1fr; align-items:stretch;">
           <div style="display:grid; grid-template-rows:1fr 1fr 1fr; gap:3px; min-height:360px;">
             <div style="position:relative; overflow:hidden;">
-              <img src="images/dining-indoor-glass.png" alt="Glass dining table with wooden chairs indoors at Casa Solaris" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+              <img src="images/dining-indoor-glass.jpg" alt="Glass dining table with wooden chairs indoors at Casa Solaris" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
             </div>
             <div style="position:relative; overflow:hidden;">
-              <img src="images/dining-terrace.png" alt="Long teak dining table on the terrace beside the pool at Casa Solaris" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+              <img src="images/dining-terrace.jpg" alt="Long teak dining table on the terrace beside the pool at Casa Solaris" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
             </div>
             <div style="position:relative; overflow:hidden;">
               <img src="images/kitchen-coffee-machine.jpg" alt="Coffee machine and moka pot in the kitchen at Casa Solaris" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
@@ -998,7 +1004,7 @@
         <div id="work" style="background:var(--cs-warm-white); border:0.5px solid var(--color-border); border-radius:4px; overflow:hidden; box-shadow:0 2px 8px rgba(74,27,12,0.08); scroll-margin-top:76px;">
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:2px; height:230px;">
             <div style="overflow:hidden; display:flex; align-items:center; justify-content:center; background:var(--cs-umber);">
-              <img src="images/work-desk.png" alt="Desk with laptop stand and a leafy corner at Casa Solaris" style="width:100%; height:100%; object-fit:contain; display:block;">
+              <img src="images/work-desk.jpg" alt="Desk with laptop stand and a leafy corner at Casa Solaris" style="width:100%; height:100%; object-fit:contain; display:block;">
             </div>
             <div style="overflow:hidden;">
               <img src="images/work-coffee.jpg" alt="Coffee on the desk beside a laptop at Casa Solaris" style="width:100%; height:100%; object-fit:cover; object-position:center 45%; display:block;">
@@ -1018,7 +1024,7 @@
         <div id="parking" style="background:var(--cs-warm-white); border:0.5px solid var(--color-border); border-radius:4px; overflow:hidden; box-shadow:0 2px 8px rgba(74,27,12,0.08); scroll-margin-top:76px;">
           <div style="display:grid; grid-template-rows:1fr 1fr; gap:2px; height:290px;">
             <div style="overflow:hidden;"><img src="images/parking-garage.jpg" alt="Private underground parking garage at Casa Solaris" style="width:100%; height:100%; object-fit:cover; object-position:center 45%; display:block;"></div>
-            <div style="overflow:hidden;"><img src="images/parking-street.jpeg" alt="Gated street-level parking entrance at Casa Solaris" style="width:100%; height:100%; object-fit:cover; object-position:center 55%; display:block;"></div>
+            <div style="overflow:hidden;"><img src="images/parking-street.jpg" alt="Gated street-level parking entrance at Casa Solaris" style="width:100%; height:100%; object-fit:cover; object-position:center 55%; display:block;"></div>
           </div>
           <div style="padding:36px;">
           <p style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.26em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 12px;">At the Door</p>
