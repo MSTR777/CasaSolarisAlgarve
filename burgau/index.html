@@ -40,9 +40,6 @@
 <script src="/support.js"></script>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KV9BSFQJ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 <x-dc>
 <helmet>
   <title>Burgau & the Western Algarve — Beaches, Walks & Local Guide | Casa Solaris</title>
@@ -236,14 +233,29 @@
           <circle cx="0" cy="0" r="2.6" fill="#E8A33D"/>
         </g>
       </svg>
-      <span style="font-family:'Cormorant Garamond',Georgia,serif; font-weight:700; font-size:22px; letter-spacing:0.18em; color:var(--cs-umber); text-transform:uppercase;">Casa Solaris</span>
+      <span translate="no" style="font-family:'Cormorant Garamond',Georgia,serif; font-weight:700; font-size:22px; letter-spacing:0.18em; color:var(--cs-umber); text-transform:uppercase;">Casa Solaris</span>
     </a>
     <nav class="cs-nav-links" style="display:flex; align-items:center; gap:34px;">
       <a href="/" style="{{ navHome }}">The House</a>
       <a href="/amenities/" style="{{ navTips }}">Amenities</a>
       <a href="/burgau/" style="{{ navBurgau }}">Why Burgau</a>
       <a href="/reservations/" style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--cs-parchment); background:var(--cs-terracotta); padding:11px 22px; border-radius:3px; cursor:pointer; text-decoration:none;" style-hover="background:var(--cs-sunset);">Reservations</a>
-      <a href="{{ langHref }}" onClick="{{ chooseLang }}" lang="pt-PT" title="Versão em português" style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.14em; color:var(--cs-umber); border:1px solid rgba(74,27,12,0.22); padding:9px 11px; border-radius:3px; text-decoration:none;" style-hover="color:var(--cs-terracotta); border-color:var(--cs-terracotta);">PT</a>
+      <div ref="{{ langRootRef }}" style="position:relative;">
+        <button type="button" onClick="{{ toggleLangMenu }}" aria-haspopup="true" aria-label="Language · Idioma" style="display:flex; align-items:center; gap:7px; font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.14em; color:var(--cs-umber); background:transparent; border:1px solid rgba(74,27,12,0.22); padding:9px 10px 9px 11px; border-radius:3px; cursor:pointer;" style-hover="color:var(--cs-terracotta); border-color:var(--cs-terracotta);">
+          <span>EN</span>
+          <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true" style="display:block;"><path d="M2 3.5 L5 6.5 L8 3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        </button>
+        <sc-if value="{{ langMenuOpen }}" hint-placeholder-val="{{ false }}">
+          <div role="menu" style="position:absolute; top:calc(100% + 8px); right:0; min-width:184px; background:#FFFDF8; border:0.5px solid rgba(153,60,29,0.18); border-radius:3px; box-shadow:0 3px 12px rgba(74,27,12,0.18); padding:6px 0; z-index:60; display:flex; flex-direction:column;">
+            <sc-for list="{{ langOptions }}" as="l" hint-placeholder-count="2">
+              <a role="menuitem" href="{{ l.href }}" lang="{{ l.hreflang }}" onClick="{{ l.choose }}" style="{{ l.itemStyle }}">
+                <span>{{ l.label }}</span>
+                <span style="font-size:10px; letter-spacing:0.14em; color:var(--color-text-tertiary);">{{ l.short }}</span>
+              </a>
+            </sc-for>
+          </div>
+        </sc-if>
+      </div>
     </nav>
     <span class="cs-nav-toggle" onClick="{{ toggleMenu }}" aria-label="Menu" style="align-items:center; justify-content:center; width:42px; height:42px; margin:-8px -8px -8px 0; cursor:pointer; color:var(--cs-umber);">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
@@ -254,9 +266,10 @@
 <!-- MOBILE MENU -->
 <sc-if value="{{ menuOpen }}">
 <div style="position:fixed; top:63px; left:0; right:0; z-index:49; background:rgba(250,246,238,0.98); backdrop-filter:blur(10px); border-bottom:0.5px solid rgba(153,60,29,0.18); box-shadow:0 10px 26px rgba(74,27,12,0.16); padding:8px 24px 22px; display:flex; flex-direction:column;">
-  <div style="display:flex; align-items:center; gap:22px; padding:16px 0; border-bottom:0.5px solid rgba(153,60,29,0.14);">
-    <span style="font-family:'Trebuchet MS',sans-serif; font-size:12px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; color:var(--cs-terracotta);">English</span>
-    <a href="{{ langHref }}" onClick="{{ chooseLang }}" lang="pt-PT" style="font-family:'Trebuchet MS',sans-serif; font-size:12px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; color:var(--color-text-secondary); text-decoration:none;">Português</a>
+  <div style="display:flex; align-items:center; flex-wrap:wrap; gap:22px; padding:16px 0; border-bottom:0.5px solid rgba(153,60,29,0.14);">
+    <sc-for list="{{ langOptions }}" as="l" hint-placeholder-count="2">
+      <a href="{{ l.href }}" lang="{{ l.hreflang }}" onClick="{{ l.choose }}" style="{{ l.mobileStyle }}">{{ l.label }}</a>
+    </sc-for>
   </div>
   <a href="/" style="font-family:'Trebuchet MS',sans-serif; font-size:13px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; color:var(--cs-umber); padding:16px 0; border-bottom:0.5px solid rgba(153,60,29,0.14); cursor:pointer; text-decoration:none;">The House</a>
   <a href="/amenities/" style="font-family:'Trebuchet MS',sans-serif; font-size:13px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; color:var(--cs-umber); padding:16px 0; border-bottom:0.5px solid rgba(153,60,29,0.14); cursor:pointer; text-decoration:none;">Amenities</a>
@@ -1328,7 +1341,9 @@
     <p style="font-size:12px; color:var(--color-text-tertiary); margin:0;">Made with the warmth of the Algarve.</p>
   </div>
   <div style="max-width:1120px; margin:14px auto 0; display:flex; justify-content:center; flex-wrap:wrap; gap:16px;">
-    <a href="{{ langHref }}" onClick="{{ chooseLang }}" lang="pt-PT" style="font-size:11px; color:var(--color-text-tertiary); text-decoration:underline;" style-hover="color:var(--cs-terracotta);">Português</a>
+    <sc-for list="{{ langOthers }}" as="l" hint-placeholder-count="1">
+      <a href="{{ l.href }}" lang="{{ l.hreflang }}" onClick="{{ l.choose }}" style="font-size:11px; color:var(--color-text-tertiary); text-decoration:underline;" style-hover="color:var(--cs-terracotta);">{{ l.label }}</a>
+    </sc-for>
     <a href="/sitemap.xml" style="font-size:11px; color:var(--color-text-tertiary); text-decoration:underline;" style-hover="color:var(--cs-terracotta);">Sitemap</a>
     <a href="/llms.txt" style="font-size:11px; color:var(--color-text-tertiary); text-decoration:underline;" style-hover="color:var(--cs-terracotta);">llms.txt</a>
     <a href="/llms-full.txt" style="font-size:11px; color:var(--color-text-tertiary); text-decoration:underline;" style-hover="color:var(--cs-terracotta);">llms-full.txt</a>
@@ -1400,6 +1415,9 @@ class Component extends DCLogic {
 
   componentDidMount() {
     if (typeof document !== 'undefined') document.documentElement.lang = 'en';
+    this._onDocClick = (e) => { if (this.state.langMenuOpen && this._langRoot && !this._langRoot.contains(e.target)) this.setState({ langMenuOpen: false }); };
+    this._onKey = (e) => { if (e.key === 'Escape' && this.state.langMenuOpen) this.setState({ langMenuOpen: false }); };
+    if (typeof document !== 'undefined') { document.addEventListener('click', this._onDocClick); document.addEventListener('keydown', this._onKey); }
     this._onHash = () => this.applyRoute();
     if (typeof window !== 'undefined') {
       window.addEventListener('hashchange', this._onHash);
@@ -1421,14 +1439,15 @@ class Component extends DCLogic {
   ensureHreflang() {
     if (typeof document === 'undefined' || !document.head) return;
     const page = (this.state && this.state.page) || 'home';
-    const want = [['en', this.absUrl(page, 'en')], ['pt', this.absUrl(page, 'pt')], ['x-default', this.absUrl(page, 'en')]];
+    const want = this.languages.map((l) => [l.code, this.absUrl(page, l.code)]).concat([['x-default', this.absUrl(page, 'en')]]);
     const have = document.head.querySelectorAll('link[rel="alternate"][hreflang]');
-    if (have.length === 3 && want.every(([l, h], i) => have[i].getAttribute('hreflang') === l && have[i].getAttribute('href') === h)) return;
+    if (have.length === want.length && want.every(([l, h], i) => have[i].getAttribute('hreflang') === l && have[i].getAttribute('href') === h)) return;
     have.forEach((el) => el.remove());
     want.forEach(([l, h]) => { const el = document.createElement('link'); el.rel = 'alternate'; el.hreflang = l; el.href = h; el.setAttribute('data-cs-hreflang', ''); document.head.appendChild(el); });
   }
 
   componentWillUnmount() {
+    if (typeof document !== 'undefined') { document.removeEventListener('click', this._onDocClick); document.removeEventListener('keydown', this._onKey); }
     if (typeof window !== 'undefined' && this._onHash) window.removeEventListener('hashchange', this._onHash);
     if (this._titleObserver) this._titleObserver.disconnect();
   }
@@ -1559,15 +1578,34 @@ class Component extends DCLogic {
     }));
   }
 
-  chooseLang() {
-    try { localStorage.setItem('cs_lang', 'pt'); } catch (e) {}
+  languages = [
+    { code: 'en', hreflang: 'en', label: 'English', short: 'EN', preview: 'Casa%20Solaris%20Website.dc.html' },
+    { code: 'pt', hreflang: 'pt-PT', label: 'Português', short: 'PT', preview: 'Casa%20Solaris%20Website%20PT.dc.html' }
+  ];
+
+  chooseLang(code) {
+    try { localStorage.setItem('cs_lang', code); } catch (e) {}
+    this.setState({ langMenuOpen: false });
   }
 
-  langHref() {
-    const other = this.siteLang === 'pt' ? 'en' : 'pt';
+  langHrefFor(code) {
     const page = (this.state && this.state.page) || 'home';
-    if (!this.isProd()) return (other === 'pt' ? 'Casa%20Solaris%20Website%20PT.dc.html' : 'Casa%20Solaris%20Website.dc.html') + this.previewHash[page];
-    return this.siteUrls[page][other];
+    const lang = this.languages.find((l) => l.code === code);
+    if (!this.isProd()) return lang.preview + this.previewHash[page];
+    return this.siteUrls[page][code];
+  }
+
+  langOptionsList() {
+    return this.languages.map((l) => {
+      const active = l.code === this.siteLang;
+      return {
+        code: l.code, label: l.label, short: l.short, hreflang: l.hreflang, active,
+        href: this.langHrefFor(l.code),
+        choose: (e) => { if (active) { if (e) e.preventDefault(); this.setState({ langMenuOpen: false }); return; } this.chooseLang(l.code); },
+        itemStyle: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '18px', padding: '10px 16px', fontFamily: "'Trebuchet MS', sans-serif", fontSize: '12px', fontWeight: 'bold', letterSpacing: '0.12em', textTransform: 'uppercase', textDecoration: 'none', color: active ? 'var(--cs-terracotta)' : 'var(--cs-umber)', background: active ? 'rgba(153,60,29,0.06)' : 'transparent' },
+        mobileStyle: { fontFamily: "'Trebuchet MS', sans-serif", fontSize: '12px', fontWeight: 'bold', letterSpacing: '0.14em', textTransform: 'uppercase', textDecoration: 'none', color: active ? 'var(--cs-terracotta)' : 'var(--color-text-secondary)' }
+      };
+    });
   }
 
   renderVals() {
@@ -1578,8 +1616,11 @@ class Component extends DCLogic {
     });
     return {
       faqItems,
-      langHref: this.langHref(),
-      chooseLang: () => this.chooseLang(),
+      langOptions: this.langOptionsList(),
+      langOthers: this.langOptionsList().filter((l) => !l.active),
+      langMenuOpen: !!this.state.langMenuOpen,
+      toggleLangMenu: () => this.setState((st) => ({ langMenuOpen: !st.langMenuOpen })),
+      langRootRef: (el) => { this._langRoot = el; },
       compareRows: this.buildCompareRows(),
       isHome: p === 'home',
       isBurgau: p === 'burgau',
