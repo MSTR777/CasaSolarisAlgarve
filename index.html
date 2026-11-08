@@ -1,9 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
+<script>
+(function () {
+  try {
+    if (!/casasolarisalgarve\.com$/.test(location.hostname)) return;
+    var q = new URLSearchParams(location.search).get('lang');
+    if (q === 'en' || q === 'pt') localStorage.setItem('cs_lang', q);
+    if (/bot|crawl|spider|slurp|lighthouse/i.test(navigator.userAgent)) return;
+    var saved = localStorage.getItem('cs_lang');
+    var langs = (navigator.languages || [navigator.language || '']).join(',').toLowerCase();
+    var tz = (Intl.DateTimeFormat().resolvedOptions().timeZone || '');
+    var inPT = /^(Europe\/Lisbon|Atlantic\/Madeira|Atlantic\/Azores)$/.test(tz);
+    var wantsPT = saved ? saved === 'pt' : (/(^|,)pt/.test(langs) || inPT);
+    if (wantsPT) {
+      var map = { '/': '/pt/', '/amenities/': '/pt/apartamento-com-piscina-burgau/', '/burgau/': '/pt/o-que-fazer-em-burgau/', '/reservations/': '/pt/reservar-alojamento-burgau/' };
+      var p = location.pathname.replace(/index\.html$/, ''); if (p.slice(-1) !== '/') p += '/';
+      var h = (location.hash || '').replace(/^#\/?/, '');
+      var hp = { 'amenities': map['/amenities/'], 'burgau': map['/burgau/'], 'reservations': map['/reservations/'] };
+      if (p === '/' && hp[h]) location.replace(hp[h]);
+      else if (map[p]) location.replace(map[p] + (location.hash || ''));
+    }
+  } catch (e) {}
+})();
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
+<script src="/support.js"></script>
 </head>
 <body>
 <x-dc>
@@ -20,25 +43,30 @@
     gtag('config', 'G-ENQR9VC8M3');
   </script>
   <title>Casa Solaris — 2-Bedroom Holiday Apartment in Burgau, Western Algarve</title>
-  <meta name="description" content="Casa Solaris is a calm two-bedroom, two-bathroom self-catering holiday apartment above Burgau on Portugal's Western Algarve. Sea views, a shared pool, and an eight-minute walk to the beach. Book direct with the owners.">
+  <meta name="description" content="A calm two-bedroom, two-bathroom self-catering apartment above Burgau on Portugal’s Western Algarve. Sea views, a shared pool, and an eight-minute walk to the beach. Book direct with the owners.">
   <meta name="keywords" content="Casa Solaris Burgau, holiday apartment in Burgau Algarve, Burgau self-catering accommodation, 2 bedroom apartment Burgau, holiday rentals near Burgau beach, Western Algarve family accommodation, book direct Burgau, Costa Vicentina, sea view apartment Portugal">
   <link rel="canonical" href="https://www.casasolarisalgarve.com/">
+  <link rel="alternate" hreflang="en" href="https://www.casasolarisalgarve.com/">
+  <link rel="alternate" hreflang="pt" href="https://www.casasolarisalgarve.com/pt/">
+  <link rel="alternate" hreflang="x-default" href="https://www.casasolarisalgarve.com/">
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Casa Solaris">
   <meta property="og:url" content="https://www.casasolarisalgarve.com/">
   <meta property="og:title" content="Casa Solaris — 2-Bedroom Holiday Apartment in Burgau, Western Algarve">
-  <meta property="og:description" content="A calm two-bedroom self-catering apartment above Burgau. Sea views, shared pool, eight minutes from the beach. Book direct.">
-  <meta property="og:image" content="images/pool-loungers-hero.jpg">
+  <meta property="og:description" content="A calm two-bedroom, two-bathroom self-catering apartment above Burgau on Portugal’s Western Algarve. Sea views, a shared pool, and an eight-minute walk to the beach. Book direct with the owners.">
+  <meta property="og:image" content="https://www.casasolarisalgarve.com/images/pool-loungers-hero.jpg">
   <meta property="og:locale" content="en_GB">
+  <meta property="og:locale:alternate" content="pt_PT">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="robots" content="index, follow">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-  <link rel="stylesheet" href="_ds/casa-solaris-design-system-84226e24-443e-4cc1-a89a-d78c1b6a1fcd/tokens/fonts.css">
-  <link rel="stylesheet" href="_ds/casa-solaris-design-system-84226e24-443e-4cc1-a89a-d78c1b6a1fcd/tokens/colors.css">
-  <link rel="stylesheet" href="_ds/casa-solaris-design-system-84226e24-443e-4cc1-a89a-d78c1b6a1fcd/tokens/typography.css">
-  <link rel="stylesheet" href="_ds/casa-solaris-design-system-84226e24-443e-4cc1-a89a-d78c1b6a1fcd/tokens/spacing.css">
-  <link rel="stylesheet" href="_ds/casa-solaris-design-system-84226e24-443e-4cc1-a89a-d78c1b6a1fcd/tokens/motion.css">
-  <link rel="stylesheet" href="_ds/casa-solaris-design-system-84226e24-443e-4cc1-a89a-d78c1b6a1fcd/styles.css">
+  <link rel="stylesheet" href="/_ds/casa-solaris-design-system-84226e24-443e-4cc1-a89a-d78c1b6a1fcd/tokens/fonts.css">
+  <link rel="stylesheet" href="/_ds/casa-solaris-design-system-84226e24-443e-4cc1-a89a-d78c1b6a1fcd/tokens/colors.css">
+  <link rel="stylesheet" href="/_ds/casa-solaris-design-system-84226e24-443e-4cc1-a89a-d78c1b6a1fcd/tokens/typography.css">
+  <link rel="stylesheet" href="/_ds/casa-solaris-design-system-84226e24-443e-4cc1-a89a-d78c1b6a1fcd/tokens/spacing.css">
+  <link rel="stylesheet" href="/_ds/casa-solaris-design-system-84226e24-443e-4cc1-a89a-d78c1b6a1fcd/tokens/motion.css">
+  <link rel="stylesheet" href="/_ds/casa-solaris-design-system-84226e24-443e-4cc1-a89a-d78c1b6a1fcd/styles.css">
   <link rel="stylesheet" type="text/css" href="https://login.smoobu.com/css/singleCalendarWidgetIframe.css">
   <style>
     body { margin: 0; background: var(--cs-parchment); -webkit-font-smoothing: antialiased; }
@@ -81,36 +109,46 @@
   {
     "@context": "https://schema.org",
     "@type": ["LodgingBusiness", "Apartment", "VacationRental"],
+    "additionalType": "https://schema.org/Apartment",
     "name": "Casa Solaris",
     "description": "A two-bedroom ground-floor apartment above the village of Burgau on Portugal's Western Algarve. Sea views, a shared pool, and an eight-minute walk to the beach.",
     "url": "https://www.casasolarisalgarve.com/",
     "identifier": "casa-solaris-burgau",
     "image": [
-      "https://casasolarisalgarve.com/images/pool-loungers-hero.jpg",
-      "https://casasolarisalgarve.com/images/living-wide.jpg",
-      "https://casasolarisalgarve.com/images/kitchen-dining-wide.jpg",
-      "https://casasolarisalgarve.com/images/bedroom-master.jpg",
-      "https://casasolarisalgarve.com/images/bedroom-twin.jpg",
-      "https://casasolarisalgarve.com/images/terrace-pool.jpg",
-      "https://casasolarisalgarve.com/images/beach-promenade.jpg",
-      "https://casasolarisalgarve.com/images/access-entrance-2.jpg"
+      "https://www.casasolarisalgarve.com/images/pool-loungers-hero.jpg",
+      "https://www.casasolarisalgarve.com/images/living-wide.jpg",
+      "https://www.casasolarisalgarve.com/images/kitchen-dining-wide.jpg",
+      "https://www.casasolarisalgarve.com/images/bedroom-master.jpg",
+      "https://www.casasolarisalgarve.com/images/bedroom-twin.jpg",
+      "https://www.casasolarisalgarve.com/images/terrace-pool.jpg",
+      "https://www.casasolarisalgarve.com/images/beach-promenade.jpg",
+      "https://www.casasolarisalgarve.com/images/access-entrance-2.jpg"
     ],
     "numberOfRooms": 2,
     "petsAllowed": false,
     "priceRange": "€€",
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "Condomínio Aromas, Lote 2, Montinhos de Burgau",
       "addressLocality": "Burgau",
       "addressRegion": "Vila do Bispo, Faro",
+      "postalCode": "8600-123",
       "addressCountry": "PT"
     },
     "geo": { "@type": "GeoCoordinates", "latitude": 37.0806, "longitude": -8.7736 },
     "containsPlace": {
       "@type": "Accommodation",
+      "additionalType": "https://schema.org/Apartment",
       "occupancy": { "@type": "QuantitativeValue", "value": 5, "maxValue": 5 },
       "numberOfBedrooms": 2,
       "numberOfBathroomsTotal": 2,
-      "floorSize": { "@type": "QuantitativeValue", "value": 90, "unitCode": "MTK" }
+      "bed": "1 double bed, 2 single beds",
+      "floorSize": { "@type": "QuantitativeValue", "value": 90, "unitCode": "MTK" },
+      "amenityFeature": [
+        { "@type": "LocationFeatureSpecification", "name": "Air conditioning", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Fireplace", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Fully equipped kitchen", "value": true }
+      ]
     },
     "amenityFeature": [
       { "@type": "LocationFeatureSpecification", "name": "Shared swimming pool", "value": true },
@@ -121,35 +159,29 @@
       { "@type": "LocationFeatureSpecification", "name": "Underground parking", "value": true },
       { "@type": "LocationFeatureSpecification", "name": "Fully equipped kitchen", "value": true },
       { "@type": "LocationFeatureSpecification", "name": "Terrace with sun beds", "value": true }
+    ],
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": 5, "bestRating": 5, "reviewCount": 16 },
+    "review": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Bass" },
+        "datePublished": "2026-02-01",
+        "reviewRating": { "@type": "Rating", "ratingValue": 5, "bestRating": 5 },
+        "inLanguage": "en",
+        "reviewBody": "A wonderful stay. The apartment is beautifully decorated and equipped with all the amenities. Everything you need is available in the kitchen. The location is beautiful."
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Laura" },
+        "datePublished": "2026-03-01",
+        "reviewRating": { "@type": "Rating", "ratingValue": 5, "bestRating": 5 },
+        "inLanguage": "en",
+        "reviewBody": "We had a wonderful long weekend. Beautiful apartment, really spacious, very well equipped, felt completely safe, very comfortable, and it was great that it had two bathrooms."
+      }
     ]
   }
   </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "The House", "item": "https://casasolarisalgarve.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Amenities", "item": "https://casasolarisalgarve.com/amenities" },
-      { "@type": "ListItem", "position": 3, "name": "Why Burgau", "item": "https://casasolarisalgarve.com/burgau" },
-      { "@type": "ListItem", "position": 4, "name": "Reservations", "item": "https://casasolarisalgarve.com/reservations" }
-    ]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      { "@type": "Question", "name": "How far is Casa Solaris from the beach?", "acceptedAnswer": { "@type": "Answer", "text": "Burgau's sandy beach is about an eight-minute walk (roughly 600 m) downhill through the village. Praia da Luz is roughly ten minutes by car." } },
-      { "@type": "Question", "name": "How many guests does the apartment sleep?", "acceptedAnswer": { "@type": "Answer", "text": "Casa Solaris sleeps up to five guests across two bedrooms — a double master bedroom and a twin room — with two bathrooms." } },
-      { "@type": "Question", "name": "Is there a swimming pool?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The apartment shares a well-kept pool and sun terrace with the small Aromas 2 development." } },
-      { "@type": "Question", "name": "Is there parking and WiFi?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The apartment comes with an underground parking space and free WiFi throughout, along with air conditioning and a fireplace for cooler evenings." } },
-      { "@type": "Question", "name": "Can I book directly with the owners?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can book direct through this site to get the best rate, or find Casa Solaris on Booking.com and Airbnb." } }
-    ]
-  }
-  </script>
-  <script src="./image-slot.js"></script>
+  <script src="/image-slot.js"></script>
 </helmet>
 
 <template id="__bundler_thumbnail" data-bg-color="#4A1B0C">
@@ -170,7 +202,7 @@
 <!-- ══════════ NAV ══════════ -->
 <header style="position:sticky; top:0; z-index:50; background:rgba(250,246,238,0.94); backdrop-filter:blur(10px); border-bottom:0.5px solid var(--cs-border, rgba(153,60,29,0.18));">
   <div style="max-width:1200px; margin:0 auto; padding:16px 32px; display:flex; align-items:center; justify-content:space-between; gap:24px;">
-    <a href="#/" style="display:flex; align-items:center; gap:12px; cursor:pointer; text-decoration:none;">
+    <a href="/" style="display:flex; align-items:center; gap:12px; cursor:pointer; text-decoration:none;">
       <svg width="30" height="30" viewBox="0 0 66 66" aria-hidden="true" style="flex:none;">
         <g transform="translate(33 33)">
           <rect x="-24" y="-24" width="48" height="48" rx="3" fill="none" stroke="#993C1D" stroke-width="1.6"/>
@@ -184,10 +216,11 @@
       <span style="font-family:'Cormorant Garamond',Georgia,serif; font-weight:700; font-size:22px; letter-spacing:0.18em; color:var(--cs-umber); text-transform:uppercase;">Casa Solaris</span>
     </a>
     <nav class="cs-nav-links" style="display:flex; align-items:center; gap:34px;">
-      <a href="#/" style="{{ navHome }}">The House</a>
-      <a href="#/amenities" style="{{ navTips }}">Amenities</a>
-      <a href="#/burgau" style="{{ navBurgau }}">Why Burgau</a>
-      <a href="#/reservations" style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--cs-parchment); background:var(--cs-terracotta); padding:11px 22px; border-radius:3px; cursor:pointer; text-decoration:none;" style-hover="background:var(--cs-sunset);">Reservations</a>
+      <a href="/" style="{{ navHome }}">The House</a>
+      <a href="/amenities/" style="{{ navTips }}">Amenities</a>
+      <a href="/burgau/" style="{{ navBurgau }}">Why Burgau</a>
+      <a href="/reservations/" style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--cs-parchment); background:var(--cs-terracotta); padding:11px 22px; border-radius:3px; cursor:pointer; text-decoration:none;" style-hover="background:var(--cs-sunset);">Reservations</a>
+      <a href="{{ langHref }}" onClick="{{ chooseLang }}" lang="pt-PT" title="Versão em português" style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.14em; color:var(--cs-umber); border:1px solid rgba(74,27,12,0.22); padding:9px 11px; border-radius:3px; text-decoration:none;" style-hover="color:var(--cs-terracotta); border-color:var(--cs-terracotta);">PT</a>
     </nav>
     <span class="cs-nav-toggle" onClick="{{ toggleMenu }}" aria-label="Menu" style="align-items:center; justify-content:center; width:42px; height:42px; margin:-8px -8px -8px 0; cursor:pointer; color:var(--cs-umber);">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
@@ -198,11 +231,15 @@
 <!-- MOBILE MENU -->
 <sc-if value="{{ menuOpen }}">
 <div style="position:fixed; top:63px; left:0; right:0; z-index:49; background:rgba(250,246,238,0.98); backdrop-filter:blur(10px); border-bottom:0.5px solid rgba(153,60,29,0.18); box-shadow:0 10px 26px rgba(74,27,12,0.16); padding:8px 24px 22px; display:flex; flex-direction:column;">
-  <a href="#/" style="font-family:'Trebuchet MS',sans-serif; font-size:13px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; color:var(--cs-umber); padding:16px 0; border-bottom:0.5px solid rgba(153,60,29,0.14); cursor:pointer; text-decoration:none;">The House</a>
-  <a href="#/amenities" style="font-family:'Trebuchet MS',sans-serif; font-size:13px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; color:var(--cs-umber); padding:16px 0; border-bottom:0.5px solid rgba(153,60,29,0.14); cursor:pointer; text-decoration:none;">Amenities</a>
-  <a href="#/burgau" style="font-family:'Trebuchet MS',sans-serif; font-size:13px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; color:var(--cs-umber); padding:16px 0; border-bottom:0.5px solid rgba(153,60,29,0.14); cursor:pointer; text-decoration:none;">Why Burgau</a>
-  <a href="#/reservations" style="font-family:'Trebuchet MS',sans-serif; font-size:13px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; color:var(--cs-umber); padding:16px 0 20px; cursor:pointer; text-decoration:none;">Reservations</a>
-  <a href="#/reservations" style="text-align:center; font-family:'Trebuchet MS',sans-serif; font-size:12px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--cs-parchment); background:var(--cs-terracotta); padding:15px; border-radius:3px; cursor:pointer; text-decoration:none;">Book Direct</a>
+  <div style="display:flex; align-items:center; gap:22px; padding:16px 0; border-bottom:0.5px solid rgba(153,60,29,0.14);">
+    <span style="font-family:'Trebuchet MS',sans-serif; font-size:12px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; color:var(--cs-terracotta);">English</span>
+    <a href="{{ langHref }}" onClick="{{ chooseLang }}" lang="pt-PT" style="font-family:'Trebuchet MS',sans-serif; font-size:12px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; color:var(--color-text-secondary); text-decoration:none;">Português</a>
+  </div>
+  <a href="/" style="font-family:'Trebuchet MS',sans-serif; font-size:13px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; color:var(--cs-umber); padding:16px 0; border-bottom:0.5px solid rgba(153,60,29,0.14); cursor:pointer; text-decoration:none;">The House</a>
+  <a href="/amenities/" style="font-family:'Trebuchet MS',sans-serif; font-size:13px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; color:var(--cs-umber); padding:16px 0; border-bottom:0.5px solid rgba(153,60,29,0.14); cursor:pointer; text-decoration:none;">Amenities</a>
+  <a href="/burgau/" style="font-family:'Trebuchet MS',sans-serif; font-size:13px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; color:var(--cs-umber); padding:16px 0; border-bottom:0.5px solid rgba(153,60,29,0.14); cursor:pointer; text-decoration:none;">Why Burgau</a>
+  <a href="/reservations/" style="font-family:'Trebuchet MS',sans-serif; font-size:13px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; color:var(--cs-umber); padding:16px 0 20px; cursor:pointer; text-decoration:none;">Reservations</a>
+  <a href="/reservations/" style="text-align:center; font-family:'Trebuchet MS',sans-serif; font-size:12px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--cs-parchment); background:var(--cs-terracotta); padding:15px; border-radius:3px; cursor:pointer; text-decoration:none;">Book Direct</a>
 </div>
 </sc-if>
 
@@ -214,13 +251,13 @@
 
   <!-- HERO -->
   <section id="home" style="position:relative; height:88vh; min-height:660px; display:flex; align-items:flex-end; overflow:hidden;">
-    <img src="images/pool-loungers-hero.jpg" alt="Sun loungers on the deck beside the blue pool at Casa Solaris in Burgau" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 78%;">
+    <img src="/images/pool-loungers-hero.jpg" alt="Sun loungers on the deck beside the blue pool at Casa Solaris in Burgau" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 78%;">
     <div class="cs-hero-pad" style="position:relative; max-width:1200px; margin:0 auto; width:100%; padding:0 32px 64px; display:flex; justify-content:flex-end;">
       <div class="cs-hero-plate" style="display:inline-block; max-width:720px; background:rgba(74,27,12,0.52); border-radius:5px; padding:34px 38px;">
       <p style="font-family:'Trebuchet MS',sans-serif; font-size:12px; font-weight:bold; letter-spacing:0.42em; text-transform:uppercase; color:var(--cs-amber); margin:0 0 18px;">Western Algarve · Burgau · Portugal</p>
       <h1 class="cs-h1" style="font-family:'Cormorant Garamond',Georgia,serif; font-weight:700; font-size:32px; line-height:1.24; letter-spacing:0.02em; color:var(--cs-parchment); text-transform:uppercase; margin:0 0 22px; max-width:820px;">Family and kids-friendly two-bedroom apartment in Burgau, Western Algarve — terrace, pool, and the beach 8 minutes' walk.</h1>
       <div style="display:flex; gap:16px; flex-wrap:wrap;">
-        <a href="#/reservations" style="font-family:'Trebuchet MS',sans-serif; font-size:12px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--cs-parchment); background:var(--cs-terracotta); padding:15px 32px; border-radius:3px; cursor:pointer; text-decoration:none;" style-hover="background:var(--cs-sunset);">Check availability</a>
+        <a href="/reservations/" style="font-family:'Trebuchet MS',sans-serif; font-size:12px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--cs-parchment); background:var(--cs-terracotta); padding:15px 32px; border-radius:3px; cursor:pointer; text-decoration:none;" style-hover="background:var(--cs-sunset);">Check availability</a>
         <a href="#the-space" style="font-family:'Trebuchet MS',sans-serif; font-size:12px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--cs-parchment); border:1px solid rgba(250,246,238,0.6); padding:15px 32px; border-radius:3px;" style-hover="border-color:var(--cs-parchment); background:rgba(250,246,238,0.1);">Explore the house</a>
       </div>
       </div>
@@ -308,7 +345,7 @@
 
         <figure style="margin:0; background:var(--cs-parchment); border:0.5px solid var(--color-border); border-radius:4px; overflow:hidden; box-shadow:0 2px 8px rgba(74,27,12,0.08); display:flex; flex-direction:column;">
           <div style="position:relative; height:200px; overflow:hidden;">
-            <img src="images/guestbook-note.jpg" alt="A handwritten thank-you note left in the Casa Solaris guestbook" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 30%;">
+            <img src="/images/guestbook-note.jpg" alt="A handwritten thank-you note left in the Casa Solaris guestbook" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 30%;">
           </div>
           <div style="padding:26px 28px 28px; display:flex; flex-direction:column; flex:1;">
             <blockquote style="font-family:'Cormorant Garamond',Georgia,serif; font-size:19px; line-height:1.5; color:var(--cs-umber); margin:0 0 18px; flex:1;">"We had a wonderful stay! The apartment is beautiful &amp; had everything we needed. Thank you for your hospitality!"</blockquote>
@@ -332,7 +369,7 @@
       </div>
       <figure style="margin:0 auto 40px; max-width:1120px; position:relative;">
         <div style="position:relative; border-radius:4px; overflow:hidden; box-shadow:0 3px 14px rgba(74,27,12,0.14);">
-          <img src="images/burgau-beach-landscape.jpg" alt="Sweeping view of the Western Algarve coastline and beach at golden hour" style="width:100%; height:auto; display:block;">
+          <img src="/images/burgau-beach-landscape.jpg" alt="Sweeping view of the Western Algarve coastline and beach at golden hour" style="width:100%; height:auto; display:block;">
           <figcaption style="position:absolute; left:32px; right:32px; bottom:26px; font-family:'Cormorant Garamond',Georgia,serif; font-size:35px; font-style:italic; color:#fff; text-shadow:0 2px 10px rgba(0,0,0,0.45); text-align:center; margin:0;">For All Those, Who Love Ocean, Sun and Nature</figcaption>
         </div>
       </figure>
@@ -411,15 +448,15 @@
       <div class="cs-room" style="display:grid; grid-template-columns:1.15fr 1fr; gap:48px; align-items:center; margin-bottom:88px;">
         <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
           <div style="position:relative; grid-column:1 / -1; border-radius:3px; overflow:hidden;">
-            <img onClick="{{ openImg }}" src="images/terrace-pool.jpg" alt="The terrace at Casa Solaris with dining table, lounge seating and the shared pool beyond" style="width:100%; height:280px; object-fit:cover; display:block; cursor:zoom-in;">
+            <img onClick="{{ openImg }}" src="/images/terrace-pool.jpg" alt="The terrace at Casa Solaris with dining table, lounge seating and the shared pool beyond" style="width:100%; height:280px; object-fit:cover; display:block; cursor:zoom-in;">
             <span style="{{ zoomBadge }}">{{ zoomIcon }}</span>
           </div>
           <div style="position:relative; border-radius:3px; overflow:hidden;">
-            <img onClick="{{ openImg }}" src="images/pool-closeup.jpg" alt="The shared swimming pool at Casa Solaris" style="width:100%; height:200px; object-fit:cover; object-position:center 65%; display:block; cursor:zoom-in;">
+            <img onClick="{{ openImg }}" src="/images/pool-closeup.jpg" alt="The shared swimming pool at Casa Solaris" style="width:100%; height:200px; object-fit:cover; object-position:center 65%; display:block; cursor:zoom-in;">
             <span style="{{ zoomBadge }}">{{ zoomIcon }}</span>
           </div>
           <div style="position:relative; border-radius:3px; overflow:hidden;">
-            <img onClick="{{ openImg }}" src="images/terrace-lounge.jpg" alt="The clear turquoise water and sand of Burgau beach" style="width:100%; height:200px; object-fit:cover; display:block; cursor:zoom-in;">
+            <img onClick="{{ openImg }}" src="/images/terrace-lounge.jpg" alt="The clear turquoise water and sand of Burgau beach" style="width:100%; height:200px; object-fit:cover; display:block; cursor:zoom-in;">
             <span style="{{ zoomBadge }}">{{ zoomIcon }}</span>
           </div>
         </div>
@@ -439,11 +476,11 @@
         </div>
         <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
           <div style="position:relative; border-radius:3px; overflow:hidden;">
-            <img onClick="{{ openImg }}" src="images/living-wide.jpg" alt="Casa Solaris living room with fireplace and dining area" style="width:100%; height:280px; object-fit:cover; display:block; cursor:zoom-in;">
+            <img onClick="{{ openImg }}" src="/images/living-wide.jpg" alt="Casa Solaris living room with fireplace and dining area" style="width:100%; height:280px; object-fit:cover; display:block; cursor:zoom-in;">
             <span style="{{ zoomBadge }}">{{ zoomIcon }}</span>
           </div>
           <div style="position:relative; border-radius:3px; overflow:hidden;">
-            <img onClick="{{ openImg }}" src="images/living-sofa.jpg" alt="Living room sofa and woven bench with coffee table" style="width:100%; height:280px; object-fit:cover; display:block; cursor:zoom-in;">
+            <img onClick="{{ openImg }}" src="/images/living-sofa.jpg" alt="Living room sofa and woven bench with coffee table" style="width:100%; height:280px; object-fit:cover; display:block; cursor:zoom-in;">
             <span style="{{ zoomBadge }}">{{ zoomIcon }}</span>
           </div>
         </div>
@@ -453,15 +490,15 @@
       <div class="cs-room" style="display:grid; grid-template-columns:1.15fr 1fr; gap:48px; align-items:center; margin-bottom:88px;">
         <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
           <div style="position:relative; grid-column:1 / -1; border-radius:3px; overflow:hidden;">
-            <img onClick="{{ openImg }}" src="images/kitchen-1.jpg" alt="Fully equipped kitchen with azulejo tile splashback at Casa Solaris" style="width:100%; height:280px; object-fit:cover; display:block; cursor:zoom-in;">
+            <img onClick="{{ openImg }}" src="/images/kitchen-1.jpg" alt="Fully equipped kitchen with azulejo tile splashback at Casa Solaris" style="width:100%; height:280px; object-fit:cover; display:block; cursor:zoom-in;">
             <span style="{{ zoomBadge }}">{{ zoomIcon }}</span>
           </div>
           <div style="position:relative; border-radius:3px; overflow:hidden;">
-            <img onClick="{{ openImg }}" src="images/dining-1.jpg" alt="Glass dining table with woven pendant light" style="width:100%; height:200px; object-fit:cover; display:block; cursor:zoom-in;">
+            <img onClick="{{ openImg }}" src="/images/dining-1.jpg" alt="Glass dining table with woven pendant light" style="width:100%; height:200px; object-fit:cover; display:block; cursor:zoom-in;">
             <span style="{{ zoomBadge }}">{{ zoomIcon }}</span>
           </div>
           <div style="position:relative; border-radius:3px; overflow:hidden;">
-            <img onClick="{{ openImg }}" src="images/kitchen-dining-wide.jpg" alt="Open kitchen and dining area with woven pendant light at Casa Solaris" style="width:100%; height:200px; object-fit:cover; object-position:center 30%; display:block; cursor:zoom-in;">
+            <img onClick="{{ openImg }}" src="/images/kitchen-dining-wide.jpg" alt="Open kitchen and dining area with woven pendant light at Casa Solaris" style="width:100%; height:200px; object-fit:cover; object-position:center 30%; display:block; cursor:zoom-in;">
             <span style="{{ zoomBadge }}">{{ zoomIcon }}</span>
           </div>
         </div>
@@ -477,7 +514,7 @@
       <div class="cs-grid-2" style="display:grid; grid-template-columns:1fr 1fr; gap:40px; margin-bottom:56px;">
         <div>
           <div style="position:relative; border-radius:3px; overflow:hidden; margin-bottom:22px;">
-            <img onClick="{{ openImg }}" src="images/bedroom-master.jpg" alt="Master bedroom at Casa Solaris with double bed and sage green wall" style="width:100%; height:320px; object-fit:cover; display:block; cursor:zoom-in;">
+            <img onClick="{{ openImg }}" src="/images/bedroom-master.jpg" alt="Master bedroom at Casa Solaris with double bed and sage green wall" style="width:100%; height:320px; object-fit:cover; display:block; cursor:zoom-in;">
             <span style="{{ zoomBadge }}">{{ zoomIcon }}</span>
           </div>
           <p style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.28em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 12px;">Master Bedroom</p>
@@ -486,7 +523,7 @@
         </div>
         <div>
           <div style="position:relative; border-radius:3px; overflow:hidden; margin-bottom:22px;">
-            <img onClick="{{ openImg }}" src="images/bedroom-twin.jpg" alt="Twin bedroom at Casa Solaris with two single beds and striped throws" style="width:100%; height:320px; object-fit:cover; display:block; cursor:zoom-in;">
+            <img onClick="{{ openImg }}" src="/images/bedroom-twin.jpg" alt="Twin bedroom at Casa Solaris with two single beds and striped throws" style="width:100%; height:320px; object-fit:cover; display:block; cursor:zoom-in;">
             <span style="{{ zoomBadge }}">{{ zoomIcon }}</span>
           </div>
           <p style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.28em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 12px;">Twin Bedroom</p>
@@ -499,7 +536,7 @@
       <div class="cs-grid-2" style="display:grid; grid-template-columns:1fr 1fr; gap:40px;">
         <div>
           <div style="position:relative; border-radius:3px; overflow:hidden; margin-bottom:22px;">
-            <img onClick="{{ openImg }}" src="images/bathroom-big.jpg" alt="Family bathroom with bathtub at Casa Solaris" style="width:100%; height:300px; object-fit:cover; display:block; cursor:zoom-in;">
+            <img onClick="{{ openImg }}" src="/images/bathroom-big.jpg" alt="Family bathroom with bathtub at Casa Solaris" style="width:100%; height:300px; object-fit:cover; display:block; cursor:zoom-in;">
             <span style="{{ zoomBadge }}">{{ zoomIcon }}</span>
           </div>
           <p style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.28em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 12px;">Family Bathroom</p>
@@ -507,7 +544,7 @@
         </div>
         <div>
           <div style="position:relative; border-radius:3px; overflow:hidden; margin-bottom:22px;">
-            <img onClick="{{ openImg }}" src="images/bathroom-small.jpg" alt="Second bathroom with walk-in shower at Casa Solaris" style="width:100%; height:300px; object-fit:cover; display:block; cursor:zoom-in;">
+            <img onClick="{{ openImg }}" src="/images/bathroom-small.jpg" alt="Second bathroom with walk-in shower at Casa Solaris" style="width:100%; height:300px; object-fit:cover; display:block; cursor:zoom-in;">
             <span style="{{ zoomBadge }}">{{ zoomIcon }}</span>
           </div>
           <p style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.28em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 12px;">Second Bathroom</p>
@@ -536,17 +573,17 @@
     <div class="cs-room" style="display:grid; grid-template-columns:1fr 1fr; align-items:stretch;">
       <div style="min-height:460px; position:relative; display:grid; grid-template-rows:1.6fr 1fr; gap:3px;">
         <div style="position:relative; overflow:hidden;">
-          <img src="images/view-coast.jpg" alt="Clifftop view over Burgau village and the Atlantic coastline" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+          <img src="/images/view-coast.jpg" alt="Clifftop view over Burgau village and the Atlantic coastline" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
         </div>
         <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:3px;">
           <div style="position:relative; overflow:hidden;">
-            <img src="images/burgau-sunset-rooftops.jpg" alt="Whitewashed rooftops and chimneys over the sea at sunset in Burgau" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+            <img src="/images/burgau-sunset-rooftops.jpg" alt="Whitewashed rooftops and chimneys over the sea at sunset in Burgau" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
           </div>
           <div style="position:relative; overflow:hidden;">
-            <img src="images/burgau-alley-scooter.jpg" alt="A cobbled lane in Burgau with a scooter parked by a blue-trimmed house" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+            <img src="/images/burgau-alley-scooter.jpg" alt="A cobbled lane in Burgau with a scooter parked by a blue-trimmed house" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
           </div>
           <div style="position:relative; overflow:hidden;">
-            <img src="images/burgau-bougainvillea.jpg" alt="Bougainvillea in bloom over terracotta rooftops in the Burgau hills" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+            <img src="/images/burgau-bougainvillea.jpg" alt="Bougainvillea in bloom over terracotta rooftops in the Burgau hills" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
           </div>
         </div>
       </div>
@@ -554,7 +591,7 @@
         <p style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.32em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 22px;">The Setting</p>
         <h2 class="cs-h2" style="font-family:'Cormorant Garamond',Georgia,serif; font-size:42px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:var(--cs-umber); margin:0 0 22px; line-height:1.12;">Burgau, on the protected coast</h2>
         <p style="font-size:17px; line-height:1.9; color:var(--color-text-secondary); margin:0 0 20px;">A fishing village that kept its scale. Cobbled lanes down to a sandy cove, a harbour older than the tourist trade, and clifftop paths that run for miles with nothing built on them. The beach is an eight-minute walk; Praia da Luz and Lagos are a short drive east; Sagres and Cape St Vincent lie to the west.</p>
-        <a href="#/burgau" style="font-family:'Trebuchet MS',sans-serif; font-size:12px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--cs-terracotta); cursor:pointer; align-self:flex-start; border-bottom:2px solid var(--cs-terracotta); padding-bottom:4px; text-decoration:none;" style-hover="color:var(--cs-sunset);">Explore Burgau &amp; beyond →</a>
+        <a href="/burgau/" style="font-family:'Trebuchet MS',sans-serif; font-size:12px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--cs-terracotta); cursor:pointer; align-self:flex-start; border-bottom:2px solid var(--cs-terracotta); padding-bottom:4px; text-decoration:none;" style-hover="color:var(--cs-sunset);">Explore Burgau &amp; beyond →</a>
       </div>
     </div>
   </section>
@@ -566,7 +603,7 @@
       <p style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.32em; text-transform:uppercase; color:var(--cs-amber); margin:0 0 22px;">Your stay</p>
       <h2 class="cs-h2" style="font-family:'Cormorant Garamond',Georgia,serif; font-size:46px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; color:var(--cs-parchment); margin:0 0 22px; line-height:1.1;">Come and rest a while</h2>
       <p style="font-size:17px; line-height:1.85; color:var(--color-text-on-dark-2); margin:0 0 36px;">Contact us to check availability, ask about the house, or arrange your arrival. Book direct for the best rate and a real conversation.</p>
-      <a href="#/reservations" style="font-family:'Trebuchet MS',sans-serif; font-size:12px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--cs-parchment); background:var(--cs-terracotta); padding:16px 40px; border-radius:3px; cursor:pointer; display:inline-block; text-decoration:none;" style-hover="background:var(--cs-sunset);">Check availability</a>
+      <a href="/reservations/" style="font-family:'Trebuchet MS',sans-serif; font-size:12px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--cs-parchment); background:var(--cs-terracotta); padding:16px 40px; border-radius:3px; cursor:pointer; display:inline-block; text-decoration:none;" style-hover="background:var(--cs-sunset);">Check availability</a>
     </div>
   </section>
 </main>
@@ -578,7 +615,7 @@
 <sc-if value="{{ isBurgau }}">
 <main data-screen-label="Burgau and Beyond">
   <section id="burgau" style="position:relative; height:78vh; min-height:560px; display:flex; align-items:flex-end; overflow:hidden;">
-    <img src="images/burgau-street-sign.jpg" alt="The sticker-covered Burgau village sign, a local landmark" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 42%;">
+    <img src="/images/burgau-street-sign.jpg" alt="The sticker-covered Burgau village sign, a local landmark" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 42%;">
     <h1 style="position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap;">Why Burgau</h1>
   </section>
 
@@ -638,7 +675,7 @@
 
   <!-- ══════════ SIGN PHOTO BAND ══════════ -->
   <section style="height:520px; position:relative; overflow:hidden;">
-    <img src="images/burgau-beach-overlook.jpg" alt="Burgau beach seen from the terrace above, shaded by a tree" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 42%;">on:center 38%;">
+    <img src="/images/burgau-beach-overlook.jpg" alt="Burgau beach seen from the terrace above, shaded by a tree" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 42%;">
   </section>
 
   <!-- ══════════ WHERE TO BASE / COMPARISON ══════════ -->
@@ -781,7 +818,7 @@
 
       <article style="background:var(--cs-warm-white); border:0.5px solid var(--color-border); border-radius:4px; overflow:hidden; box-shadow:0 2px 8px rgba(74,27,12,0.10);">
         <div style="height:5px; background:var(--cs-grad);"></div>
-        <img src="images/beach-turquoise-water.jpg" alt="Turquoise water meeting golden sand at Burgau beach" style="width:100%; height:220px; object-fit:cover; object-position:center 30%; display:block;">
+        <img src="/images/beach-turquoise-water.jpg" alt="Turquoise water meeting golden sand at Burgau beach" style="width:100%; height:220px; object-fit:cover; object-position:center 30%; display:block;">
         <div style="padding:32px;">
           <p style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.24em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 12px;">Beaches &amp; Swimming</p>
           <h3 style="font-family:'Cormorant Garamond',Georgia,serif; font-size:28px; font-weight:700; color:var(--cs-umber); margin:0 0 14px; line-height:1.2;">Coves within reach</h3>
@@ -791,7 +828,7 @@
 
       <article style="background:var(--cs-warm-white); border:0.5px solid var(--color-border); border-radius:4px; overflow:hidden; box-shadow:0 2px 8px rgba(74,27,12,0.10);">
         <div style="height:5px; background:var(--cs-grad);"></div>
-        <img src="images/view-coast.jpg" alt="Clifftop coastal path near Burgau" style="width:100%; height:220px; object-fit:cover; display:block;">
+        <img src="/images/view-coast.jpg" alt="Clifftop coastal path near Burgau" style="width:100%; height:220px; object-fit:cover; display:block;">
         <div style="padding:32px;">
           <p style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.24em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 12px;">Hiking &amp; Cliffs</p>
           <h3 style="font-family:'Cormorant Garamond',Georgia,serif; font-size:28px; font-weight:700; color:var(--cs-umber); margin:0 0 14px; line-height:1.2;">The unbuilt coast</h3>
@@ -801,7 +838,7 @@
 
       <article style="background:var(--cs-warm-white); border:0.5px solid var(--color-border); border-radius:4px; overflow:hidden; box-shadow:0 2px 8px rgba(74,27,12,0.10);">
         <div style="height:5px; background:var(--cs-grad);"></div>
-        <img src="images/cycling-cliff-trail.jpg" alt="A coastal trail along the cliffs near Burgau" style="width:100%; height:220px; object-fit:cover; object-position:center 55%; display:block;">
+        <img src="/images/cycling-cliff-trail.jpg" alt="A coastal trail along the cliffs near Burgau" style="width:100%; height:220px; object-fit:cover; object-position:center 55%; display:block;">
         <div style="padding:32px;">
           <p style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.24em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 12px;">Cycling</p>
           <h3 style="font-family:'Cormorant Garamond',Georgia,serif; font-size:28px; font-weight:700; color:var(--cs-umber); margin:0 0 14px; line-height:1.2;">Quiet roads inland</h3>
@@ -811,7 +848,7 @@
 
       <article style="background:var(--cs-warm-white); border:0.5px solid var(--color-border); border-radius:4px; overflow:hidden; box-shadow:0 2px 8px rgba(74,27,12,0.10);">
         <div style="height:5px; background:var(--cs-grad);"></div>
-        <img src="images/food-sardines.jpg" alt="Fresh sardines grilling over charcoal, a Burgau tradition" style="width:100%; height:220px; object-fit:cover; object-position:center 60%; display:block;">
+        <img src="/images/food-sardines.jpg" alt="Fresh sardines grilling over charcoal, a Burgau tradition" style="width:100%; height:220px; object-fit:cover; object-position:center 60%; display:block;">
         <div style="padding:32px;">
           <p style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.24em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 12px;">Food &amp; the Harbour</p>
           <h3 style="font-family:'Cormorant Garamond',Georgia,serif; font-size:28px; font-weight:700; color:var(--cs-umber); margin:0 0 14px; line-height:1.2;">Eat where the boats land</h3>
@@ -827,10 +864,10 @@
           <p style="font-size:15px; line-height:1.85; color:var(--color-text-secondary); margin:0 0 24px; max-width:820px;">Half an hour west, Sagres and Cape St Vincent mark the south-westernmost point of the continent — cliffs, a lighthouse, and Atlantic weather. East, Lagos gives you a walled old town, marina, and the golden coves of Ponta da Piedade. Inland, Monchique's hills bring cooler air and thermal springs. All of it makes an easy day from the door.</p>
           <div style="display:grid; grid-template-columns:1.3fr 1fr; gap:14px;">
             <div style="position:relative; border-radius:3px; overflow:hidden; min-height:220px;">
-              <img src="images/daytrip-luz-overlook.jpg" alt="View over Praia da Luz from the coastal cliffs" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+              <img src="/images/daytrip-luz-overlook.jpg" alt="View over Praia da Luz from the coastal cliffs" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
             </div>
             <div style="position:relative; border-radius:3px; overflow:hidden; min-height:220px;">
-              <img src="images/daytrip-cliffs-sunset.jpg" alt="Sunset light on the sandstone cliffs and rocky shore near Sagres" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+              <img src="/images/daytrip-cliffs-sunset.jpg" alt="Sunset light on the sandstone cliffs and rocky shore near Sagres" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
             </div>
           </div>
         </div>
@@ -861,8 +898,8 @@
       <div id="beach-pool" style="background:var(--cs-warm-white); border:0.5px solid var(--color-border); border-radius:4px; box-shadow:0 2px 8px rgba(74,27,12,0.10); overflow:hidden; scroll-margin-top:76px;">
         <div class="cs-room" style="display:grid; grid-template-columns:1fr 1.1fr; align-items:stretch;">
           <div style="display:grid; grid-template-rows:1fr 1fr; gap:3px; min-height:360px;">
-            <div style="position:relative; overflow:hidden;"><img src="images/beach-pool-loungers.jpg" alt="Loungers beside the pool at Casa Solaris" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;"></div>
-            <div style="position:relative; overflow:hidden;"><img src="images/beach-promenade.jpg" alt="The promenade and sandy beach at Burgau" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;"></div>
+            <div style="position:relative; overflow:hidden;"><img src="/images/beach-pool-loungers.jpg" alt="Loungers beside the pool at Casa Solaris" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;"></div>
+            <div style="position:relative; overflow:hidden;"><img src="/images/beach-promenade.jpg" alt="The promenade and sandy beach at Burgau" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;"></div>
           </div>
           <div style="padding:44px 40px;">
             <p style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.26em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 12px;">Sun &amp; Water</p>
@@ -901,7 +938,7 @@
             </ul>
           </div>
           <div style="position:relative; min-height:360px; overflow:hidden;">
-            <img src="images/comfort-bedroom-pillows.jpg" alt="Bedroom with cushions and warm linen at Casa Solaris" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+            <img src="/images/comfort-bedroom-pillows.jpg" alt="Bedroom with cushions and warm linen at Casa Solaris" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
           </div>
         </div>
       </div>
@@ -921,8 +958,8 @@
             </ul>
           </div>
           <div style="display:grid; grid-template-rows:1fr 1fr; gap:3px; min-height:360px; order:2;">
-            <div style="position:relative; overflow:hidden;"><img src="images/kids-baby-crib.jpg" alt="Travel crib provided for babies" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;"></div>
-            <div style="position:relative; overflow:hidden;"><img src="images/kids-high-chair.jpg" alt="High chair provided for mealtimes" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 30%;"></div>
+            <div style="position:relative; overflow:hidden;"><img src="/images/kids-baby-crib.jpg" alt="Travel crib provided for babies" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;"></div>
+            <div style="position:relative; overflow:hidden;"><img src="/images/kids-high-chair.jpg" alt="High chair provided for mealtimes" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 30%;"></div>
           </div>
         </div>
       </div>
@@ -932,10 +969,10 @@
         <div style="height:4px; background:var(--cs-grad);"></div>
         <div style="display:grid; grid-template-columns:1fr 1fr; gap:2px; background:var(--cs-stone);">
           <div style="height:320px; overflow:hidden; display:flex; align-items:center; justify-content:center; background:var(--cs-umber);">
-            <img src="images/access-entrance-2.jpg" alt="Gated driveway entrance at Casa Solaris" style="width:100%; height:100%; object-fit:contain; display:block;">
+            <img src="/images/access-entrance-2.jpg" alt="Gated driveway entrance at Casa Solaris" style="width:100%; height:100%; object-fit:contain; display:block;">
           </div>
           <div style="height:320px; overflow:hidden; display:flex; align-items:center; justify-content:center; background:var(--cs-umber);">
-            <img src="images/access-garage.jpg" alt="Private garage entrance at Casa Solaris" style="width:100%; height:100%; object-fit:contain; display:block;">
+            <img src="/images/access-garage.jpg" alt="Private garage entrance at Casa Solaris" style="width:100%; height:100%; object-fit:contain; display:block;">
           </div>
         </div>
         <div class="cs-grid-2" style="display:grid; grid-template-columns:1.15fr 1fr; gap:0;">
@@ -961,13 +998,13 @@
         <div class="cs-room" style="display:grid; grid-template-columns:1fr 1.1fr; align-items:stretch;">
           <div style="display:grid; grid-template-rows:1fr 1fr 1fr; gap:3px; min-height:360px;">
             <div style="position:relative; overflow:hidden;">
-              <img src="images/dining-indoor-glass.jpg" alt="Glass dining table with wooden chairs indoors at Casa Solaris" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+              <img src="/images/dining-indoor-glass.jpg" alt="Glass dining table with wooden chairs indoors at Casa Solaris" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
             </div>
             <div style="position:relative; overflow:hidden;">
-              <img src="images/dining-terrace.jpg" alt="Long teak dining table on the terrace beside the pool at Casa Solaris" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+              <img src="/images/dining-terrace.jpg" alt="Long teak dining table on the terrace beside the pool at Casa Solaris" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
             </div>
             <div style="position:relative; overflow:hidden;">
-              <img src="images/kitchen-coffee-machine.jpg" alt="Coffee machine and moka pot in the kitchen at Casa Solaris" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+              <img src="/images/kitchen-coffee-machine.jpg" alt="Coffee machine and moka pot in the kitchen at Casa Solaris" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
             </div>
           </div>
           <div style="padding:44px 40px;">
@@ -1013,10 +1050,10 @@
         <div id="work" style="background:var(--cs-warm-white); border:0.5px solid var(--color-border); border-radius:4px; overflow:hidden; box-shadow:0 2px 8px rgba(74,27,12,0.08); scroll-margin-top:76px;">
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:2px; height:230px;">
             <div style="overflow:hidden; display:flex; align-items:center; justify-content:center; background:var(--cs-umber);">
-              <img src="images/work-desk.jpg" alt="Desk with laptop stand and a leafy corner at Casa Solaris" style="width:100%; height:100%; object-fit:contain; display:block;">
+              <img src="/images/work-desk.jpg" alt="Desk with laptop stand and a leafy corner at Casa Solaris" style="width:100%; height:100%; object-fit:contain; display:block;">
             </div>
             <div style="overflow:hidden;">
-              <img src="images/work-coffee.jpg" alt="Coffee on the desk beside a laptop at Casa Solaris" style="width:100%; height:100%; object-fit:cover; object-position:center 45%; display:block;">
+              <img src="/images/work-coffee.jpg" alt="Coffee on the desk beside a laptop at Casa Solaris" style="width:100%; height:100%; object-fit:cover; object-position:center 45%; display:block;">
             </div>
           </div>
           <div style="padding:36px;">
@@ -1032,8 +1069,8 @@
         </div>
         <div id="parking" style="background:var(--cs-warm-white); border:0.5px solid var(--color-border); border-radius:4px; overflow:hidden; box-shadow:0 2px 8px rgba(74,27,12,0.08); scroll-margin-top:76px;">
           <div style="display:grid; grid-template-rows:1fr 1fr; gap:2px; height:290px;">
-            <div style="overflow:hidden;"><img src="images/parking-garage.jpg" alt="Private underground parking garage at Casa Solaris" style="width:100%; height:100%; object-fit:cover; object-position:center 45%; display:block;"></div>
-            <div style="overflow:hidden;"><img src="images/parking-street.jpg" alt="Gated street-level parking entrance at Casa Solaris" style="width:100%; height:100%; object-fit:cover; object-position:center 55%; display:block;"></div>
+            <div style="overflow:hidden;"><img src="/images/parking-garage.jpg" alt="Private underground parking garage at Casa Solaris" style="width:100%; height:100%; object-fit:cover; object-position:center 45%; display:block;"></div>
+            <div style="overflow:hidden;"><img src="/images/parking-street.jpg" alt="Gated street-level parking entrance at Casa Solaris" style="width:100%; height:100%; object-fit:cover; object-position:center 55%; display:block;"></div>
           </div>
           <div style="padding:36px;">
           <p style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.26em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 12px;">At the Door</p>
@@ -1065,7 +1102,7 @@
 <sc-if value="{{ isStay }}">
 <main data-screen-label="Reservations">
   <section id="reservations" style="position:relative; height:46vh; min-height:340px; display:flex; align-items:flex-end; overflow:hidden;">
-    <img src="images/reservations-sundeck.jpg" alt="Sun loungers and terrace beside the pool at Casa Solaris" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 40%;">
+    <img src="/images/reservations-sundeck.jpg" alt="Sun loungers and terrace beside the pool at Casa Solaris" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 40%;">
     <div style="position:relative; max-width:1120px; margin:0 auto; width:100%; padding:0 32px 52px;">
       <div style="display:inline-block; background:rgba(74,27,12,0.52); border-radius:5px; padding:28px 34px;">
       <p style="font-family:'Trebuchet MS',sans-serif; font-size:12px; font-weight:bold; letter-spacing:0.36em; text-transform:uppercase; color:var(--cs-amber); margin:0 0 16px;">Availability &amp; Booking</p>
@@ -1177,7 +1214,7 @@
 
       <!-- Right: photo -->
       <div style="min-height:420px; border-radius:4px; overflow:hidden; box-shadow:0 3px 14px rgba(74,27,12,0.12);">
-                <img src="images/reservations-beach-goldenhour.jpg" alt="Golden-hour view over the beach and Atlantic near Burgau" style="width:100%; height:100%; object-fit:cover; display:block;">
+                <img src="/images/reservations-beach-goldenhour.jpg" alt="Golden-hour view over the beach and Atlantic near Burgau" style="width:100%; height:100%; object-fit:cover; display:block;">
       </div>
 
     </div>
@@ -1237,7 +1274,7 @@
 <footer style="background:var(--cs-warm-white); padding:64px 32px 40px; border-top:4px solid transparent; border-image:var(--cs-grad) 1;">
   <div class="cs-grid-3" style="max-width:1120px; margin:0 auto; display:grid; grid-template-columns:2fr 1fr 1fr; gap:48px; align-items:center;">
     <div style="display:flex; flex-direction:column; align-items:flex-start;">
-      <img src="images/casa-solaris-lockup-light.png" alt="Casa Solaris — Western Algarve, Burgau" style="width:100%; max-width:420px; height:auto;">
+      <img src="/images/casa-solaris-lockup-light.png" alt="Casa Solaris — Western Algarve, Burgau" style="width:100%; max-width:420px; height:auto;">
     </div>
     <div>
       <p style="font-size:14px; line-height:1.8; color:var(--color-text-secondary); margin:0;">Casa Solaris Burgau, Western Algarve, is a cozy, highest-rated, modern, spacious apartment with two bedrooms and two bathrooms. The ground-floor unit features a pool, terrace, and garden views.</p>
@@ -1247,16 +1284,16 @@
       <div>
         <p style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.22em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 18px;">Explore</p>
         <div style="display:flex; flex-direction:column; gap:12px;">
-          <a href="#/" style="font-size:14px; color:var(--color-text-secondary); cursor:pointer;" style-hover="color:var(--cs-terracotta);">The House</a>
-          <a href="#/amenities" style="font-size:14px; color:var(--color-text-secondary); cursor:pointer;" style-hover="color:var(--cs-terracotta);">Amenities</a>
-          <a href="#/burgau" style="font-size:14px; color:var(--color-text-secondary); cursor:pointer;" style-hover="color:var(--cs-terracotta);">Why Burgau</a>
-          <a href="#/reservations" style="font-size:14px; color:var(--color-text-secondary); cursor:pointer;" style-hover="color:var(--cs-terracotta);">Reservations</a>
+          <a href="/" style="font-size:14px; color:var(--color-text-secondary); cursor:pointer;" style-hover="color:var(--cs-terracotta);">The House</a>
+          <a href="/amenities/" style="font-size:14px; color:var(--color-text-secondary); cursor:pointer;" style-hover="color:var(--cs-terracotta);">Amenities</a>
+          <a href="/burgau/" style="font-size:14px; color:var(--color-text-secondary); cursor:pointer;" style-hover="color:var(--cs-terracotta);">Why Burgau</a>
+          <a href="/reservations/" style="font-size:14px; color:var(--color-text-secondary); cursor:pointer;" style-hover="color:var(--cs-terracotta);">Reservations</a>
         </div>
       </div>
       <div>
         <p style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.22em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 18px;">Contact</p>
         <div style="display:flex; flex-direction:column; gap:12px;">
-          <a href="#/reservations" style="font-size:14px; color:var(--color-text-secondary);" style-hover="color:var(--cs-terracotta);">Contact</a>
+          <a href="/reservations/" style="font-size:14px; color:var(--color-text-secondary);" style-hover="color:var(--cs-terracotta);">Contact</a>
           <a href="https://www.booking.com/hotel/pt/casa-solaris-algarve.html" target="_blank" rel="noopener" style="font-size:14px; color:var(--color-text-secondary); display:inline-flex; align-items:center;" style-hover="color:var(--cs-terracotta);"><span style="display:inline-flex; align-items:center; justify-content:center; width:15px; height:15px; border-radius:3px; background:#003580; margin-right:6px; flex:none;"><span style="font-family:Georgia,serif; font-weight:700; font-size:9.5px; color:#fff; line-height:1;">B</span></span>Booking.com</a>
           <a href="https://www.airbnb.pl/h/casasolarisalgarve" target="_blank" rel="noopener" style="font-size:14px; color:var(--color-text-secondary); display:inline-flex; align-items:center;" style-hover="color:var(--cs-terracotta);"><span style="display:inline-flex; align-items:center; justify-content:center; width:15px; height:15px; border-radius:3px; background:#FF385C; margin-right:6px; flex:none;"><svg width="9" height="9" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2C9 6 4 12.5 4 16.5A8 5.5 0 0 0 12 22a8 5.5 0 0 0 8-5.5C20 12.5 15 6 12 2z"/></svg></span>Airbnb</a>
         </div>
@@ -1268,6 +1305,7 @@
     <p style="font-size:12px; color:var(--color-text-tertiary); margin:0;">Made with the warmth of the Algarve.</p>
   </div>
   <div style="max-width:1120px; margin:14px auto 0; display:flex; justify-content:center; flex-wrap:wrap; gap:16px;">
+    <a href="{{ langHref }}" onClick="{{ chooseLang }}" lang="pt-PT" style="font-size:11px; color:var(--color-text-tertiary); text-decoration:underline;" style-hover="color:var(--cs-terracotta);">Português</a>
     <a href="/sitemap.xml" style="font-size:11px; color:var(--color-text-tertiary); text-decoration:underline;" style-hover="color:var(--cs-terracotta);">Sitemap</a>
     <a href="/llms.txt" style="font-size:11px; color:var(--color-text-tertiary); text-decoration:underline;" style-hover="color:var(--cs-terracotta);">llms.txt</a>
     <a href="/llms-full.txt" style="font-size:11px; color:var(--color-text-tertiary); text-decoration:underline;" style-hover="color:var(--cs-terracotta);">llms-full.txt</a>
@@ -1305,6 +1343,31 @@ class Component extends DCLogic {
 
   // Smoobu "Calendar iFrame" embed URL (Smoobu dashboard → Advanced → Calendar iFrame)
   smoobuCalendarUrl = 'https://login.smoobu.com/en/cockpit/widget/show-calendar-iframe/3120931/079e33183035a3e3743d47bd27f5430cca2319415d007e208eebf28d2238abc1';
+  siteLang = 'en';
+  siteUrls = {
+    home: { en: '/', pt: '/pt/' },
+    tips: { en: '/amenities/', pt: '/pt/apartamento-com-piscina-burgau/' },
+    burgau: { en: '/burgau/', pt: '/pt/o-que-fazer-em-burgau/' },
+    stay: { en: '/reservations/', pt: '/pt/reservar-alojamento-burgau/' }
+  };
+  previewHash = { home: '#/', tips: '#/amenities', burgau: '#/burgau', stay: '#/reservations' };
+
+  isProd() {
+    return typeof window !== 'undefined' && /casasolarisalgarve\.com$/.test(window.location.hostname);
+  }
+
+  pageFromPath() {
+    if (!this.isProd()) return null;
+    let p = window.location.pathname.replace(/index\.html$/, '').replace(/\.html$/, '');
+    if (p.slice(-1) !== '/') p += '/';
+    for (const k in this.siteUrls) if (this.siteUrls[k][this.siteLang] === p) return k;
+    return null;
+  }
+
+  absUrl(page, lang) {
+    return 'https://www.casasolarisalgarve.com' + this.siteUrls[page][lang];
+  }
+
   meta = {
     home: { slug: '', title: 'Casa Solaris \u2014 2-Bedroom Holiday Apartment in Burgau, Western Algarve', desc: 'A calm two-bedroom, two-bathroom self-catering apartment above Burgau on Portugal\u2019s Western Algarve. Sea views, a shared pool, and an eight-minute walk to the beach. Book direct with the owners.' },
     burgau: { slug: 'burgau', title: 'Burgau & the Western Algarve \u2014 Beaches, Walks & Local Guide | Casa Solaris', desc: 'Beaches, clifftop walks, harbour restaurants, day trips and the year-round climate around Burgau on Portugal\u2019s Western Algarve \u2014 a local guide from Casa Solaris.' },
@@ -1313,6 +1376,7 @@ class Component extends DCLogic {
   };
 
   componentDidMount() {
+    if (typeof document !== 'undefined') document.documentElement.lang = 'en';
     this._onHash = () => this.applyRoute();
     if (typeof window !== 'undefined') {
       window.addEventListener('hashchange', this._onHash);
@@ -1323,10 +1387,22 @@ class Component extends DCLogic {
       // title is a no-op, so this does not loop.
       this._titleObserver = new MutationObserver(() => {
         if (this._title && document.title !== this._title) document.title = this._title;
+        this.ensureHreflang();
       });
       this._titleObserver.observe(document.head, { childList: true, subtree: true, characterData: true });
     }
     if (typeof window !== 'undefined') this.applyRoute();
+    this.ensureHreflang();
+  }
+
+  ensureHreflang() {
+    if (typeof document === 'undefined' || !document.head) return;
+    const page = (this.state && this.state.page) || 'home';
+    const want = [['en', this.absUrl(page, 'en')], ['pt', this.absUrl(page, 'pt')], ['x-default', this.absUrl(page, 'en')]];
+    const have = document.head.querySelectorAll('link[rel="alternate"][hreflang]');
+    if (have.length === 3 && want.every(([l, h], i) => have[i].getAttribute('hreflang') === l && have[i].getAttribute('href') === h)) return;
+    have.forEach((el) => el.remove());
+    want.forEach(([l, h]) => { const el = document.createElement('link'); el.rel = 'alternate'; el.hreflang = l; el.href = h; el.setAttribute('data-cs-hreflang', ''); document.head.appendChild(el); });
   }
 
   componentWillUnmount() {
@@ -1342,11 +1418,20 @@ class Component extends DCLogic {
   applyRoute() {
     let raw = '';
     try { raw = decodeURIComponent((window.location.hash || '').replace(/^#\/?/, '')).trim().toLowerCase(); } catch (e) { raw = ''; }
-    let page = 'home';
+    const has = (o, k) => Object.prototype.hasOwnProperty.call(o, k);
+    const fromPath = this.pageFromPath();
+    let page = fromPath || 'home';
     let scrollId = null;
-    if (Object.prototype.hasOwnProperty.call(this.pages, raw)) page = this.pages[raw];
-    else if (Object.prototype.hasOwnProperty.call(this.sections, raw)) { page = this.sections[raw]; scrollId = raw; }
-    this.setState({ page, menuOpen: false });
+    if (fromPath) {
+      const target = has(this.pages, raw) ? this.pages[raw] : (has(this.sections, raw) ? this.sections[raw] : null);
+      if (raw && target && target !== fromPath) {
+        window.location.replace(this.siteUrls[target][this.siteLang] + (has(this.sections, raw) ? '#' + raw : ''));
+        return;
+      }
+      if (has(this.sections, raw)) scrollId = raw;
+    } else if (has(this.pages, raw)) page = this.pages[raw];
+    else if (has(this.sections, raw)) { page = this.sections[raw]; scrollId = raw; }
+    this.setState({ page, menuOpen: false }, () => this.ensureHreflang());
     this.updateMeta(page);
     if (typeof window !== 'undefined') {
       const doScroll = () => {
@@ -1370,7 +1455,8 @@ class Component extends DCLogic {
     set('meta[name="description"]', 'content', m.desc);
     set('meta[property="og:title"]', 'content', m.title);
     set('meta[property="og:description"]', 'content', m.desc);
-    set('link[rel="canonical"]', 'href', 'https://www.casasolarisalgarve.com/' + m.slug);
+    set('link[rel="canonical"]', 'href', this.absUrl(page, this.siteLang));
+    set('meta[property="og:url"]', 'content', this.absUrl(page, this.siteLang));
   }
 
   goHash(h) {
@@ -1450,6 +1536,17 @@ class Component extends DCLogic {
     }));
   }
 
+  chooseLang() {
+    try { localStorage.setItem('cs_lang', 'pt'); } catch (e) {}
+  }
+
+  langHref() {
+    const other = this.siteLang === 'pt' ? 'en' : 'pt';
+    const page = (this.state && this.state.page) || 'home';
+    if (!this.isProd()) return (other === 'pt' ? 'Casa%20Solaris%20Website%20PT.dc.html' : 'Casa%20Solaris%20Website.dc.html') + this.previewHash[page];
+    return this.siteUrls[page][other];
+  }
+
   renderVals() {
     const p = this.state.page;
     const faqItems = this.faqData.map((item) => {
@@ -1458,6 +1555,8 @@ class Component extends DCLogic {
     });
     return {
       faqItems,
+      langHref: this.langHref(),
+      chooseLang: () => this.chooseLang(),
       compareRows: this.buildCompareRows(),
       isHome: p === 'home',
       isBurgau: p === 'burgau',

@@ -1,6 +1,6 @@
 # Casa Solaris — Full Reference (llms-full.txt)
 
-Site: https://casasolarisalgarve.com
+Site: https://www.casasolarisalgarve.com
 Property: Casa Solaris, a privately owned holiday apartment in Burgau, Western Algarve, Portugal.
 Type: Self-catering apartment (not a hotel, not professionally managed as a resort).
 

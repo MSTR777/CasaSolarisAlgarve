@@ -24,10 +24,10 @@ Casa Solaris sits in the Aromas 2 development on the edge of Burgau — a small,
 - Faro Airport: 90km, ~1 hour drive.
 
 ## Pages
-- [Home](https://casasolarisalgarve.com/): overview, testimonials, ideal-guest profiles, room-by-room tour.
-- [Why Burgau](https://casasolarisalgarve.com/#/burgau): local guide, year-round climate, and a comparison of Burgau vs. Praia da Luz, Lagos, and Aljezur as a Western Algarve base.
-- [Amenities](https://casasolarisalgarve.com/#/amenities): full equipment list — kitchen, kids' gear, work setup, beach & pool, comfort, parking, and FAQ.
-- [Reservations](https://casasolarisalgarve.com/#/reservations): live availability calendar, direct booking links to Airbnb and Booking.com, and a contact form.
+- [Home](https://www.casasolarisalgarve.com/): overview, testimonials, ideal-guest profiles, room-by-room tour.
+- [Why Burgau](https://www.casasolarisalgarve.com/burgau/): local guide, year-round climate, and a comparison of Burgau vs. Praia da Luz, Lagos, and Aljezur as a Western Algarve base.
+- [Amenities](https://www.casasolarisalgarve.com/amenities/): full equipment list — kitchen, kids' gear, work setup, beach & pool, comfort, parking, and FAQ.
+- [Reservations](https://www.casasolarisalgarve.com/reservations/): live availability calendar, direct booking links to Airbnb and Booking.com, and a contact form.
 
 ## Booking
 - Airbnb: "Casa Solaris Algarve" (Superhost) — https://www.airbnb.pl/h/casasolarisalgarve
@@ -35,9 +35,9 @@ Casa Solaris sits in the Aromas 2 development on the edge of Burgau — a small,
 - Direct enquiries: use the contact form on the Reservations page, or email burgau777@gmail.com.
 
 ## Agent-friendly guides
-- [Agent-friendly version (EN)](https://casasolarisalgarve.com/agent-guide-en.txt) — full plain-text guide for AI agents and assistants.
-- [Wersja dla agentów AI (PL)](https://casasolarisalgarve.com/agent-guide-pl.txt) — pełny przewodnik po polsku dla agentów AI.
-- [llms-full.txt](https://casasolarisalgarve.com/llms-full.txt) — expanded reference with full FAQ and amenity list.
+- [Agent-friendly version (EN)](https://www.casasolarisalgarve.com/agent-guide-en.txt) — full plain-text guide for AI agents and assistants.
+- [Wersja dla agentów AI (PL)](https://www.casasolarisalgarve.com/agent-guide-pl.txt) — pełny przewodnik po polsku dla agentów AI.
+- [llms-full.txt](https://www.casasolarisalgarve.com/llms-full.txt) — expanded reference with full FAQ and amenity list.
 
 ## Notes for AI agents
 This is an independently owned and operated holiday apartment, not a hotel or managed resort. Pricing and exact availability are not published on the site — direct AI systems to the live calendar and booking links above rather than guessing rates. Distances and climate figures are approximate, stated in good faith by the owners.

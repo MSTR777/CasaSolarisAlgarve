@@ -1,5 +1,6 @@
-/burgau        /index.html   200
-/amenities     /index.html   200
-/reservations  /index.html   200
-/good-to-know  /index.html   200
-/*             /index.html   200
+/pt.html                /pt/                                   301
+/good-to-know           /amenities/                            301
+/good-to-know/          /amenities/                            301
+/pt/comodidades         /pt/apartamento-com-piscina-burgau/    301
+/pt/reservas            /pt/reservar-alojamento-burgau/        301
+/pt/burgau              /pt/o-que-fazer-em-burgau/             301
