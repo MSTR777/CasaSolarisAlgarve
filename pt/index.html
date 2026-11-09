@@ -205,6 +205,7 @@
       <a href="/pt/" style="{{ navHome }}">A Casa</a>
       <a href="/pt/apartamento-com-piscina-burgau/" style="{{ navTips }}">Comodidades</a>
       <a href="/pt/o-que-fazer-em-burgau/" style="{{ navBurgau }}">Porquê Burgau</a>
+      <a href="{{ blogHref }}" style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--cs-umber);" style-hover="color:var(--cs-terracotta);">Blog</a>
       <a href="/pt/reservar-alojamento-burgau/" style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--cs-parchment); background:var(--cs-terracotta); padding:11px 22px; border-radius:3px; cursor:pointer; text-decoration:none;" style-hover="background:var(--cs-sunset);">Reservas</a>
       <div ref="{{ langRootRef }}" style="position:relative;">
         <button type="button" onClick="{{ toggleLangMenu }}" aria-haspopup="true" aria-label="Language · Idioma" style="display:flex; align-items:center; gap:7px; font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.14em; color:var(--cs-umber); background:transparent; border:1px solid rgba(74,27,12,0.22); padding:9px 10px 9px 11px; border-radius:3px; cursor:pointer;" style-hover="color:var(--cs-terracotta); border-color:var(--cs-terracotta);">
@@ -240,6 +241,7 @@
   <a href="/pt/" style="font-family:'Trebuchet MS',sans-serif; font-size:13px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; color:var(--cs-umber); padding:16px 0; border-bottom:0.5px solid rgba(153,60,29,0.14); cursor:pointer; text-decoration:none;">A Casa</a>
   <a href="/pt/apartamento-com-piscina-burgau/" style="font-family:'Trebuchet MS',sans-serif; font-size:13px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; color:var(--cs-umber); padding:16px 0; border-bottom:0.5px solid rgba(153,60,29,0.14); cursor:pointer; text-decoration:none;">Comodidades</a>
   <a href="/pt/o-que-fazer-em-burgau/" style="font-family:'Trebuchet MS',sans-serif; font-size:13px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; color:var(--cs-umber); padding:16px 0; border-bottom:0.5px solid rgba(153,60,29,0.14); cursor:pointer; text-decoration:none;">Porquê Burgau</a>
+  <a href="{{ blogHref }}" style="font-family:'Trebuchet MS',sans-serif; font-size:13px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; color:var(--cs-umber); padding:16px 0; border-bottom:0.5px solid rgba(153,60,29,0.14); cursor:pointer; text-decoration:none;">Blog</a>
   <a href="/pt/reservar-alojamento-burgau/" style="font-family:'Trebuchet MS',sans-serif; font-size:13px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; color:var(--cs-umber); padding:16px 0 20px; cursor:pointer; text-decoration:none;">Reservas</a>
   <a href="/pt/reservar-alojamento-burgau/" style="text-align:center; font-family:'Trebuchet MS',sans-serif; font-size:12px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--cs-parchment); background:var(--cs-terracotta); padding:15px; border-radius:3px; cursor:pointer; text-decoration:none;">Reservar diretamente</a>
 </div>
@@ -579,10 +581,10 @@
         </div>
         <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:3px;">
           <div style="position:relative; overflow:hidden;">
-            <img src="/images/burgau-sunset-rooftops.jpg" alt="Telhados caiados e chaminés sobre o mar ao pôr do sol, em Burgau" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+            <img src="/images/burgau-sunset-rooftops.jpg" alt="Uma rua calcetada de Burgau com uma scooter junto a uma casa de barra azul" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
           </div>
           <div style="position:relative; overflow:hidden;">
-            <img src="/images/burgau-alley-scooter.jpg" alt="Uma rua calcetada de Burgau com uma scooter junto a uma casa de barra azul" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+            <img src="/images/burgau-alley-scooter.jpg" alt="Telhados caiados e chaminés sobre o mar ao pôr do sol, em Burgau" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
           </div>
           <div style="position:relative; overflow:hidden;">
             <img src="/images/burgau-bougainvillea.jpg" alt="Buganvílias em flor sobre telhados de terracota nas colinas de Burgau" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
@@ -1289,6 +1291,8 @@
           <a href="/pt/" style="font-size:14px; color:var(--color-text-secondary); cursor:pointer;" style-hover="color:var(--cs-terracotta);">A Casa</a>
           <a href="/pt/apartamento-com-piscina-burgau/" style="font-size:14px; color:var(--color-text-secondary); cursor:pointer;" style-hover="color:var(--cs-terracotta);">Comodidades</a>
           <a href="/pt/o-que-fazer-em-burgau/" style="font-size:14px; color:var(--color-text-secondary); cursor:pointer;" style-hover="color:var(--cs-terracotta);">Porquê Burgau</a>
+          <a href="{{ winterHref }}" style="font-size:14px; color:var(--color-text-secondary);" style-hover="color:var(--cs-terracotta);">Inverno e estadias longas</a>
+          <a href="{{ blogHref }}" style="font-size:14px; color:var(--color-text-secondary);" style-hover="color:var(--cs-terracotta);">Blog</a>
           <a href="/pt/reservar-alojamento-burgau/" style="font-size:14px; color:var(--color-text-secondary); cursor:pointer;" style-hover="color:var(--cs-terracotta);">Reservas</a>
         </div>
       </div>
@@ -1324,12 +1328,12 @@ class Component extends DCLogic {
   state = { page: 'home', lightbox: null, menuOpen: false, openFaq: { 'getting-in': true } };
 
   faqData = [
-    { id: 'getting-in', q: 'Chegada', first: 'O Aeroporto de Faro fica a cerca de uma hora de carro.', rest: 'O seu lugar de estacionamento privado está incluído — um verdadeiro luxo na aldeia. As indicações e os detalhes das chaves são enviados antes da viagem. Check-in a partir das 15h · check-out até às 10h (confirme os seus horários).' },
+    { id: 'getting-in', q: 'Chegada', first: 'O Aeroporto de Faro fica a cerca de uma hora de carro.', rest: 'O seu lugar de estacionamento privado está incluído — um verdadeiro luxo na aldeia. As indicações e os detalhes das chaves são enviados antes da viagem. Check-in a partir das 14h · check-out até às 10h.' },
     { id: 'book', q: 'Como faço a reserva?', first: 'Diretamente no Airbnb ou no Booking.com, acima.', rest: 'Os dois calendários estão sincronizados, por isso a disponibilidade apresentada é a mesma em qualquer uma das plataformas.' },
     { id: 'min-stay', q: 'Qual é a estadia mínima?', first: 'Normalmente, três noites.', rest: 'Em julho e agosto costumam aplicar-se estadias mínimas mais longas — pergunte pelas suas datas.' },
     { id: 'arrival-details', q: 'Quando recebo os detalhes de chegada?', first: 'Assim que a reserva for confirmada na plataforma.', rest: 'As indicações e os códigos da porta são enviados por mensagem pouco antes da estadia.' },
-    { id: 'check-in-out', q: 'Check-in, check-out e sem festas', first: 'Check-in das 14h00 às 22h00 · check-out até às 10h30.', rest: 'Chegadas mais tardias são possíveis, mas por sua conta e risco, já que a nossa linha de apoio pode não estar disponível a essa hora — não há reembolsos por check-ins perdidos. Este é um condomínio tranquilo, com vários proprietários, ideal para famílias com crianças ou adultos responsáveis; não são permitidas festas nem outros incómodos. Se não tiver a certeza de que os seus planos se adequam, envie-nos uma mensagem antes de reservar para confirmarmos.' },
-    { id: 'getting-there', q: 'Preciso de carro?', first: 'Em Burgau não — fica tudo a poucos minutos a pé.', rest: 'Para chegar cá, o mais fácil é alugar um carro no aeroporto (Faro ou Lisboa), mas o comboio, o autocarro, a Uber ou o táxi também são opção. Como exige a lei portuguesa, enviamos cerca de uma semana antes da chegada um formulário de registo SEF, que todos os hóspedes devem preencher e devolver antes do check-in. Os nossos preços incluem todas as taxas, sem custos escondidos. A partir da casa: a Praia do Burgau fica a 6 minutos a pé ou 2 de carro; a Luz a 5 minutos de carro; Lagos a 10 minutos; e Faro, Carvoeiro, Salema e o resto do Algarve entre 20 e 40 minutos.' }
+    { id: 'check-in-out', q: 'Check-in, check-out e sem festas', first: 'Check-in das 14h00 às 22h00 · check-out até às 10h00.', rest: 'Chegadas mais tardias são possíveis, mas por sua conta e risco, já que a nossa linha de apoio pode não estar disponível a essa hora — não há reembolsos por check-ins perdidos. Este é um condomínio tranquilo, com vários proprietários, ideal para famílias com crianças ou adultos responsáveis; não são permitidas festas nem outros incómodos. Se não tiver a certeza de que os seus planos se adequam, envie-nos uma mensagem antes de reservar para confirmarmos.' },
+    { id: 'getting-there', q: 'Preciso de carro?', first: 'Em Burgau não — fica tudo a poucos minutos a pé.', rest: 'Para chegar cá, o mais fácil é alugar um carro no aeroporto (Faro ou Lisboa), mas o comboio, o autocarro, a Uber ou o táxi também são opção. A lei portuguesa obriga-nos a comunicar à AIMA a estadia de hóspedes estrangeiros; por isso, enviamos cerca de uma semana antes da chegada um breve formulário de registo, a preencher antes do check-in. Hóspedes de nacionalidade portuguesa estão dispensados. Os nossos preços incluem todas as taxas, sem custos escondidos. A partir da casa: a Praia do Burgau fica a 6 minutos a pé ou 2 de carro; a Luz a 5 minutos de carro; Lagos a 10 minutos; e Faro, Carvoeiro, Salema e o resto do Algarve entre 20 e 40 minutos.' }
   ];
 
   toggleFaq(id) {
@@ -1554,6 +1558,15 @@ class Component extends DCLogic {
     this.setState({ langMenuOpen: false });
   }
 
+  blogHref() {
+    return this.isProd() ? '/blog/' : 'Casa%20Solaris%20Blog.dc.html';
+  }
+
+  winterHref() {
+    if (!this.isProd()) return this.siteLang === 'pt' ? 'Casa%20Solaris%20Winter%20Stays%20PT.dc.html' : 'Casa%20Solaris%20Winter%20Stays.dc.html';
+    return this.siteLang === 'pt' ? '/pt/inverno-estadias-longas-burgau-algarve/' : '/winter-long-stays-burgau-algarve/';
+  }
+
   langHrefFor(code) {
     const page = (this.state && this.state.page) || 'home';
     const lang = this.languages.find((l) => l.code === code);
@@ -1584,6 +1597,8 @@ class Component extends DCLogic {
       faqItems,
       langOptions: this.langOptionsList(),
       langOthers: this.langOptionsList().filter((l) => !l.active),
+      winterHref: this.winterHref(),
+      blogHref: this.blogHref(),
       langMenuOpen: !!this.state.langMenuOpen,
       toggleLangMenu: () => this.setState((st) => ({ langMenuOpen: !st.langMenuOpen })),
       langRootRef: (el) => { this._langRoot = el; },

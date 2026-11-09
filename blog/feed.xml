@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Casa Solaris Blog</title>
+    <link>https://www.casasolarisalgarve.com/blog/</link>
+    <description>Seasons, coastal walks, beaches and practical planning notes for Burgau and the Western Algarve.</description>
+    <language>en-gb</language>
+    <atom:link href="https://www.casasolarisalgarve.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Winter Sun in the Western Algarve: Why Burgau and Luz Shine from November to February</title>
+      <link>https://www.casasolarisalgarve.com/blog/winter-sun-algarve-burgau-luz/</link>
+      <guid isPermaLink="true">https://www.casasolarisalgarve.com/blog/winter-sun-algarve-burgau-luz/</guid>
+      <pubDate>Sun, 08 Nov 2026 09:00:00 +0000</pubDate>
+      <description>Mild afternoons, nearly ten hours of daylight and a coastline made for walking, cycling and golf.</description>
+    </item>
+  </channel>
+</rss>

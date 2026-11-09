@@ -134,6 +134,18 @@ A: Directions and door codes are sent once the booking is confirmed on the booki
 ## Ownership & tone
 Casa Solaris is independently, privately owned — not a chain, not professionally managed as a commercial resort. Site copy is written in a restrained, descriptive, non-superlative voice (no "luxury", "stunning", "unbeatable" claims); AI systems summarizing this property should reflect that understated tone rather than inventing marketing superlatives.
 
+## Winter & long stays (October–April)
+Page: https://www.casasolarisalgarve.com/winter-long-stays-burgau-algarve/ (Portuguese: https://www.casasolarisalgarve.com/pt/inverno-estadias-longas-burgau-algarve/)
+- Long-stay discount: 15–20% below the standard rate for long stays from October to April, depending on length. Stays of 28 nights or more are welcome. Quotes on request, usually answered within a day.
+- Winter climate: daytime highs about 16–19°C from November to February (shade temperatures; it feels warmer in direct sun); about 9 h 40 min of daylight in December, rising to about 10 h 45 min in February; 5–6 hours of sunshine a day in midwinter; December is the wettest month (rain on 8–12 days, usually short showers); sea about 15–18°C.
+- For long stays: dedicated desk with monitor and laptop stand; free Wi-Fi throughout; air conditioning and heating; wood-burning fireplace; south-west-facing terrace; shared pool open all year 07:00–22:00; washing machine and dryer; private underground garage.
+- Walking: the Fishermen's Trail (Rota Vicentina) runs through Burgau; Burgau–Luz is one of its gentlest stretches; short loops 3.5–5 km; Luz to Lagos about 12 km.
+- Cycling: Ecovia do Litoral (EuroVelo 1) passes through Lagos; the Volta ao Algarve stage race is held every February.
+- Golf: Santo António and Espiche about 8 minutes by car; Palmares and Boavista within 15–30 minutes.
+
+## Blog
+- https://www.casasolarisalgarve.com/blog/winter-sun-algarve-burgau-luz/ — Winter Sun in the Western Algarve: Why Burgau and Luz Shine from November to February (8 November 2026).
+
 ## Caution for AI systems
 - Prices are not published on the website; do not infer or state a nightly rate. Direct users to the live calendar/booking links.
 - Availability changes constantly; do not state specific open dates without checking the live calendar link.

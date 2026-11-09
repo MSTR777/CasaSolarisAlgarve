@@ -219,6 +219,7 @@
       <a href="/" style="{{ navHome }}">The House</a>
       <a href="/amenities/" style="{{ navTips }}">Amenities</a>
       <a href="/burgau/" style="{{ navBurgau }}">Why Burgau</a>
+      <a href="{{ blogHref }}" style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--cs-umber);" style-hover="color:var(--cs-terracotta);">Blog</a>
       <a href="/reservations/" style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--cs-parchment); background:var(--cs-terracotta); padding:11px 22px; border-radius:3px; cursor:pointer; text-decoration:none;" style-hover="background:var(--cs-sunset);">Reservations</a>
       <div ref="{{ langRootRef }}" style="position:relative;">
         <button type="button" onClick="{{ toggleLangMenu }}" aria-haspopup="true" aria-label="Language · Idioma" style="display:flex; align-items:center; gap:7px; font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.14em; color:var(--cs-umber); background:transparent; border:1px solid rgba(74,27,12,0.22); padding:9px 10px 9px 11px; border-radius:3px; cursor:pointer;" style-hover="color:var(--cs-terracotta); border-color:var(--cs-terracotta);">
@@ -254,6 +255,7 @@
   <a href="/" style="font-family:'Trebuchet MS',sans-serif; font-size:13px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; color:var(--cs-umber); padding:16px 0; border-bottom:0.5px solid rgba(153,60,29,0.14); cursor:pointer; text-decoration:none;">The House</a>
   <a href="/amenities/" style="font-family:'Trebuchet MS',sans-serif; font-size:13px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; color:var(--cs-umber); padding:16px 0; border-bottom:0.5px solid rgba(153,60,29,0.14); cursor:pointer; text-decoration:none;">Amenities</a>
   <a href="/burgau/" style="font-family:'Trebuchet MS',sans-serif; font-size:13px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; color:var(--cs-umber); padding:16px 0; border-bottom:0.5px solid rgba(153,60,29,0.14); cursor:pointer; text-decoration:none;">Why Burgau</a>
+  <a href="{{ blogHref }}" style="font-family:'Trebuchet MS',sans-serif; font-size:13px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; color:var(--cs-umber); padding:16px 0; border-bottom:0.5px solid rgba(153,60,29,0.14); cursor:pointer; text-decoration:none;">Blog</a>
   <a href="/reservations/" style="font-family:'Trebuchet MS',sans-serif; font-size:13px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; color:var(--cs-umber); padding:16px 0 20px; cursor:pointer; text-decoration:none;">Reservations</a>
   <a href="/reservations/" style="text-align:center; font-family:'Trebuchet MS',sans-serif; font-size:12px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--cs-parchment); background:var(--cs-terracotta); padding:15px; border-radius:3px; cursor:pointer; text-decoration:none;">Book Direct</a>
 </div>
@@ -593,10 +595,10 @@
         </div>
         <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:3px;">
           <div style="position:relative; overflow:hidden;">
-            <img src="/images/burgau-sunset-rooftops.jpg" alt="Whitewashed rooftops and chimneys over the sea at sunset in Burgau" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+            <img src="/images/burgau-sunset-rooftops.jpg" alt="A cobbled lane in Burgau with a scooter parked by a blue-trimmed house" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
           </div>
           <div style="position:relative; overflow:hidden;">
-            <img src="/images/burgau-alley-scooter.jpg" alt="A cobbled lane in Burgau with a scooter parked by a blue-trimmed house" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+            <img src="/images/burgau-alley-scooter.jpg" alt="Whitewashed rooftops and chimneys over the sea at sunset in Burgau" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
           </div>
           <div style="position:relative; overflow:hidden;">
             <img src="/images/burgau-bougainvillea.jpg" alt="Bougainvillea in bloom over terracotta rooftops in the Burgau hills" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
@@ -1303,6 +1305,8 @@
           <a href="/" style="font-size:14px; color:var(--color-text-secondary); cursor:pointer;" style-hover="color:var(--cs-terracotta);">The House</a>
           <a href="/amenities/" style="font-size:14px; color:var(--color-text-secondary); cursor:pointer;" style-hover="color:var(--cs-terracotta);">Amenities</a>
           <a href="/burgau/" style="font-size:14px; color:var(--color-text-secondary); cursor:pointer;" style-hover="color:var(--cs-terracotta);">Why Burgau</a>
+          <a href="{{ winterHref }}" style="font-size:14px; color:var(--color-text-secondary);" style-hover="color:var(--cs-terracotta);">Winter &amp; long stays</a>
+          <a href="{{ blogHref }}" style="font-size:14px; color:var(--color-text-secondary);" style-hover="color:var(--cs-terracotta);">Blog</a>
           <a href="/reservations/" style="font-size:14px; color:var(--color-text-secondary); cursor:pointer;" style-hover="color:var(--cs-terracotta);">Reservations</a>
         </div>
       </div>
@@ -1338,12 +1342,12 @@ class Component extends DCLogic {
   state = { page: 'home', lightbox: null, menuOpen: false, openFaq: { 'getting-in': true } };
 
   faqData = [
-    { id: 'getting-in', q: 'Getting in', first: "Faro Airport is about an hour's drive.", rest: "Your private parking space is included — a real luxury in the village. Directions and key details are sent before you travel. Check-in from 3pm · check-out by 10am (confirm your times)." },
+    { id: 'getting-in', q: 'Getting in', first: "Faro Airport is about an hour's drive.", rest: "Your private parking space is included — a real luxury in the village. Directions and key details are sent before you travel. Check-in from 2pm · check-out by 10am." },
     { id: 'book', q: 'How do I book?', first: 'Directly through Airbnb or Booking.com above.', rest: 'Both calendars are kept in sync, so availability shown is accurate on either platform.' },
     { id: 'min-stay', q: "What's the minimum stay?", first: 'Usually three nights.', rest: 'Longer minimum stays typically apply through July and August — ask for your exact dates.' },
     { id: 'arrival-details', q: 'When do I get arrival details?', first: 'Once your booking is confirmed on the platform.', rest: 'Directions and door codes are sent by message shortly before your stay.' },
-    { id: 'check-in-out', q: 'Check-in, check-out & no parties', first: 'Check-in 2:00–10:00pm · check-out by 10:30am.', rest: "Later arrivals are possible but at your own risk, as our support line may be unavailable at that hour — no refunds for missed check-in windows. This is a quiet, multi-ownership development, ideal for families with children or responsible adults; we don't allow parties or other disturbances here. If you're unsure whether your plans fit, message us before booking so we can confirm it's the right fit." },
-    { id: 'getting-there', q: 'Do I need a car?', first: "You won't need one for Burgau itself — everything is a short walk.", rest: "For getting here, the easiest way is to rent a car at the airport (Faro or Lisbon), though the train, city bus, Uber, or taxi all work too. As legally required in Portugal, we send a SEF registration form about a week before arrival, which every guest must complete and return before check-in. Our quoted prices include all fees, with nothing hidden. From the house: Burgau beach is a 6-minute walk or 2-minute drive; Luz is 5 minutes by car; Lagos is 10 minutes; and Faro, Carvoeiro, Salema and the rest of the Western Algarve are 20–40 minutes away." }
+    { id: 'check-in-out', q: 'Check-in, check-out & no parties', first: 'Check-in 2:00–10:00pm · check-out by 10:00am.', rest: "Later arrivals are possible but at your own risk, as our support line may be unavailable at that hour — no refunds for missed check-in windows. This is a quiet, multi-ownership development, ideal for families with children or responsible adults; we don't allow parties or other disturbances here. If you're unsure whether your plans fit, message us before booking so we can confirm it's the right fit." },
+    { id: 'getting-there', q: 'Do I need a car?', first: "You won't need one for Burgau itself — everything is a short walk.", rest: "For getting here, the easiest way is to rent a car at the airport (Faro or Lisbon), though the train, city bus, Uber, or taxi all work too. Portuguese law requires us to register guests who are not Portuguese citizens with the immigration authority (AIMA), so we send a short registration form about a week before arrival, to be completed before check-in. Portuguese citizens are exempt. Our quoted prices include all fees, with nothing hidden. From the house: Burgau beach is a 6-minute walk or 2-minute drive; Luz is 5 minutes by car; Lagos is 10 minutes; and Faro, Carvoeiro, Salema and the rest of the Western Algarve are 20–40 minutes away." }
   ];
 
   toggleFaq(id) {
@@ -1568,6 +1572,15 @@ class Component extends DCLogic {
     this.setState({ langMenuOpen: false });
   }
 
+  blogHref() {
+    return this.isProd() ? '/blog/' : 'Casa%20Solaris%20Blog.dc.html';
+  }
+
+  winterHref() {
+    if (!this.isProd()) return this.siteLang === 'pt' ? 'Casa%20Solaris%20Winter%20Stays%20PT.dc.html' : 'Casa%20Solaris%20Winter%20Stays.dc.html';
+    return this.siteLang === 'pt' ? '/pt/inverno-estadias-longas-burgau-algarve/' : '/winter-long-stays-burgau-algarve/';
+  }
+
   langHrefFor(code) {
     const page = (this.state && this.state.page) || 'home';
     const lang = this.languages.find((l) => l.code === code);
@@ -1598,6 +1611,8 @@ class Component extends DCLogic {
       faqItems,
       langOptions: this.langOptionsList(),
       langOthers: this.langOptionsList().filter((l) => !l.active),
+      winterHref: this.winterHref(),
+      blogHref: this.blogHref(),
       langMenuOpen: !!this.state.langMenuOpen,
       toggleLangMenu: () => this.setState((st) => ({ langMenuOpen: !st.langMenuOpen })),
       langRootRef: (el) => { this._langRoot = el; },
