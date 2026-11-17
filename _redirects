@@ -1,6 +1,13 @@
 /pt.html                /pt/                                   301
-/good-to-know           /amenities/                            301
-/good-to-know/          /amenities/                            301
+/amenities              /burgau/amenities/                     301
+/amenities/             /burgau/amenities/                     301
+/good-to-know           /burgau/amenities/                     301
+/good-to-know/          /burgau/amenities/                     301
+/burgau/apartment       /burgau/apartment/                     301
+/burgau/amenities       /burgau/amenities/                     301
+/luz                    /luz/                                  301
+/praia-da-luz           /luz/                                  301
+/praia-da-luz/          /luz/                                  301
 /pt/comodidades         /pt/apartamento-com-piscina-burgau/    301
 /pt/reservas            /pt/reservar-alojamento-burgau/        301
 /pt/burgau              /pt/o-que-fazer-em-burgau/             301

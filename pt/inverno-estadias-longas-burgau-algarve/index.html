@@ -39,12 +39,7 @@
   <meta name="twitter:image" content="https://www.casasolarisalgarve.com/images/winter-burgau-beach-cliffs-october.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-  <link rel="stylesheet" href="/_ds/casa-solaris-design-system-84226e24-443e-4cc1-a89a-d78c1b6a1fcd/tokens/fonts.css">
-  <link rel="stylesheet" href="/_ds/casa-solaris-design-system-84226e24-443e-4cc1-a89a-d78c1b6a1fcd/tokens/colors.css">
-  <link rel="stylesheet" href="/_ds/casa-solaris-design-system-84226e24-443e-4cc1-a89a-d78c1b6a1fcd/tokens/typography.css">
-  <link rel="stylesheet" href="/_ds/casa-solaris-design-system-84226e24-443e-4cc1-a89a-d78c1b6a1fcd/tokens/spacing.css">
-  <link rel="stylesheet" href="/_ds/casa-solaris-design-system-84226e24-443e-4cc1-a89a-d78c1b6a1fcd/tokens/motion.css">
-  <link rel="stylesheet" href="/_ds/casa-solaris-design-system-84226e24-443e-4cc1-a89a-d78c1b6a1fcd/styles.css">
+  <link rel="stylesheet" href="/assets/casa-solaris.css">
   <style>
     body { margin: 0; background: var(--cs-parchment); -webkit-font-smoothing: antialiased; }
     a { color: var(--cs-terracotta); text-decoration: none; }
@@ -68,12 +63,17 @@
     @media (max-width: 600px) {
       .ws-wrap { padding-left: 20px !important; padding-right: 20px !important; }
       .ws-hero { height: 50vh !important; min-height: 300px !important; }
-      .ws-h1 { font-size: 27px !important; line-height: 1.2 !important; }
-      .ws-dek { font-size: 20px !important; }
-      .ws-body p, .ws-body li { font-size: 17px !important; }
+      .ws-h1 { font-size: 30px !important; line-height: 1.16 !important; }
+      .ws-dek { font-size: 19px !important; margin-bottom: 18px !important; }
+      .ws-body p:not([style*="uppercase"]), .ws-body li { font-size: 17px !important; }
+      .ws-body .ws-cap, .ws-body .ws-crumb li { font-size: 12px !important; }
+      .ws-body .ws-facts li { font-size: 13px !important; }
       .ws-table th, .ws-table td { padding: 12px 10px !important; font-size: 14px !important; }
     }
-  </style>
+  
+    summary::-webkit-details-marker { display: none; }
+    details[open] > summary .faq-plus { transform: rotate(45deg); }
+</style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -178,19 +178,19 @@
   </section>
 
   <div class="ws-wrap ws-body" style="max-width:784px; margin:0 auto; padding:30px 32px 24px; color:rgba(74,27,12,0.86);">
+    <p class="ws-cap" style="margin:0 0 22px; font-size:13px; line-height:1.5; color:rgba(74,27,12,0.6);">A praia do Burgau, em outubro. Todas as fotografias de exterior desta página foram tiradas entre outubro e abril.</p>
 
     <header style="margin:0 0 36px;">
-      <nav aria-label="Breadcrumb" style="margin:0 0 30px;">
-        <ol style="list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:8px; font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.18em; text-transform:uppercase; color:rgba(74,27,12,0.6);">
+      <nav aria-label="Breadcrumb" class="ws-crumb" style="margin:0 0 14px;">
+        <ol style="list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:6px; font-size:12px; line-height:1.4; color:rgba(74,27,12,0.55);">
           <li><a href="/pt/" style="color:rgba(74,27,12,0.6);" style-hover="color:var(--cs-terracotta);">A Casa</a></li>
           <li aria-hidden="true">/</li>
-          <li aria-current="page" style="color:var(--cs-terracotta);">Inverno e estadias longas</li>
+          <li aria-current="page" style="color:rgba(74,27,12,0.55);">Inverno e estadias longas</li>
         </ol>
       </nav>
-      <p style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.32em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 16px;">Inverno e estadias longas · outubro a abril</p>
-      <h1 class="ws-h1" style="font-family:'Cormorant Garamond',Georgia,serif; font-weight:700; font-size:42px; line-height:1.16; letter-spacing:0.02em; color:var(--cs-umber); text-transform:uppercase; margin:0 0 18px; text-wrap:balance;">Passar o inverno em Burgau, no Barlavento Algarvio: estadias longas de outubro a abril</h1>
+      <h1 class="ws-h1" style="font-family:'Cormorant Garamond',Georgia,serif; font-weight:700; font-size:44px; line-height:1.14; letter-spacing:0; color:var(--cs-umber); margin:0 0 16px; text-wrap:balance;">Passar o inverno em Burgau, no Barlavento Algarvio: estadias longas de outubro a abril</h1>
       <p class="ws-dek" style="font-family:'Cormorant Garamond',Georgia,serif; font-size:24px; line-height:1.45; color:rgba(74,27,12,0.8); margin:0 0 24px; text-wrap:pretty;">Dias amenos, aldeias tranquilas e uma casa preparada para ficar um mês ou mais.</p>
-      <ul style="list-style:none; margin:0; padding:14px 0; display:flex; flex-wrap:wrap; gap:8px 26px; border-top:0.5px solid rgba(153,60,29,0.18); border-bottom:0.5px solid rgba(153,60,29,0.18); font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; color:var(--cs-umber);">
+      <ul class="ws-facts" style="list-style:none; margin:0; padding:12px 0; display:flex; flex-wrap:wrap; gap:6px 22px; border-top:0.5px solid rgba(153,60,29,0.18); border-bottom:0.5px solid rgba(153,60,29,0.18); font-family:'Trebuchet MS',sans-serif; font-size:13px; font-weight:bold; letter-spacing:0.02em; color:var(--cs-umber);">
         <li>Outubro a abril</li>
         <li style="color:var(--cs-terracotta);">15–20% de desconto em estadias longas</li>
         <li>Piscina aberta todo o ano</li>
@@ -308,28 +308,43 @@
     </section>
 
     <section id="faq" style="scroll-margin-top:90px;">
-      <h2 style="font-family:'Cormorant Garamond',Georgia,serif; font-weight:700; font-size:30px; line-height:1.25; letter-spacing:0.03em; text-transform:uppercase; color:var(--cs-umber); margin:0 0 14px; text-wrap:balance;">Perguntas frequentes</h2>
+      <h2 style="font-family:'Cormorant Garamond',Georgia,serif; font-weight:700; font-size:30px; line-height:1.25; letter-spacing:0.03em; text-transform:uppercase; color:var(--cs-umber); margin:0 0 6px; text-wrap:balance;">Perguntas frequentes</h2>
       <div style="display:flex; flex-direction:column; margin:0 0 24px;">
-        <div style="padding:22px 0; border-bottom:0.5px solid rgba(153,60,29,0.18);">
-          <h3 style="font-size:18px; line-height:1.45; font-weight:bold; color:var(--cs-umber); margin:0 0 8px;">Posso reservar por um mês ou mais?</h3>
-          <p style="font-size:17px; line-height:1.8; margin:0;">Sim. Envie-nos as suas datas e respondemos com um orçamento, normalmente no prazo de um dia.</p>
-        </div>
-        <div style="padding:22px 0; border-bottom:0.5px solid rgba(153,60,29,0.18);">
-          <h3 style="font-size:18px; line-height:1.45; font-weight:bold; color:var(--cs-umber); margin:0 0 8px;">Há desconto para estadias longas?</h3>
-          <p style="font-size:17px; line-height:1.8; margin:0;">Sim. De outubro a abril, as estadias longas ficam 15–20% abaixo da tarifa normal, consoante a duração.</p>
-        </div>
-        <div style="padding:22px 0; border-bottom:0.5px solid rgba(153,60,29,0.18);">
-          <h3 style="font-size:18px; line-height:1.45; font-weight:bold; color:var(--cs-umber); margin:0 0 8px;">Posso trabalhar à distância na Casa Solaris?</h3>
-          <p style="font-size:17px; line-height:1.8; margin:0;">Sim. Há uma secretária com monitor e suporte para portátil, e Wi-Fi gratuito em todo o apartamento.</p>
-        </div>
-        <div style="padding:22px 0; border-bottom:0.5px solid rgba(153,60,29,0.18);">
-          <h3 style="font-size:18px; line-height:1.45; font-weight:bold; color:var(--cs-umber); margin:0 0 8px;">A piscina está aberta no inverno?</h3>
-          <p style="font-size:17px; line-height:1.8; margin:0;">A piscina partilhada está aberta todo o ano, das 07:00 às 22:00.</p>
-        </div>
-        <div style="padding:22px 0; border-bottom:0.5px solid rgba(153,60,29,0.18);">
-          <h3 style="font-size:18px; line-height:1.45; font-weight:bold; color:var(--cs-umber); margin:0 0 8px;">Como é aquecido o apartamento?</h3>
-          <p style="font-size:17px; line-height:1.8; margin:0;">Com ar condicionado e aquecimento, e uma lareira a lenha na sala.</p>
-        </div>
+        <details style="border-bottom:0.5px solid rgba(153,60,29,0.18);">
+          <summary style="list-style:none; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:20px; padding:20px 0; min-height:44px;">
+            <h3 style="font-size:18px; line-height:1.45; font-weight:bold; color:var(--cs-umber); margin:0;">Posso reservar por um mês ou mais?</h3>
+            <span class="faq-plus" aria-hidden="true" style="flex:none; font-family:'Trebuchet MS',sans-serif; font-size:24px; line-height:1; color:var(--cs-terracotta); transition:transform 200ms cubic-bezier(0.22,0.61,0.36,1);">+</span>
+          </summary>
+          <p style="font-size:17px; line-height:1.8; margin:0 0 22px;">Sim. Envie-nos as suas datas e respondemos com um orçamento, normalmente no prazo de um dia.</p>
+        </details>
+        <details style="border-bottom:0.5px solid rgba(153,60,29,0.18);">
+          <summary style="list-style:none; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:20px; padding:20px 0; min-height:44px;">
+            <h3 style="font-size:18px; line-height:1.45; font-weight:bold; color:var(--cs-umber); margin:0;">Há desconto para estadias longas?</h3>
+            <span class="faq-plus" aria-hidden="true" style="flex:none; font-family:'Trebuchet MS',sans-serif; font-size:24px; line-height:1; color:var(--cs-terracotta); transition:transform 200ms cubic-bezier(0.22,0.61,0.36,1);">+</span>
+          </summary>
+          <p style="font-size:17px; line-height:1.8; margin:0 0 22px;">Sim. De outubro a abril, as estadias longas ficam 15–20% abaixo da tarifa normal, consoante a duração.</p>
+        </details>
+        <details style="border-bottom:0.5px solid rgba(153,60,29,0.18);">
+          <summary style="list-style:none; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:20px; padding:20px 0; min-height:44px;">
+            <h3 style="font-size:18px; line-height:1.45; font-weight:bold; color:var(--cs-umber); margin:0;">Posso trabalhar à distância na Casa Solaris?</h3>
+            <span class="faq-plus" aria-hidden="true" style="flex:none; font-family:'Trebuchet MS',sans-serif; font-size:24px; line-height:1; color:var(--cs-terracotta); transition:transform 200ms cubic-bezier(0.22,0.61,0.36,1);">+</span>
+          </summary>
+          <p style="font-size:17px; line-height:1.8; margin:0 0 22px;">Sim. Há uma secretária com monitor e suporte para portátil, e Wi-Fi gratuito em todo o apartamento.</p>
+        </details>
+        <details style="border-bottom:0.5px solid rgba(153,60,29,0.18);">
+          <summary style="list-style:none; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:20px; padding:20px 0; min-height:44px;">
+            <h3 style="font-size:18px; line-height:1.45; font-weight:bold; color:var(--cs-umber); margin:0;">A piscina está aberta no inverno?</h3>
+            <span class="faq-plus" aria-hidden="true" style="flex:none; font-family:'Trebuchet MS',sans-serif; font-size:24px; line-height:1; color:var(--cs-terracotta); transition:transform 200ms cubic-bezier(0.22,0.61,0.36,1);">+</span>
+          </summary>
+          <p style="font-size:17px; line-height:1.8; margin:0 0 22px;">A piscina partilhada está aberta todo o ano, das 07:00 às 22:00.</p>
+        </details>
+        <details style="border-bottom:0.5px solid rgba(153,60,29,0.18);">
+          <summary style="list-style:none; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:20px; padding:20px 0; min-height:44px;">
+            <h3 style="font-size:18px; line-height:1.45; font-weight:bold; color:var(--cs-umber); margin:0;">Como é aquecido o apartamento?</h3>
+            <span class="faq-plus" aria-hidden="true" style="flex:none; font-family:'Trebuchet MS',sans-serif; font-size:24px; line-height:1; color:var(--cs-terracotta); transition:transform 200ms cubic-bezier(0.22,0.61,0.36,1);">+</span>
+          </summary>
+          <p style="font-size:17px; line-height:1.8; margin:0 0 22px;">Com ar condicionado e aquecimento, e uma lareira a lenha na sala.</p>
+        </details>
       </div>
     </section>
   </div>

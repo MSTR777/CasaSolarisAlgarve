@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script>
+(function () {
+  try {
+    if (!/casasolarisalgarve\.com$/.test(location.hostname)) return;
+    var q = new URLSearchParams(location.search).get('lang');
+    if (q === 'en' || q === 'pt') localStorage.setItem('cs_lang', q);
+    if (/bot|crawl|spider|slurp|lighthouse/i.test(navigator.userAgent)) return;
+    var saved = localStorage.getItem('cs_lang');
+    var langs = (navigator.languages || [navigator.language || '']).join(',').toLowerCase();
+    var tz = (Intl.DateTimeFormat().resolvedOptions().timeZone || '');
+    var inPT = /^(Europe\/Lisbon|Atlantic\/Madeira|Atlantic\/Azores)$/.test(tz);
+    var wantsPT = saved ? saved === 'pt' : (/(^|,)pt/.test(langs) || inPT);
+    if (wantsPT) {
+      var map = { '/burgau/apartment/': '/pt/', '/burgau/amenities/': '/pt/apartamento-com-piscina-burgau/', '/burgau/': '/pt/o-que-fazer-em-burgau/', '/reservations/': '/pt/reservar-alojamento-burgau/', '/winter-long-stays-burgau-algarve/': '/pt/inverno-estadias-longas-burgau-algarve/' };
+      var p = location.pathname.replace(/index\.html$/, ''); if (p.slice(-1) !== '/') p += '/';
+      var h = (location.hash || '').replace(/^#\/?/, '');
+      var hp = { 'amenities': map['/amenities/'], 'burgau': map['/burgau/'], 'reservations': map['/reservations/'] };
+      if (map[p]) location.replace(map[p] + (location.hash || ''));
+    }
+  } catch (e) {}
+})();
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KV9BSFQJ');</script>
+<!-- End Google Tag Manager -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ENQR9VC8M3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ENQR9VC8M3');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="/support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <title>Casa Solaris Luz — Ocean-View Apartment with Pools in Praia da Luz, Algarve</title>
+  <meta name="description" content="Two-bedroom apartment in St. James Resort, Praia da Luz: 2nd floor with a lift, ocean views from the living room and both bedrooms, two pools, and an 8-minute walk to the beach. Book direct with the owners.">
+  <link rel="canonical" href="https://www.casasolarisalgarve.com/luz/">
+  <link rel="alternate" hreflang="en" href="https://www.casasolarisalgarve.com/luz/">
+  <link rel="alternate" hreflang="x-default" href="https://www.casasolarisalgarve.com/luz/">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Casa Solaris">
+  <meta property="og:url" content="https://www.casasolarisalgarve.com/luz/">
+  <meta property="og:title" content="Casa Solaris Luz — Ocean-View Apartment with Pools in Praia da Luz">
+  <meta property="og:description" content="Two-bedroom apartment in St. James Resort, Praia da Luz: ocean views from the living room and both bedrooms, two pools, a gym, 8 minutes to the beach.">
+  <meta property="og:image" content="https://www.casasolarisalgarve.com/images/web/luz-living-view.jpg">
+  <meta property="og:locale" content="en_GB">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.casasolarisalgarve.com/"},{"@type":"ListItem","position":2,"name":"Casa Solaris Luz","item":"https://www.casasolarisalgarve.com/luz/"}]}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="stylesheet" href="/assets/casa-solaris.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"VacationRental","name":"Casa Solaris Luz","url":"https://www.casasolarisalgarve.com/luz/","description":"Two-bedroom apartment on the 2nd floor of St. James Resort in Praia da Luz, Western Algarve, with a lift, ocean views from the living room and both bedrooms, two pools and an 8-minute walk to the beach.","image":["https://www.casasolarisalgarve.com/images/web/luz-living-view.jpg","https://www.casasolarisalgarve.com/images/web/luz-pool-landscape.jpg"],"address":{"@type":"PostalAddress","streetAddress":"St. James Resort","addressLocality":"Praia da Luz","addressRegion":"Lagos, Faro","addressCountry":"PT"},"containsPlace":{"@type":"Accommodation","additionalType":"Apartment","numberOfBedrooms":2,"numberOfBathroomsTotal":2,"occupancy":{"@type":"QuantitativeValue","maxValue":4},"floorLevel":"2"},"amenityFeature":[{"@type":"LocationFeatureSpecification","name":"Ocean view","value":true},{"@type":"LocationFeatureSpecification","name":"Elevator","value":true},{"@type":"LocationFeatureSpecification","name":"Swimming pool","value":true},{"@type":"LocationFeatureSpecification","name":"Children's pool","value":true},{"@type":"LocationFeatureSpecification","name":"Playground","value":true},{"@type":"LocationFeatureSpecification","name":"Wi-Fi","value":true},{"@type":"LocationFeatureSpecification","name":"Air conditioning","value":true},{"@type":"LocationFeatureSpecification","name":"Free street parking","value":true}]}</script>
+  <style>
+    body { margin: 0; background: var(--cs-parchment); -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: 100%; -webkit-tap-highlight-color: transparent; }
+    a { color: var(--cs-terracotta); text-decoration: none; }
+    a:hover { color: var(--cs-sunset); }
+    * { box-sizing: border-box; }
+    img { max-width: 100%; }
+    .cs-nav-toggle { display: none; }
+    @media (max-width: 1020px) {
+      .cs-nav-links { display: none !important; }
+      .cs-nav-toggle { display: flex !important; }
+    }
+    @media (max-width: 860px) {
+      .lz-mosaic { grid-template-columns: 1fr 1fr !important; grid-template-rows: auto !important; }
+      .lz-mosaic > :first-child { grid-column: 1 / -1 !important; grid-row: auto !important; height: 300px !important; }
+      .lz-mosaic img { height: 160px; }
+      .lz-3 { grid-template-columns: 1fr !important; }
+      .lz-loc img { height: 220px !important; }
+      .lz-bhead { grid-template-columns: 1fr !important; }
+      .lz-bento { grid-template-columns: 1fr 1fr !important; grid-auto-rows: 200px !important; gap: 10px !important; }
+      .lz-bento > div { grid-column: span 2 !important; padding: 24px 22px !important; }
+      .lz-bento > figure[style*="span 2"] { grid-column: span 2 !important; }
+      .lz-bt { font-size: 25px !important; }
+      .lz-views { grid-template-columns: 1fr 1fr !important; }
+      .lz-views > :first-child { grid-column: 1 / -1 !important; }
+      .lz-views img { height: 260px !important; }
+      .lz-resort { grid-template-columns: 1fr 1fr !important; grid-template-rows: auto !important; }
+      .lz-resort > :first-child { grid-column: 1 / -1 !important; grid-row: auto !important; height: 280px !important; }
+      .lz-resort > :nth-child(2) { grid-row: auto !important; }
+      .lz-resort figure { height: 220px; }
+      .lz-acts { grid-template-columns: 1fr 1fr !important; }
+      .lz-guide { grid-template-columns: 1fr 1fr !important; }
+      .lz-guide img { height: 240px !important; }
+      .lz-hero { height: 52vh !important; min-height: 320px !important; }
+      .lz-subnav { justify-content: flex-start !important; }
+      .cs-split { grid-template-columns: 1fr !important; height: auto !important; min-height: 0 !important; }
+      .cs-split > a { height: auto !important; min-height: 0 !important; }
+      .cs-half-photo { flex: none !important; height: 42vh !important; min-height: 260px !important; }
+      .cs-ov-title { position: relative !important; top: 0 !important; padding: 0 !important; order: -1; }
+      .cs-ov-plate { border-radius: 0 !important; max-width: none !important; width: 100% !important; background: var(--cs-umber) !important; padding: 36px 20px 30px !important; }
+            .cs-ov-sec { display: flex !important; flex-direction: column !important; }
+      .cs-2 { grid-template-columns: 1fr !important; }
+      .cs-3 { grid-template-columns: 1fr !important; }
+      .cs-cmp-row { grid-template-columns: 1fr 1fr !important; }
+      .cs-cmp-row > :first-child { grid-column: 1 / -1 !important; padding-bottom: 0 !important; }
+      .cs-cmp-big { height: 200px !important; } .cs-cmp-small { height: 110px !important; }
+      .cs-glance { grid-template-columns: 1fr !important; gap: 40px !important; }
+      .cs-glance > :first-child { display: none !important; }
+      .cs-m-only { display: block !important; }
+      .cs-3 { display: flex !important; overflow-x: auto; scroll-snap-type: x mandatory; gap: 16px !important; margin: 0 -32px; padding: 0 32px 10px; scrollbar-width: none; }
+      .cs-3::-webkit-scrollbar { display: none; }
+      .cs-3 > * { flex: 0 0 82%; scroll-snap-align: center; }
+      .cs-mbar { display: flex !important; }
+      body { padding-bottom: calc(70px + env(safe-area-inset-bottom)); }
+      .cs-map-hint { display: block !important; }
+      .cs-feat { gap: 36px 16px !important; }
+      .cs-feat-item { flex-basis: calc(50% - 8px) !important; }
+      .cs-h1 { font-size: 40px !important; }
+      .cs-h2 { font-size: 32px !important; }
+      .cs-foot { grid-template-columns: 1fr 1fr !important; }
+    }
+    @media (max-width: 600px) {
+      .cs-pad { padding: 64px 20px !important; }
+      .cs-h1 { font-size: 30px !important; }
+      .cs-h2 { font-size: 27px !important; }
+      .cs-specs { grid-template-columns: repeat(2,1fr) !important; row-gap: 18px !important; }
+      .cs-foot { grid-template-columns: 1fr !important; }
+      .cs-hero-top { padding-top: 40px !important; padding-bottom: 32px !important; }
+      .cs-map-inner { width: 900px !important; }
+      .cs-cmp-row > p:not(:first-child) { font-size: 15px !important; line-height: 1.6 !important; }
+      .cs-card-body { padding: 26px 22px 28px !important; }
+      .cs-card-main { height: 240px !important; }
+      .cs-both-img { height: 240px !important; }
+      .cs-both-badge { top: 120px !important; width: 64px !important; height: 64px !important; }
+      .cs-head-in { padding: 12px 20px !important; gap: 12px !important; }
+      .cs-wordmark { font-size: 18px !important; letter-spacing: 0.14em !important; }
+      .cs-mmenu { top: 55px !important; }
+      .cs-lead, .cs-quote { font-size: 23px !important; }
+      .cs-glance-line { font-size: 22px !important; }
+      .cs-half-cap { min-height: 0 !important; padding: 16px 20px 18px !important; gap: 10px !important; }
+      .cs-half-photo { height: 36vh !important; min-height: 230px !important; }
+      .cs-3 { margin: 0 -20px !important; padding: 0 20px 10px !important; }
+      .cs-foot a { padding: 6px 0; }
+    }
+  
+    @media (max-width: 1080px) { .cs-nav-links { display: none !important; } .cs-nav-toggle { display: flex !important; } }
+
+    .cs-dd-menu { display: none; }
+    .cs-dd:hover > .cs-dd-menu, .cs-dd:focus-within > .cs-dd-menu { display: flex; }
+</style>
+</helmet>
+
+<header style="position:sticky; top:0; z-index:50; background:rgba(250,246,238,0.95); backdrop-filter:blur(10px); border-bottom:0.5px solid rgba(153,60,29,0.18);">
+  <div ref="{{ navRef }}" class="cs-head-in" style="max-width:1240px; margin:0 auto; padding:16px 32px; display:flex; align-items:center; justify-content:space-between; gap:24px; position:relative;">
+    <a href="/" style="display:flex; align-items:center; gap:12px; text-decoration:none;">
+      <svg width="30" height="30" viewBox="0 0 66 66" aria-hidden="true" style="flex:none;">
+        <g transform="translate(33 33)">
+          <rect x="-24" y="-24" width="48" height="48" rx="3" fill="none" stroke="#993C1D" stroke-width="1.6"></rect>
+          <circle cx="0" cy="0" r="19.5" fill="none" stroke="#D85A30" stroke-width="0.7"></circle>
+          <g fill="#993C1D"><polygon points="0,-19 5,-4.5 0,-7 -5,-4.5"></polygon><polygon points="0,19 5,4.5 0,7 -5,4.5"></polygon><polygon points="-19,0 -4.5,-5 -7,0 -4.5,5"></polygon><polygon points="19,0 4.5,-5 7,0 4.5,5"></polygon></g>
+          <g fill="#D85A30"><polygon points="-13,-13 -3.2,-2 -4.8,-1 -2,-3.2"></polygon><polygon points="13,-13 3.2,-2 4.8,-1 2,-3.2"></polygon><polygon points="-13,13 -3.2,2 -4.8,1 -2,3.2"></polygon><polygon points="13,13 3.2,2 4.8,1 2,3.2"></polygon></g>
+          <circle cx="0" cy="0" r="5.5" fill="none" stroke="#993C1D" stroke-width="0.9"></circle>
+          <circle cx="0" cy="0" r="2.6" fill="#E8A33D"></circle>
+        </g>
+      </svg>
+      <span translate="no" class="cs-wordmark" style="white-space:nowrap; font-family:'Cormorant Garamond',Georgia,serif; font-weight:700; font-size:22px; letter-spacing:0.18em; color:var(--cs-umber); text-transform:uppercase;">Casa Solaris</span>
+    </a>
+
+    <nav class="cs-nav-links" style="display:flex; align-items:center; gap:28px;">
+      <div class="cs-dd" style="position:relative;">
+        <a href="/burgau/apartment/" aria-haspopup="true" style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; white-space:nowrap; color:var(--cs-umber); display:flex; align-items:center; gap:6px; padding:12px 0;" style-hover="color:var(--cs-terracotta);">Burgau<svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5 L5 6.5 L8 3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+        <div class="cs-dd-menu" role="menu" style="position:absolute; top:100%; left:-20px; min-width:220px; flex-direction:column; background:#FFFDF8; border:0.5px solid rgba(153,60,29,0.18); border-radius:3px; box-shadow:0 3px 12px rgba(74,27,12,0.18); padding:8px 0; z-index:60;">
+          <a role="menuitem" href="/burgau/apartment/" style="display:block; padding:11px 20px; font-size:15px; color:var(--cs-umber); white-space:nowrap;" style-hover="color:var(--cs-terracotta); background:var(--cs-stone);">The apartment</a>
+          <a role="menuitem" href="/burgau/amenities/" style="display:block; padding:11px 20px; font-size:15px; color:var(--cs-umber); white-space:nowrap;" style-hover="color:var(--cs-terracotta); background:var(--cs-stone);">Amenities</a>
+        </div>
+      </div>
+      <div class="cs-dd" style="position:relative;">
+        <a href="#apartment" aria-haspopup="true" style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; white-space:nowrap; color:var(--cs-umber); display:flex; align-items:center; gap:6px; padding:12px 0;" style-hover="color:var(--cs-terracotta);">Praia da Luz<svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5 L5 6.5 L8 3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+        <div class="cs-dd-menu" role="menu" style="position:absolute; top:100%; left:-20px; min-width:220px; flex-direction:column; background:#FFFDF8; border:0.5px solid rgba(153,60,29,0.18); border-radius:3px; box-shadow:0 3px 12px rgba(74,27,12,0.18); padding:8px 0; z-index:60;">
+          <a role="menuitem" href="#apartment" style="display:block; padding:11px 20px; font-size:15px; color:var(--cs-umber); white-space:nowrap;" style-hover="color:var(--cs-terracotta); background:var(--cs-stone);">The apartment</a>
+          <a role="menuitem" href="#amenities" style="display:block; padding:11px 20px; font-size:15px; color:var(--cs-umber); white-space:nowrap;" style-hover="color:var(--cs-terracotta); background:var(--cs-stone);">Amenities</a>
+        </div>
+      </div>
+      <a href="/winter-long-stays-burgau-algarve/" style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; white-space:nowrap; color:var(--cs-umber);" style-hover="color:var(--cs-terracotta);">Winter stays</a>
+      <div class="cs-dd" style="position:relative;">
+        <a href="/burgau/" aria-haspopup="true" style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; white-space:nowrap; color:var(--cs-umber); display:flex; align-items:center; gap:6px; padding:12px 0;" style-hover="color:var(--cs-terracotta);">Guide<svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5 L5 6.5 L8 3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+        <div class="cs-dd-menu" role="menu" style="position:absolute; top:100%; left:-20px; min-width:220px; flex-direction:column; background:#FFFDF8; border:0.5px solid rgba(153,60,29,0.18); border-radius:3px; box-shadow:0 3px 12px rgba(74,27,12,0.18); padding:8px 0; z-index:60;">
+          <a role="menuitem" href="/burgau/" style="display:block; padding:11px 20px; font-size:15px; color:var(--cs-umber); white-space:nowrap;" style-hover="color:var(--cs-terracotta); background:var(--cs-stone);">Burgau guide</a>
+          <a role="menuitem" href="#guide" style="display:block; padding:11px 20px; font-size:15px; color:var(--cs-umber); white-space:nowrap;" style-hover="color:var(--cs-terracotta); background:var(--cs-stone);">Praia da Luz guide</a>
+        </div>
+      </div>
+      <a href="/blog/" style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; white-space:nowrap; color:var(--cs-umber);" style-hover="color:var(--cs-terracotta);">Blog</a>
+      <a href="/reservations/" style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; white-space:nowrap; color:var(--cs-parchment); background:var(--cs-terracotta); padding:11px 22px; border-radius:3px;" style-hover="background:var(--cs-sunset); color:var(--cs-parchment);">Check availability</a>
+      <span style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.14em; color:var(--cs-umber); border:1px solid rgba(74,27,12,0.22); padding:9px 11px; border-radius:3px;">EN</span>
+    </nav>
+
+    <button type="button" class="cs-nav-toggle" onClick="{{ toggleMobile }}" aria-label="Menu" style="align-items:center; justify-content:center; width:44px; height:44px; margin:-8px -8px -8px 0; background:transparent; border:0; cursor:pointer; color:var(--cs-umber);">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="7" x2="21" y2="7"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="17" x2="21" y2="17"></line></svg>
+    </button>
+
+  </div>
+</header>
+
+<sc-if value="{{ mobileOpen }}" hint-placeholder-val="{{ false }}">
+  <div class="cs-mmenu" style="position:fixed; top:63px; left:0; right:0; bottom:0; overflow:auto; z-index:49; background:rgba(250,246,238,0.99); padding:8px 24px 28px; display:flex; flex-direction:column;">
+    <p style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.26em; text-transform:uppercase; color:var(--cs-terracotta); margin:20px 0 2px;">Burgau</p>
+    <a href="/burgau/apartment/" style="font-size:16px; color:var(--cs-umber); padding:12px 0; border-bottom:0.5px solid rgba(153,60,29,0.14); text-decoration:none;">The apartment</a>
+    <a href="/burgau/amenities/" style="font-size:16px; color:var(--cs-umber); padding:12px 0; border-bottom:0.5px solid rgba(153,60,29,0.14); text-decoration:none;">Amenities</a>
+    <p style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.26em; text-transform:uppercase; color:var(--cs-terracotta); margin:20px 0 2px;">Praia da Luz</p>
+    <a href="#apartment" onClick="{{ toggleMobile }}" style="font-size:16px; color:var(--cs-umber); padding:12px 0; border-bottom:0.5px solid rgba(153,60,29,0.14); text-decoration:none;">The apartment</a>
+    <a href="#amenities" onClick="{{ toggleMobile }}" style="font-size:16px; color:var(--cs-umber); padding:12px 0; border-bottom:0.5px solid rgba(153,60,29,0.14); text-decoration:none;">Amenities</a>
+    <p style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.26em; text-transform:uppercase; color:var(--cs-terracotta); margin:20px 0 2px;">Guide</p>
+    <a href="/burgau/" style="font-size:16px; color:var(--cs-umber); padding:12px 0; border-bottom:0.5px solid rgba(153,60,29,0.14); text-decoration:none;">Burgau guide</a>
+    <a href="#guide" onClick="{{ toggleMobile }}" style="font-size:16px; color:var(--cs-umber); padding:12px 0; border-bottom:0.5px solid rgba(153,60,29,0.14); text-decoration:none;">Praia da Luz guide</a>
+    <a href="/winter-long-stays-burgau-algarve/" style="font-family:'Trebuchet MS',sans-serif; font-size:13px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; color:var(--cs-umber); padding:16px 0; border-bottom:0.5px solid rgba(153,60,29,0.14); text-decoration:none; margin-top:14px;">Winter stays</a>
+    <a href="/blog/" style="font-family:'Trebuchet MS',sans-serif; font-size:13px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; color:var(--cs-umber); padding:16px 0; border-bottom:0.5px solid rgba(153,60,29,0.14); text-decoration:none; border-bottom:0; padding-bottom:20px;">Blog</a>
+    <a href="/reservations/" style="text-align:center; font-family:'Trebuchet MS',sans-serif; font-size:12px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--cs-parchment); background:var(--cs-terracotta); padding:15px; border-radius:3px; text-decoration:none;">Check availability</a>
+  
+</div>
+</sc-if>
+
+
+<main id="top" data-screen-label="Casa Solaris Luz">
+  <section class="lz-hero" style="position:relative; height:72vh; min-height:440px; max-height:780px; overflow:hidden; background:var(--cs-umber);">
+    <img src="/images/luz/luz-balcony-ocean-view.avif" alt="Balcony at Casa Solaris Luz with a glass of wine and a view over the rooftops to the ocean" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:42% 55%;">
+  </section>
+
+  <section class="cs-pad" style="background:var(--cs-parchment); padding:30px 32px 56px;">
+    <div style="max-width:860px; margin:0 auto;">
+      <nav aria-label="Breadcrumb" style="margin:0 0 22px;">
+        <ol style="list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:6px; font-size:12px; line-height:1.4; color:rgba(74,27,12,0.55);">
+          <li><a href="/" style="color:rgba(74,27,12,0.55);" style-hover="color:var(--cs-terracotta);">Home</a></li>
+          <li aria-hidden="true">/</li>
+          <li aria-current="page">Casa Solaris Luz</li>
+        </ol>
+      </nav>
+      <p style="display:flex; align-items:center; gap:12px; flex-wrap:wrap; font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.32em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 14px;"><span>Praia da Luz · Lagos</span><span style="font-size:9px; letter-spacing:0.18em; color:var(--cs-umber); background:var(--cs-stone); padding:5px 10px; border-radius:100px;">New</span></p>
+      <h1 class="cs-h1" style="font-family:'Cormorant Garamond',Georgia,serif; font-weight:700; font-size:46px; line-height:1.12; color:var(--cs-umber); margin:0 0 16px; text-wrap:balance;">Casa Solaris Luz: an ocean-view apartment in Praia da Luz</h1>
+      <p style="font-family:'Cormorant Garamond',Georgia,serif; font-size:23px; line-height:1.45; color:rgba(74,27,12,0.8); margin:0 0 24px; text-wrap:pretty;">On the 2nd floor of St. James Resort, with a lift, two pools and the beach an 8-minute walk away.</p>
+      <ul style="list-style:none; margin:0 0 28px; padding:12px 0; display:flex; flex-wrap:wrap; gap:6px 22px; border-top:0.5px solid rgba(153,60,29,0.18); border-bottom:0.5px solid rgba(153,60,29,0.18); font-family:'Trebuchet MS',sans-serif; font-size:13px; font-weight:bold; letter-spacing:0.02em; color:var(--cs-umber);">
+        <li>Sleeps 4</li>
+        <li>2 bedrooms</li>
+        <li>2 bathrooms</li>
+        <li style="color:var(--cs-terracotta);">Ocean views from every room</li>
+        <li>2nd floor, lift</li>
+        <li>2 pools</li>
+        <li>8 min to the beach</li>
+      </ul>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="#book" style="font-family:'Trebuchet MS',sans-serif; font-size:12px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--cs-parchment); background:var(--cs-terracotta); padding:15px 30px; border-radius:3px;" style-hover="background:var(--cs-sunset); color:var(--cs-parchment);">Send an enquiry</a>
+        <a href="#amenities" style="font-family:'Trebuchet MS',sans-serif; font-size:12px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--cs-terracotta); border:1px solid var(--cs-terracotta); padding:14px 28px; border-radius:3px;" style-hover="color:var(--cs-sunset); border-color:var(--cs-sunset);">See amenities</a>
+      </div>
+    </div>
+  </section>
+
+  <nav aria-label="On this page" class="lz-subnav" style="position:relative; background:var(--cs-parchment); border-top:0.5px solid rgba(153,60,29,0.14); border-bottom:0.5px solid rgba(153,60,29,0.14); padding:10px 20px; display:flex; justify-content:center; gap:10px; overflow-x:auto; scrollbar-width:none;">
+    <a href="#apartment" style="flex:none; display:inline-flex; align-items:center; min-height:40px; font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; color:var(--cs-umber); border:1px solid rgba(153,60,29,0.28); padding:0 16px; border-radius:100px;" style-hover="color:var(--cs-terracotta); border-color:var(--cs-terracotta);">The apartment</a>
+    <a href="#views" style="flex:none; display:inline-flex; align-items:center; min-height:40px; font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; color:var(--cs-umber); border:1px solid rgba(153,60,29,0.28); padding:0 16px; border-radius:100px;" style-hover="color:var(--cs-terracotta); border-color:var(--cs-terracotta);">Views</a>
+    <a href="#resort" style="flex:none; display:inline-flex; align-items:center; min-height:40px; font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; color:var(--cs-umber); border:1px solid rgba(153,60,29,0.28); padding:0 16px; border-radius:100px;" style-hover="color:var(--cs-terracotta); border-color:var(--cs-terracotta);">The resort</a>
+    <a href="#amenities" style="flex:none; display:inline-flex; align-items:center; min-height:40px; font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; color:var(--cs-umber); border:1px solid rgba(153,60,29,0.28); padding:0 16px; border-radius:100px;" style-hover="color:var(--cs-terracotta); border-color:var(--cs-terracotta);">Amenities</a>
+    <a href="#guide" style="flex:none; display:inline-flex; align-items:center; min-height:40px; font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; color:var(--cs-umber); border:1px solid rgba(153,60,29,0.28); padding:0 16px; border-radius:100px;" style-hover="color:var(--cs-terracotta); border-color:var(--cs-terracotta);">Praia da Luz guide</a>
+    <a href="#location" style="flex:none; display:inline-flex; align-items:center; min-height:40px; font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; color:var(--cs-umber); border:1px solid rgba(153,60,29,0.28); padding:0 16px; border-radius:100px;" style-hover="color:var(--cs-terracotta); border-color:var(--cs-terracotta);">Location</a>
+    <a href="#book" style="flex:none; display:inline-flex; align-items:center; min-height:40px; font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; color:var(--cs-umber); border:1px solid rgba(153,60,29,0.28); padding:0 16px; border-radius:100px;" style-hover="color:var(--cs-terracotta); border-color:var(--cs-terracotta);">Reservations</a>
+  </nav>
+
+  <section id="apartment" class="cs-pad" style="background:var(--cs-parchment); padding:72px 32px 96px; scroll-margin-top:80px;">
+    <div style="max-width:1160px; margin:0 auto;">
+      <div class="lz-bhead" style="display:grid; grid-template-columns:minmax(0,1fr) minmax(0,2.4fr); gap:24px 48px; margin:0 0 48px;">
+        <p style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.32em; text-transform:uppercase; color:var(--cs-terracotta); margin:12px 0 0;">The apartment</p>
+        <div>
+          <h2 class="cs-h2" style="font-family:'Cormorant Garamond',Georgia,serif; font-size:46px; line-height:1.1; margin:0 0 22px; text-wrap:balance;"><span style="font-weight:500; color:rgba(74,27,12,0.6);">Stylish, charming,</span> <span style="font-weight:700; color:var(--cs-umber);">with stunning views from the living room and both bedrooms</span></h2>
+          <p style="font-size:17px; line-height:1.85; color:var(--color-text-secondary); margin:0; text-wrap:pretty; margin:0 0 14px;">This stylish, charming apartment is located in St. James Resort, 5 minutes' walk from the centre of Praia da Luz and 8 minutes from the iconic beach. All rooms are on the 2nd floor, with a lift: the living room and both bedrooms have amazing ocean views.</p>
+          <p style="font-size:17px; line-height:1.85; color:var(--color-text-secondary); margin:0; text-wrap:pretty;">In addition to being a short walk from the beach, this resort features the 2 large private pools in the apartment photos, one for adults and another for children, as well as a small playground.</p>
+        </div>
+      </div>
+      <div class="lz-bento" style="display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); grid-auto-rows:300px; gap:16px;">
+        <div style="background:var(--cs-warm-white); border:0.5px solid rgba(153,60,29,0.18); border-radius:6px; padding:34px 34px 30px; display:flex; flex-direction:column; justify-content:space-between; gap:20px;">
+          <p class="lz-bt" style="font-family:'Cormorant Garamond',Georgia,serif; font-size:32px; line-height:1.15; margin:0; text-wrap:balance;"><span style="font-weight:500; color:rgba(74,27,12,0.55);">Two bedrooms,</span> <span style="font-weight:700; color:var(--cs-umber);">both with ocean views</span></p>
+          <span aria-hidden="true" style="display:block; width:36px; height:2px; background:linear-gradient(90deg,#993C1D,#D85A30,#E8A33D);"></span>
+        </div>
+        <figure style="margin:0; border-radius:6px; overflow:hidden;grid-column:span 2;"><img loading="lazy" decoding="async" src="/images/web/luz-living-view.jpg" alt="The living room window at Casa Solaris Luz looking out to the ocean" style="width:100%; height:100%; object-fit:cover; display:block;"></figure>
+        <figure style="margin:0; border-radius:6px; overflow:hidden;"><img loading="lazy" decoding="async" src="/images/web/luz-living.jpg" alt="Living room with two sofas and the balcony door" style="width:100%; height:100%; object-fit:cover; display:block;"></figure>
+        <div style="background:var(--cs-warm-white); border:0.5px solid rgba(153,60,29,0.18); border-radius:6px; padding:34px 34px 30px; display:flex; flex-direction:column; justify-content:space-between; gap:20px;">
+          <p class="lz-bt" style="font-family:'Cormorant Garamond',Georgia,serif; font-size:32px; line-height:1.15; margin:0; text-wrap:balance;"><span style="font-weight:500; color:rgba(74,27,12,0.55);">All rooms on one floor,</span> <span style="font-weight:700; color:var(--cs-umber);">2nd floor with a lift</span></p>
+          <span aria-hidden="true" style="display:block; width:36px; height:2px; background:linear-gradient(90deg,#993C1D,#D85A30,#E8A33D);"></span>
+        </div>
+        <figure style="margin:0; border-radius:6px; overflow:hidden;"><img loading="lazy" decoding="async" src="/images/web/luz-kitchen.jpg" alt="The fully equipped kitchen" style="width:100%; height:100%; object-fit:cover; display:block;"></figure>
+        <figure style="margin:0; border-radius:6px; overflow:hidden;grid-column:span 2;"><img loading="lazy" decoding="async" src="/images/web/luz-bedroom-master.jpg" alt="Master bedroom with a window to the sea" style="width:100%; height:100%; object-fit:cover; display:block;"></figure>
+        <div style="background:var(--cs-warm-white); border:0.5px solid rgba(153,60,29,0.18); border-radius:6px; padding:34px 34px 30px; display:flex; flex-direction:column; justify-content:space-between; gap:20px;">
+          <p class="lz-bt" style="font-family:'Cormorant Garamond',Georgia,serif; font-size:32px; line-height:1.15; margin:0; text-wrap:balance;"><span style="font-weight:500; color:rgba(74,27,12,0.55);">A fully equipped kitchen</span> <span style="font-weight:700; color:var(--cs-umber);">and a table for long meals</span></p>
+          <span aria-hidden="true" style="display:block; width:36px; height:2px; background:linear-gradient(90deg,#993C1D,#D85A30,#E8A33D);"></span>
+        </div>
+        <figure style="margin:0; border-radius:6px; overflow:hidden;"><img loading="lazy" decoding="async" src="/images/web/luz-balcony-living.jpg" alt="Dining table in the living room" style="width:100%; height:100%; object-fit:cover; display:block;"></figure>
+        <figure style="margin:0; border-radius:6px; overflow:hidden;"><img loading="lazy" decoding="async" src="/images/web/luz-bedroom-master-2.jpg" alt="Second bedroom with a view out to the garden and sea" style="width:100%; height:100%; object-fit:cover; display:block;"></figure>
+        <figure style="margin:0; border-radius:6px; overflow:hidden;"><img loading="lazy" decoding="async" src="/images/web/luz-bathroom.jpg" alt="Bathroom with a walk-in shower" style="width:100%; height:100%; object-fit:cover; display:block;"></figure>
+        <div style="background:var(--cs-warm-white); border:0.5px solid rgba(153,60,29,0.18); border-radius:6px; padding:34px 34px 30px; display:flex; flex-direction:column; justify-content:space-between; gap:20px;">
+          <p class="lz-bt" style="font-family:'Cormorant Garamond',Georgia,serif; font-size:32px; line-height:1.15; margin:0; text-wrap:balance;"><span style="font-weight:500; color:rgba(74,27,12,0.55);">5 minutes to the centre,</span> <span style="font-weight:700; color:var(--cs-umber);">8 minutes to the beach</span></p>
+          <span aria-hidden="true" style="display:block; width:36px; height:2px; background:linear-gradient(90deg,#993C1D,#D85A30,#E8A33D);"></span>
+        </div>
+        <figure style="margin:0; border-radius:6px; overflow:hidden;grid-column:span 2;"><img loading="lazy" decoding="async" src="/images/web/luz-balcony-umbrella-800.jpg" alt="Balcony with a parasol and the ocean beyond the rooftops" style="width:100%; height:100%; object-fit:cover; display:block; object-position:center 60%;"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="views" class="cs-pad" style="background:var(--cs-umber); padding:88px 32px; position:relative; overflow:hidden; scroll-margin-top:80px;">
+    <div style="position:absolute; inset:0; background:radial-gradient(circle at 80% 0%, rgba(232,163,61,0.06), transparent 60%);"></div>
+    <div style="position:relative; max-width:1160px; margin:0 auto;">
+      <div style="text-align:center; margin:0 auto 44px; max-width:760px;">
+        <p style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.32em; text-transform:uppercase; color:var(--cs-amber); margin:0 0 20px;">From the balcony</p>
+        <h2 class="cs-h2" style="font-family:'Cormorant Garamond',Georgia,serif; font-size:42px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--cs-parchment); margin:0 0 20px; line-height:1.15; text-wrap:balance; margin:0;">Sunrise to sunset over the ocean</h2>
+      </div>
+      <div class="lz-views" style="display:grid; grid-template-columns:1.4fr 1.4fr 1fr; gap:10px;">
+        <figure style="margin:0;"><img loading="lazy" decoding="async" src="/images/web/luz-sunrise.jpg" alt="Sunrise over the sea from the balcony at Casa Solaris Luz" style="width:100%; height:420px; object-fit:cover; display:block; border-radius:3px;"><figcaption style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--color-text-secondary); margin-top:8px; color:var(--cs-amber);">Sunrise</figcaption></figure>
+        <figure style="margin:0;"><img loading="lazy" decoding="async" src="/images/web/luz-from-balcony-2.jpg" alt="Daytime view from the balcony over the town to the bay" style="width:100%; height:420px; object-fit:cover; display:block; border-radius:3px;"><figcaption style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--color-text-secondary); margin-top:8px; color:var(--cs-amber);">Midday</figcaption></figure>
+        <figure style="margin:0;"><img loading="lazy" decoding="async" src="/images/web/luz-sunset.jpg" alt="Evening light through the balcony doors" style="width:100%; height:420px; object-fit:cover; display:block; border-radius:3px;"><figcaption style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--color-text-secondary); margin-top:8px; color:var(--cs-amber);">Sunset</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="resort" class="cs-pad" style="background:var(--cs-parchment); padding:88px 32px; scroll-margin-top:80px;">
+    <div style="max-width:1160px; margin:0 auto;">
+      <div style="text-align:center; margin:0 auto 44px; max-width:780px;">
+        <p style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.32em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 20px;">The resort</p>
+        <h2 class="cs-h2" style="font-family:'Cormorant Garamond',Georgia,serif; font-size:42px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--cs-umber); margin:0 0 20px; line-height:1.15; text-wrap:balance;">Two pools, a gym and sunbeds at St. James Resort</h2>
+        <p style="font-size:17px; line-height:1.85; color:var(--color-text-secondary); margin:0; text-wrap:pretty;">Swim in the morning, train in the gym, spend the afternoon on a sunbed by the water. The children have their own pool and a small playground.</p>
+      </div>
+      <div class="lz-resort" style="display:grid; grid-template-columns:2fr 1fr 1fr; grid-template-rows:260px 260px; gap:10px; margin:0 0 40px;">
+        <figure style="grid-row:1 / span 2; margin:0;"><img loading="lazy" decoding="async" src="/images/web/luz-pool-landscape.jpg" alt="The large adults' pool with sunbeds along its edge" style="width:100%; height:100%; object-fit:cover; display:block; border-radius:3px;"></figure>
+        <figure style="grid-row:1 / span 2; margin:0;"><img loading="lazy" decoding="async" src="/images/web/luz-kids-pool.jpg" alt="The children's pool at St. James Resort" style="width:100%; height:100%; object-fit:cover; display:block; border-radius:3px;"></figure>
+        <figure style="margin:0;"><img loading="lazy" decoding="async" src="/images/web/luz-gym.jpg" alt="The resort gym with weights and machines" style="width:100%; height:100%; object-fit:cover; display:block; border-radius:3px;"></figure>
+        <figure style="margin:0;"><img loading="lazy" decoding="async" src="/images/web/luz-pool-portrait.jpg" alt="Sunbeds beside the pool in the gardens" style="width:100%; height:100%; object-fit:cover; display:block; border-radius:3px;"></figure>
+      </div>
+      <ul class="lz-acts" style="list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(5, minmax(0,1fr)); gap:10px;">
+        <li style="text-align:center; background:var(--cs-warm-white); border:0.5px solid rgba(153,60,29,0.18); border-radius:3px; padding:18px 12px;"><p style="font-family:'Cormorant Garamond',Georgia,serif; font-size:20px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:var(--cs-umber); margin:0 0 4px; line-height:1.15;">Adults' pool</p><p style="font-size:13px; color:var(--color-text-secondary); margin:0;">Large, in the gardens</p></li>
+        <li style="text-align:center; background:var(--cs-warm-white); border:0.5px solid rgba(153,60,29,0.18); border-radius:3px; padding:18px 12px;"><p style="font-family:'Cormorant Garamond',Georgia,serif; font-size:20px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:var(--cs-umber); margin:0 0 4px; line-height:1.15;">Children's pool</p><p style="font-size:13px; color:var(--color-text-secondary); margin:0;">Separate and shallow</p></li>
+        <li style="text-align:center; background:var(--cs-warm-white); border:0.5px solid rgba(153,60,29,0.18); border-radius:3px; padding:18px 12px;"><p style="font-family:'Cormorant Garamond',Georgia,serif; font-size:20px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:var(--cs-umber); margin:0 0 4px; line-height:1.15;">Gym</p><p style="font-size:13px; color:var(--color-text-secondary); margin:0;">Weights and machines</p></li>
+        <li style="text-align:center; background:var(--cs-warm-white); border:0.5px solid rgba(153,60,29,0.18); border-radius:3px; padding:18px 12px;"><p style="font-family:'Cormorant Garamond',Georgia,serif; font-size:20px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:var(--cs-umber); margin:0 0 4px; line-height:1.15;">Sunbeds</p><p style="font-size:13px; color:var(--color-text-secondary); margin:0;">Around the pools</p></li>
+        <li style="text-align:center; background:var(--cs-warm-white); border:0.5px solid rgba(153,60,29,0.18); border-radius:3px; padding:18px 12px;"><p style="font-family:'Cormorant Garamond',Georgia,serif; font-size:20px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:var(--cs-umber); margin:0 0 4px; line-height:1.15;">Playground</p><p style="font-size:13px; color:var(--color-text-secondary); margin:0;">For the little ones</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="amenities" class="cs-pad" style="background:var(--cs-warm-white); padding:88px 32px; scroll-margin-top:80px;">
+    <div style="max-width:1160px; margin:0 auto;">
+      <div style="text-align:center; margin:0 auto 56px; max-width:760px;">
+        <p style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.32em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 20px;">Amenities</p>
+        <h2 class="cs-h2" style="font-family:'Cormorant Garamond',Georgia,serif; font-size:42px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--cs-umber); margin:0 0 20px; line-height:1.15; text-wrap:balance; margin:0;">In the apartment and the resort</h2>
+      </div>
+      <div class="cs-feat" style="display:flex; flex-wrap:wrap; justify-content:center; gap:48px 24px;">
+        <div class="cs-feat-item" style="flex:0 0 calc(25% - 18px); display:flex; flex-direction:column; align-items:center; text-align:center; min-width:0;">
+          <span style="width:64px; height:64px; border-radius:50%; background:var(--cs-warm-white); border:0.5px solid rgba(153,60,29,0.25); box-shadow:0 2px 8px rgba(74,27,12,0.08); display:flex; align-items:center; justify-content:center; color:var(--cs-terracotta); margin:0 0 18px;"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"></path><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"></path><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"></path></svg></span>
+          <h3 style="font-family:'Cormorant Garamond',Georgia,serif; font-size:21px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:var(--cs-umber); margin:0 0 8px; line-height:1.15; text-wrap:balance;">Ocean views</h3>
+          <p style="font-size:14.5px; line-height:1.65; color:var(--color-text-secondary); margin:0; max-width:240px; text-wrap:pretty;">From the living room and both bedrooms.</p>
+        </div>
+        <div class="cs-feat-item" style="flex:0 0 calc(25% - 18px); display:flex; flex-direction:column; align-items:center; text-align:center; min-width:0;">
+          <span style="width:64px; height:64px; border-radius:50%; background:var(--cs-warm-white); border:0.5px solid rgba(153,60,29,0.25); box-shadow:0 2px 8px rgba(74,27,12,0.08); display:flex; align-items:center; justify-content:center; color:var(--cs-terracotta); margin:0 0 18px;"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 5a2 2 0 0 0-2 2v11"></path><path d="M9 5a2 2 0 0 0-2 2v11"></path><path d="M7 13h10"></path><path d="M7 9h10"></path><path d="M2 19c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"></path></svg></span>
+          <h3 style="font-family:'Cormorant Garamond',Georgia,serif; font-size:21px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:var(--cs-umber); margin:0 0 8px; line-height:1.15; text-wrap:balance;">Two pools and a playground</h3>
+          <p style="font-size:14.5px; line-height:1.65; color:var(--color-text-secondary); margin:0; max-width:240px; text-wrap:pretty;">A large pool for adults, another for children, and a small playground.</p>
+        </div>
+        <div class="cs-feat-item" style="flex:0 0 calc(25% - 18px); display:flex; flex-direction:column; align-items:center; text-align:center; min-width:0;">
+          <span style="width:64px; height:64px; border-radius:50%; background:var(--cs-warm-white); border:0.5px solid rgba(153,60,29,0.25); box-shadow:0 2px 8px rgba(74,27,12,0.08); display:flex; align-items:center; justify-content:center; color:var(--cs-terracotta); margin:0 0 18px;"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.4 14.4 9.6 9.6"></path><path d="M18.66 21.51a2 2 0 1 1-2.83-2.82l-1.77 1.77a2 2 0 1 1-2.83-2.83l6.37-6.37a2 2 0 1 1 2.83 2.83l-1.77 1.77a2 2 0 1 1 2.83 2.83Z"></path><path d="m21.5 21.5-1.4-1.4"></path><path d="M3.9 3.9 2.5 2.5"></path><path d="M6.4 12.77a2 2 0 1 1-2.83-2.83l1.77-1.77a2 2 0 1 1-2.83-2.83l2.83-2.83a2 2 0 1 1 2.83 2.83l1.77-1.77a2 2 0 1 1 2.83 2.83Z"></path></svg></span>
+          <h3 style="font-family:'Cormorant Garamond',Georgia,serif; font-size:21px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:var(--cs-umber); margin:0 0 8px; line-height:1.15; text-wrap:balance;">Gym and sunbeds</h3>
+          <p style="font-size:14.5px; line-height:1.65; color:var(--color-text-secondary); margin:0; max-width:240px; text-wrap:pretty;">A gym in the resort, and sunbeds around the pools.</p>
+        </div>
+        <div class="cs-feat-item" style="flex:0 0 calc(25% - 18px); display:flex; flex-direction:column; align-items:center; text-align:center; min-width:0;">
+          <span style="width:64px; height:64px; border-radius:50%; background:var(--cs-warm-white); border:0.5px solid rgba(153,60,29,0.25); box-shadow:0 2px 8px rgba(74,27,12,0.08); display:flex; align-items:center; justify-content:center; color:var(--cs-terracotta); margin:0 0 18px;"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11a9 9 0 0 1 18 0Z"></path><path d="M12 11v9"></path><path d="M12 2v1"></path><path d="M2 21c2-1.3 4-1.3 6 0s4 1.3 6 0 4-1.3 6 0"></path></svg></span>
+          <h3 style="font-family:'Cormorant Garamond',Georgia,serif; font-size:21px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:var(--cs-umber); margin:0 0 8px; line-height:1.15; text-wrap:balance;">8 minutes to the beach</h3>
+          <p style="font-size:14.5px; line-height:1.65; color:var(--color-text-secondary); margin:0; max-width:240px; text-wrap:pretty;">And 5 minutes' walk to the centre of Praia da Luz.</p>
+        </div>
+        <div class="cs-feat-item" style="flex:0 0 calc(25% - 18px); display:flex; flex-direction:column; align-items:center; text-align:center; min-width:0;">
+          <span style="width:64px; height:64px; border-radius:50%; background:var(--cs-warm-white); border:0.5px solid rgba(153,60,29,0.25); box-shadow:0 2px 8px rgba(74,27,12,0.08); display:flex; align-items:center; justify-content:center; color:var(--cs-terracotta); margin:0 0 18px;"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h.01"></path><path d="M2 8.82a15 15 0 0 1 20 0"></path><path d="M5 12.86a10 10 0 0 1 14 0"></path><path d="M8.5 16.43a5 5 0 0 1 7 0"></path></svg></span>
+          <h3 style="font-family:'Cormorant Garamond',Georgia,serif; font-size:21px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:var(--cs-umber); margin:0 0 8px; line-height:1.15; text-wrap:balance;">Super-fast Wi-Fi, TV and Netflix</h3>
+          <p style="font-size:14.5px; line-height:1.65; color:var(--color-text-secondary); margin:0; max-width:240px; text-wrap:pretty;">500 Mb/s download and upload for remote work. Cable TV and Netflix for evenings in.</p>
+        </div>
+        <div class="cs-feat-item" style="flex:0 0 calc(25% - 18px); display:flex; flex-direction:column; align-items:center; text-align:center; min-width:0;">
+          <span style="width:64px; height:64px; border-radius:50%; background:var(--cs-warm-white); border:0.5px solid rgba(153,60,29,0.25); box-shadow:0 2px 8px rgba(74,27,12,0.08); display:flex; align-items:center; justify-content:center; color:var(--cs-terracotta); margin:0 0 18px;"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"></path><path d="M7 2v20"></path><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"></path></svg></span>
+          <h3 style="font-family:'Cormorant Garamond',Georgia,serif; font-size:21px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:var(--cs-umber); margin:0 0 8px; line-height:1.15; text-wrap:balance;">Kitchen and dining area</h3>
+          <p style="font-size:14.5px; line-height:1.65; color:var(--color-text-secondary); margin:0; max-width:240px; text-wrap:pretty;">A fully equipped kitchen and a proper table for long meals together.</p>
+        </div>
+        <div class="cs-feat-item" style="flex:0 0 calc(25% - 18px); display:flex; flex-direction:column; align-items:center; text-align:center; min-width:0;">
+          <span style="width:64px; height:64px; border-radius:50%; background:var(--cs-warm-white); border:0.5px solid rgba(153,60,29,0.25); box-shadow:0 2px 8px rgba(74,27,12,0.08); display:flex; align-items:center; justify-content:center; color:var(--cs-terracotta); margin:0 0 18px;"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 12H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><path d="M6 8h12"></path><path d="M18.3 17.7a2.5 2.5 0 0 1-3.16 3.83 2.53 2.53 0 0 1-1.14-2V12"></path><path d="M6.6 15.6A2 2 0 1 0 10 17v-5"></path></svg></span>
+          <h3 style="font-family:'Cormorant Garamond',Georgia,serif; font-size:21px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:var(--cs-umber); margin:0 0 8px; line-height:1.15; text-wrap:balance;">Air conditioning and heating</h3>
+          <p style="font-size:14.5px; line-height:1.65; color:var(--color-text-secondary); margin:0; max-width:240px; text-wrap:pretty;">Cool in summer, warm in winter.</p>
+        </div>
+        <div class="cs-feat-item" style="flex:0 0 calc(25% - 18px); display:flex; flex-direction:column; align-items:center; text-align:center; min-width:0;">
+          <span style="width:64px; height:64px; border-radius:50%; background:var(--cs-warm-white); border:0.5px solid rgba(153,60,29,0.25); box-shadow:0 2px 8px rgba(74,27,12,0.08); display:flex; align-items:center; justify-content:center; color:var(--cs-terracotta); margin:0 0 18px;"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="M9 17V7h4a3 3 0 0 1 0 6H9"></path></svg></span>
+          <h3 style="font-family:'Cormorant Garamond',Georgia,serif; font-size:21px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:var(--cs-umber); margin:0 0 8px; line-height:1.15; text-wrap:balance;">Easy access and free parking</h3>
+          <p style="font-size:14.5px; line-height:1.65; color:var(--color-text-secondary); margin:0; max-width:240px; text-wrap:pretty;">All rooms on the 2nd floor, reached by lift. Lots of free parking on the street.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="guide" class="cs-pad" style="background:var(--cs-parchment); padding:88px 32px; scroll-margin-top:80px;">
+    <div style="max-width:1160px; margin:0 auto;">
+      <div style="text-align:center; margin:0 auto 44px; max-width:760px;">
+        <p style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.32em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 20px;">Praia da Luz guide</p>
+        <h2 class="cs-h2" style="font-family:'Cormorant Garamond',Georgia,serif; font-size:42px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--cs-umber); margin:0 0 20px; line-height:1.15; text-wrap:balance; margin:0;">One of the Western Algarve's best-loved beach resorts</h2>
+        <p style="font-size:17px; line-height:1.85; color:var(--color-text-secondary); margin:20px auto 0; max-width:720px; text-wrap:pretty;">Praia da Luz sits on a sheltered bay between the old Fortaleza da Luz and the black cliffs of Rocha Negra, about 10 minutes from Lagos. A former fishing village with Roman remains and a 16th-century church, it has grown into one of the most popular resort towns on this coast, with a Blue Flag beach, a mosaic promenade and calm, shallow water that suits families.</p>
+      </div>
+      <div class="lz-guide" style="display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:10px; margin:0 0 48px;">
+        <figure style="margin:0;"><img loading="lazy" decoding="async" src="/images/web/luz-beach.jpg" alt="The beach at Praia da Luz under the Rocha Negra cliff" style="width:100%; height:380px; object-fit:cover; display:block; border-radius:3px; object-position:center 62%;"><figcaption style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--color-text-secondary); margin-top:8px;">The beach</figcaption></figure>
+        <figure style="margin:0;"><img loading="lazy" decoding="async" src="/images/web/luz-promenade.jpg" alt="The mosaic promenade along the seafront at Praia da Luz" style="width:100%; height:380px; object-fit:cover; display:block; border-radius:3px;"><figcaption style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--color-text-secondary); margin-top:8px;">The promenade</figcaption></figure>
+        <figure style="margin:0;"><img loading="lazy" decoding="async" src="/images/web/luz-city.jpg" alt="Restaurant terrace by the sea in Praia da Luz" style="width:100%; height:380px; object-fit:cover; display:block; border-radius:3px;"><figcaption style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--color-text-secondary); margin-top:8px;">Restaurants by the sea</figcaption></figure>
+      </div>
+      <div class="lz-3" style="display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:40px;">
+        <div>
+          <h3 style="font-family:'Cormorant Garamond',Georgia,serif; font-size:24px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:var(--cs-umber); margin:0 0 10px; line-height:1.15;">Beach, restaurants and bars</h3>
+          <p style="font-size:17px; line-height:1.85; color:var(--color-text-secondary); margin:0; text-wrap:pretty; font-size:16px;">In Praia da Luz, in addition to the fantastic beach where you can safely swim and enjoy all water sports, float rentals and boat excursions, you can also enjoy the great entertainment provided by the numerous restaurants and bars that this small village has.</p>
+        </div>
+        <div>
+          <h3 style="font-family:'Cormorant Garamond',Georgia,serif; font-size:24px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:var(--cs-umber); margin:0 0 10px; line-height:1.15;">Supermarkets</h3>
+          <p style="font-size:17px; line-height:1.85; color:var(--color-text-secondary); margin:0; text-wrap:pretty; font-size:16px;">There are also 2 large supermarkets within walking distance of the apartment.</p>
+        </div>
+        <div>
+          <h3 style="font-family:'Cormorant Garamond',Georgia,serif; font-size:24px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:var(--cs-umber); margin:0 0 10px; line-height:1.15;">The promenade</h3>
+          <p style="font-size:17px; line-height:1.85; color:var(--color-text-secondary); margin:0; text-wrap:pretty; font-size:16px;">There is a path where you can enjoy pleasant walks along the beach.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="location" class="cs-pad" style="background:var(--cs-warm-white); padding:88px 32px; scroll-margin-top:80px;">
+    <div class="cs-2" style="max-width:1160px; margin:0 auto; display:grid; grid-template-columns:1fr 1.15fr; gap:56px; align-items:center;">
+      <div>
+        <p style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.32em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 20px;">Location</p>
+        <h2 class="cs-h2" style="font-family:'Cormorant Garamond',Georgia,serif; font-size:42px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--cs-umber); margin:0 0 20px; line-height:1.15; text-wrap:balance;">St. James Resort, Praia da Luz</h2>
+        <div style="border-top:0.5px solid rgba(153,60,29,0.18); margin:0 0 28px;">
+          <p style="display:flex; justify-content:space-between; gap:16px; padding:14px 0; margin:0; border-bottom:0.5px solid rgba(153,60,29,0.18); font-size:16px; color:var(--cs-umber);"><span>Centre of Praia da Luz</span><span style="font-weight:bold; white-space:nowrap;">5 min walk</span></p>
+          <p style="display:flex; justify-content:space-between; gap:16px; padding:14px 0; margin:0; border-bottom:0.5px solid rgba(153,60,29,0.18); font-size:16px; color:var(--cs-umber);"><span>The beach</span><span style="font-weight:bold; white-space:nowrap;">8 min walk</span></p>
+          <p style="display:flex; justify-content:space-between; gap:16px; padding:14px 0; margin:0; border-bottom:0.5px solid rgba(153,60,29,0.18); font-size:16px; color:var(--cs-umber);"><span>Burgau and Casa Solaris Burgau</span><span style="font-weight:bold; white-space:nowrap;">5 min by car</span></p>
+          <p style="display:flex; justify-content:space-between; gap:16px; padding:14px 0; margin:0; border-bottom:0.5px solid rgba(153,60,29,0.18); font-size:16px; color:var(--cs-umber);"><span>Lagos</span><span style="font-weight:bold; white-space:nowrap;">About 10 min by car</span></p>
+        </div>
+        <div style="display:flex; flex-wrap:wrap; gap:10px;">
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=St+James+Resort+Praia+da+Luz+Portugal" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; min-height:44px; font-family:'Trebuchet MS',sans-serif; font-size:12px; font-weight:bold; letter-spacing:0.12em; text-transform:uppercase; color:var(--cs-terracotta); border:1px solid rgba(153,60,29,0.35); padding:0 16px; border-radius:3px;" style-hover="color:var(--cs-sunset); border-color:var(--cs-sunset);">Open in Google Maps ↗</a>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;origin=St+James+Resort+Praia+da+Luz+Portugal&amp;destination=Burgau,Portugal&amp;travelmode=driving" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; min-height:44px; font-family:'Trebuchet MS',sans-serif; font-size:12px; font-weight:bold; letter-spacing:0.12em; text-transform:uppercase; color:var(--cs-terracotta); border:1px solid rgba(153,60,29,0.35); padding:0 16px; border-radius:3px;" style-hover="color:var(--cs-sunset); border-color:var(--cs-sunset);">Route to Burgau ↗</a>
+        </div>
+      </div>
+      <div class="lz-loc" style="display:grid; grid-template-columns:1fr; gap:10px;">
+        <figure style="margin:0;"><img loading="lazy" decoding="async" src="/images/web/luz-building.jpg" alt="The apartment building at St. James Resort" style="width:100%; height:420px; object-fit:cover; display:block; border-radius:3px;"><figcaption style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--color-text-secondary); margin-top:8px;">The building</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="book" class="cs-pad" style="background:var(--cs-umber); padding:100px 32px; text-align:center; position:relative; overflow:hidden; scroll-margin-top:80px;">
+    <div style="position:absolute; inset:0; background:radial-gradient(circle at 50% 120%, rgba(232,163,61,0.06), transparent 60%);"></div>
+    <div style="position:relative; max-width:680px; margin:0 auto;">
+      <p style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.32em; text-transform:uppercase; color:var(--cs-amber); margin:0 0 20px;">Reservations</p>
+      <h2 class="cs-h2" style="font-family:'Cormorant Garamond',Georgia,serif; font-size:42px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--cs-parchment); margin:0 0 20px; line-height:1.15; text-wrap:balance;">Send us your dates</h2>
+      <p style="font-size:17px; line-height:1.85; color:var(--color-text-on-dark-2); margin:0 0 36px;">Casa Solaris Luz is booked by enquiry for now. Tell us your dates and we will reply with availability and a quote.</p>
+      <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+        <a href="/reservations/" style="font-family:'Trebuchet MS',sans-serif; font-size:12px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--cs-parchment); background:var(--cs-terracotta); padding:15px 30px; border-radius:3px; padding:16px 36px;" style-hover="background:var(--cs-sunset); color:var(--cs-parchment);">Send an enquiry</a>
+        <a href="/#both" style="font-family:'Trebuchet MS',sans-serif; font-size:12px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--cs-parchment); border:1px solid rgba(250,246,238,0.55); padding:15px 34px; border-radius:3px;" style-hover="border-color:var(--cs-parchment); color:var(--cs-parchment); background:rgba(250,246,238,0.08);">Stay at both homes</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="cs-mbar" style="display:none; position:fixed; left:0; right:0; bottom:0; z-index:48; gap:10px; align-items:center; background:rgba(250,246,238,0.97); backdrop-filter:blur(10px); border-top:0.5px solid rgba(153,60,29,0.22); box-shadow:0 -2px 10px rgba(74,27,12,0.10); padding:10px 16px calc(10px + env(safe-area-inset-bottom));">
+  <a href="#amenities" style="flex:1; font-family:'Trebuchet MS',sans-serif; font-size:12px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; text-align:center; padding:15px 10px; border-radius:3px; color:var(--cs-terracotta); border:1px solid var(--cs-terracotta);">Amenities</a>
+  <a href="#book" style="flex:1.5; font-family:'Trebuchet MS',sans-serif; font-size:12px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; text-align:center; padding:15px 10px; border-radius:3px; color:var(--cs-parchment); background:var(--cs-terracotta); border:1px solid var(--cs-terracotta);">Send an enquiry</a>
+</div>
+
+<footer style="background:var(--cs-warm-white); padding:64px 32px 40px; border-top:4px solid transparent; border-image:var(--cs-grad) 1;">
+  <div class="cs-foot" style="max-width:1160px; margin:0 auto; display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr; gap:40px;">
+    <div>
+      <img loading="lazy" decoding="async" src="/images/casa-solaris-lockup-light.png" alt="Casa Solaris — Western Algarve" style="width:100%; max-width:320px; height:auto; display:block;">
+    </div>
+    <div>
+      <p style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.22em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 18px;">Burgau</p>
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <a href="/burgau/apartment/" style="font-size:14px; color:var(--color-text-secondary);" style-hover="color:var(--cs-terracotta);">The apartment</a>
+        <a href="/burgau/amenities/" style="font-size:14px; color:var(--color-text-secondary);" style-hover="color:var(--cs-terracotta);">Amenities</a>
+        <a href="/burgau/" style="font-size:14px; color:var(--color-text-secondary);" style-hover="color:var(--cs-terracotta);">Burgau and beyond</a>
+      </div>
+    </div>
+    <div>
+      <p style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.22em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 18px;">Praia da Luz</p>
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <a href="#apartment" style="font-size:14px; color:var(--color-text-secondary);" style-hover="color:var(--cs-terracotta);">The apartment</a>
+        <a href="#guide" style="font-size:14px; color:var(--color-text-secondary);" style-hover="color:var(--cs-terracotta);">Praia da Luz guide</a>
+      </div>
+    </div>
+    <div>
+      <p style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.22em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 18px;">Plan</p>
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <a href="/#both" style="font-size:14px; color:var(--color-text-secondary);" style-hover="color:var(--cs-terracotta);">Stay at both</a>
+        <a href="/winter-long-stays-burgau-algarve/" style="font-size:14px; color:var(--color-text-secondary);" style-hover="color:var(--cs-terracotta);">Winter and long stays</a>
+        <a href="/blog/" style="font-size:14px; color:var(--color-text-secondary);" style-hover="color:var(--cs-terracotta);">Blog</a>
+        <a href="/reservations/" style="font-size:14px; color:var(--color-text-secondary);" style-hover="color:var(--cs-terracotta);">Reservations</a>
+      </div>
+    </div>
+  </div>
+  <div style="max-width:1160px; margin:40px auto 0; padding-top:24px; border-top:0.5px solid rgba(153,60,29,0.18); display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;">
+    <p style="font-size:12px; color:var(--color-text-tertiary); margin:0;">© {{ year }} Casa Solaris. All rights reserved.</p>
+    <p style="font-size:12px; color:var(--color-text-tertiary); margin:0;">Burgau · Praia da Luz · Western Algarve</p>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { menu: null, mobileOpen: false };
+  navRef = React.createRef();
+  componentDidMount() {
+    this._onDoc = (e) => { if (this.state.menu && this.navRef.current && !this.navRef.current.contains(e.target)) this.setState({ menu: null }); };
+    this._onKey = (e) => { if (e.key === 'Escape') this.setState({ menu: null, mobileOpen: false }); };
+    document.addEventListener('click', this._onDoc);
+    document.addEventListener('keydown', this._onKey);
+  }
+  componentWillUnmount() {
+    document.removeEventListener('click', this._onDoc);
+    document.removeEventListener('keydown', this._onKey);
+  }
+  renderVals() {
+    const { menu } = this.state;
+    const setMenu = (m) => (e) => { e && e.stopPropagation && e.stopPropagation(); this.setState((s) => ({ menu: s.menu === m ? null : m })); };
+    return {
+      navRef: this.navRef,
+      burgauOpen: menu === 'burgau',
+      luzOpen: menu === 'luz',
+      toggleBurgau: setMenu('burgau'),
+      toggleLuz: setMenu('luz'),
+      closeMenus: () => this.setState({ menu: null }),
+      mobileOpen: this.state.mobileOpen,
+      toggleMobile: () => this.setState((s) => ({ mobileOpen: !s.mobileOpen, menu: null })),
+      year: new Date().getFullYear()
+    };
+  }
+}
+</script>
+</body>
+</html>

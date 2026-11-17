@@ -2,6 +2,28 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<script>
+(function () {
+  try {
+    if (!/casasolarisalgarve\.com$/.test(location.hostname)) return;
+    var q = new URLSearchParams(location.search).get('lang');
+    if (q === 'en' || q === 'pt') localStorage.setItem('cs_lang', q);
+    if (/bot|crawl|spider|slurp|lighthouse/i.test(navigator.userAgent)) return;
+    var saved = localStorage.getItem('cs_lang');
+    var langs = (navigator.languages || [navigator.language || '']).join(',').toLowerCase();
+    var tz = (Intl.DateTimeFormat().resolvedOptions().timeZone || '');
+    var inPT = /^(Europe\/Lisbon|Atlantic\/Madeira|Atlantic\/Azores)$/.test(tz);
+    var wantsPT = saved ? saved === 'pt' : (/(^|,)pt/.test(langs) || inPT);
+    if (wantsPT) {
+      var map = { '/burgau/apartment/': '/pt/', '/burgau/amenities/': '/pt/apartamento-com-piscina-burgau/', '/burgau/': '/pt/o-que-fazer-em-burgau/', '/reservations/': '/pt/reservar-alojamento-burgau/', '/winter-long-stays-burgau-algarve/': '/pt/inverno-estadias-longas-burgau-algarve/' };
+      var p = location.pathname.replace(/index\.html$/, ''); if (p.slice(-1) !== '/') p += '/';
+      var h = (location.hash || '').replace(/^#\/?/, '');
+      var hp = { 'amenities': map['/amenities/'], 'burgau': map['/burgau/'], 'reservations': map['/reservations/'] };
+      if (map[p]) location.replace(map[p] + (location.hash || ''));
+    }
+  } catch (e) {}
+})();
+</script>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KV9BSFQJ');</script>
 <!-- End Google Tag Manager -->
@@ -39,12 +61,7 @@
   <meta name="twitter:image" content="https://www.casasolarisalgarve.com/images/winter-burgau-beach-cliffs-october.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-  <link rel="stylesheet" href="/_ds/casa-solaris-design-system-84226e24-443e-4cc1-a89a-d78c1b6a1fcd/tokens/fonts.css">
-  <link rel="stylesheet" href="/_ds/casa-solaris-design-system-84226e24-443e-4cc1-a89a-d78c1b6a1fcd/tokens/colors.css">
-  <link rel="stylesheet" href="/_ds/casa-solaris-design-system-84226e24-443e-4cc1-a89a-d78c1b6a1fcd/tokens/typography.css">
-  <link rel="stylesheet" href="/_ds/casa-solaris-design-system-84226e24-443e-4cc1-a89a-d78c1b6a1fcd/tokens/spacing.css">
-  <link rel="stylesheet" href="/_ds/casa-solaris-design-system-84226e24-443e-4cc1-a89a-d78c1b6a1fcd/tokens/motion.css">
-  <link rel="stylesheet" href="/_ds/casa-solaris-design-system-84226e24-443e-4cc1-a89a-d78c1b6a1fcd/styles.css">
+  <link rel="stylesheet" href="/assets/casa-solaris.css">
   <style>
     body { margin: 0; background: var(--cs-parchment); -webkit-font-smoothing: antialiased; }
     a { color: var(--cs-terracotta); text-decoration: none; }
@@ -68,12 +85,22 @@
     @media (max-width: 600px) {
       .ws-wrap { padding-left: 20px !important; padding-right: 20px !important; }
       .ws-hero { height: 50vh !important; min-height: 300px !important; }
-      .ws-h1 { font-size: 27px !important; line-height: 1.2 !important; }
-      .ws-dek { font-size: 20px !important; }
-      .ws-body p, .ws-body li { font-size: 17px !important; }
+      .ws-h1 { font-size: 30px !important; line-height: 1.16 !important; }
+      .ws-dek { font-size: 19px !important; margin-bottom: 18px !important; }
+      .ws-body p:not([style*="uppercase"]), .ws-body li { font-size: 17px !important; }
+      .ws-body .ws-cap, .ws-body .ws-crumb li { font-size: 12px !important; }
+      .ws-body .ws-facts li { font-size: 13px !important; }
       .ws-table th, .ws-table td { padding: 12px 10px !important; font-size: 14px !important; }
     }
-  </style>
+  
+    summary::-webkit-details-marker { display: none; }
+    details[open] > summary .faq-plus { transform: rotate(45deg); }
+
+    @media (max-width: 1080px) { .cs-nav-links { display: none !important; } .cs-nav-toggle { display: flex !important; } }
+
+    .cs-dd-menu { display: none; }
+    .cs-dd:hover > .cs-dd-menu, .cs-dd:focus-within > .cs-dd-menu { display: flex; }
+</style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -142,15 +169,34 @@
           <circle cx="0" cy="0" r="2.6" fill="#E8A33D"></circle>
         </g>
       </svg>
-      <span translate="no" style="font-family:'Cormorant Garamond',Georgia,serif; font-weight:700; font-size:22px; letter-spacing:0.18em; color:var(--cs-umber); text-transform:uppercase;">Casa Solaris</span>
+      <span translate="no" style="white-space:nowrap; font-family:'Cormorant Garamond',Georgia,serif; font-weight:700; font-size:22px; letter-spacing:0.18em; color:var(--cs-umber); text-transform:uppercase;">Casa Solaris</span>
     </a>
-    <nav class="cs-nav-links" style="display:flex; align-items:center; gap:30px;">
-      <a href="/" style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--cs-umber);" style-hover="color:var(--cs-terracotta);">The House</a>
-      <a href="/amenities/" style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--cs-umber);" style-hover="color:var(--cs-terracotta);">Amenities</a>
-      <a href="/burgau/" style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--cs-umber);" style-hover="color:var(--cs-terracotta);">Why Burgau</a>
-      <a href="/blog/" style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--cs-umber);" style-hover="color:var(--cs-terracotta);">Blog</a>
-      <a href="/reservations/" style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--cs-parchment); background:var(--cs-terracotta); padding:11px 22px; border-radius:3px;" style-hover="background:var(--cs-sunset); color:var(--cs-parchment);">Reservations</a>
-      <a href="/pt/inverno-estadias-longas-burgau-algarve/" lang="pt-PT" title="Versão em português" style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.14em; color:var(--cs-umber); border:1px solid rgba(74,27,12,0.22); padding:9px 11px; border-radius:3px;" style-hover="color:var(--cs-terracotta); border-color:var(--cs-terracotta);">PT</a>
+    <nav class="cs-nav-links" style="display:flex; align-items:center; gap:28px;">
+      <div class="cs-dd" style="position:relative;">
+        <a href="/burgau/apartment/" aria-haspopup="true" style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; white-space:nowrap; color:var(--cs-umber); display:flex; align-items:center; gap:6px; padding:12px 0;" style-hover="color:var(--cs-terracotta);">Burgau<svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5 L5 6.5 L8 3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+        <div class="cs-dd-menu" role="menu" style="position:absolute; top:100%; left:-20px; min-width:220px; flex-direction:column; background:#FFFDF8; border:0.5px solid rgba(153,60,29,0.18); border-radius:3px; box-shadow:0 3px 12px rgba(74,27,12,0.18); padding:8px 0; z-index:60;">
+          <a role="menuitem" href="/burgau/apartment/" style="display:block; padding:11px 20px; font-size:15px; color:var(--cs-umber); white-space:nowrap;" style-hover="color:var(--cs-terracotta); background:var(--cs-stone);">The apartment</a>
+          <a role="menuitem" href="/burgau/amenities/" style="display:block; padding:11px 20px; font-size:15px; color:var(--cs-umber); white-space:nowrap;" style-hover="color:var(--cs-terracotta); background:var(--cs-stone);">Amenities</a>
+        </div>
+      </div>
+      <div class="cs-dd" style="position:relative;">
+        <a href="/luz/#apartment" aria-haspopup="true" style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; white-space:nowrap; color:var(--cs-umber); display:flex; align-items:center; gap:6px; padding:12px 0;" style-hover="color:var(--cs-terracotta);">Praia da Luz<svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5 L5 6.5 L8 3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+        <div class="cs-dd-menu" role="menu" style="position:absolute; top:100%; left:-20px; min-width:220px; flex-direction:column; background:#FFFDF8; border:0.5px solid rgba(153,60,29,0.18); border-radius:3px; box-shadow:0 3px 12px rgba(74,27,12,0.18); padding:8px 0; z-index:60;">
+          <a role="menuitem" href="/luz/#apartment" style="display:block; padding:11px 20px; font-size:15px; color:var(--cs-umber); white-space:nowrap;" style-hover="color:var(--cs-terracotta); background:var(--cs-stone);">The apartment</a>
+          <a role="menuitem" href="/luz/#amenities" style="display:block; padding:11px 20px; font-size:15px; color:var(--cs-umber); white-space:nowrap;" style-hover="color:var(--cs-terracotta); background:var(--cs-stone);">Amenities</a>
+        </div>
+      </div>
+      <a href="/winter-long-stays-burgau-algarve/" style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; white-space:nowrap; color:var(--cs-terracotta);" style-hover="color:var(--cs-terracotta);">Winter stays</a>
+      <div class="cs-dd" style="position:relative;">
+        <a href="/burgau/" aria-haspopup="true" style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; white-space:nowrap; color:var(--cs-umber); display:flex; align-items:center; gap:6px; padding:12px 0;" style-hover="color:var(--cs-terracotta);">Guide<svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5 L5 6.5 L8 3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+        <div class="cs-dd-menu" role="menu" style="position:absolute; top:100%; left:-20px; min-width:220px; flex-direction:column; background:#FFFDF8; border:0.5px solid rgba(153,60,29,0.18); border-radius:3px; box-shadow:0 3px 12px rgba(74,27,12,0.18); padding:8px 0; z-index:60;">
+          <a role="menuitem" href="/burgau/" style="display:block; padding:11px 20px; font-size:15px; color:var(--cs-umber); white-space:nowrap;" style-hover="color:var(--cs-terracotta); background:var(--cs-stone);">Burgau guide</a>
+          <a role="menuitem" href="/luz/#guide" style="display:block; padding:11px 20px; font-size:15px; color:var(--cs-umber); white-space:nowrap;" style-hover="color:var(--cs-terracotta); background:var(--cs-stone);">Praia da Luz guide</a>
+        </div>
+      </div>
+      <a href="/blog/" style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; white-space:nowrap; color:var(--cs-umber);" style-hover="color:var(--cs-terracotta);">Blog</a>
+      <a href="/reservations/" style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; white-space:nowrap; color:var(--cs-parchment); background:var(--cs-terracotta); padding:11px 22px; border-radius:3px;" style-hover="background:var(--cs-sunset); color:var(--cs-parchment);">Check availability</a>
+      <a href="/pt/inverno-estadias-longas-burgau-algarve/" lang="pt-PT" title="Versão em português" style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.14em; color:var(--cs-umber); border:1px solid rgba(74,27,12,0.22); padding:9px 11px; border-radius:3px; white-space:nowrap;" style-hover="color:var(--cs-terracotta); border-color:var(--cs-terracotta);">PT</a>
     </nav>
     <span class="cs-nav-toggle" onClick="{{ toggleMenu }}" aria-label="Menu" style="align-items:center; justify-content:center; width:42px; height:42px; margin:-8px -8px -8px 0; cursor:pointer; color:var(--cs-umber);">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="7" x2="21" y2="7"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="17" x2="21" y2="17"></line></svg>
@@ -159,16 +205,24 @@
 </header>
 
 <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
-<div style="position:fixed; top:63px; left:0; right:0; z-index:49; background:rgba(250,246,238,0.98); backdrop-filter:blur(10px); border-bottom:0.5px solid rgba(153,60,29,0.18); box-shadow:0 10px 26px rgba(74,27,12,0.16); padding:8px 24px 22px; display:flex; flex-direction:column;">
-  <a href="/" style="font-family:'Trebuchet MS',sans-serif; font-size:13px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; color:var(--cs-umber); padding:16px 0; border-bottom:0.5px solid rgba(153,60,29,0.14);">The House</a>
-  <a href="/amenities/" style="font-family:'Trebuchet MS',sans-serif; font-size:13px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; color:var(--cs-umber); padding:16px 0; border-bottom:0.5px solid rgba(153,60,29,0.14);">Amenities</a>
-  <a href="/burgau/" style="font-family:'Trebuchet MS',sans-serif; font-size:13px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; color:var(--cs-umber); padding:16px 0; border-bottom:0.5px solid rgba(153,60,29,0.14);">Why Burgau</a>
-  <a href="/blog/" style="font-family:'Trebuchet MS',sans-serif; font-size:13px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; color:var(--cs-umber); padding:16px 0; border-bottom:0.5px solid rgba(153,60,29,0.14);">Blog</a>
+<div style="max-height:calc(100vh - 63px); overflow-y:auto; position:fixed; top:63px; left:0; right:0; z-index:49; background:rgba(250,246,238,0.98); backdrop-filter:blur(10px); border-bottom:0.5px solid rgba(153,60,29,0.18); box-shadow:0 10px 26px rgba(74,27,12,0.16); padding:8px 24px 22px; display:flex; flex-direction:column;">
+    <p style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.26em; text-transform:uppercase; color:var(--cs-terracotta); margin:20px 0 2px;">Burgau</p>
+    <a href="/burgau/apartment/" style="font-size:16px; color:var(--cs-umber); padding:12px 0; border-bottom:0.5px solid rgba(153,60,29,0.14); text-decoration:none;">The apartment</a>
+    <a href="/burgau/amenities/" style="font-size:16px; color:var(--cs-umber); padding:12px 0; border-bottom:0.5px solid rgba(153,60,29,0.14); text-decoration:none;">Amenities</a>
+    <p style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.26em; text-transform:uppercase; color:var(--cs-terracotta); margin:20px 0 2px;">Praia da Luz</p>
+    <a href="/luz/#apartment" style="font-size:16px; color:var(--cs-umber); padding:12px 0; border-bottom:0.5px solid rgba(153,60,29,0.14); text-decoration:none;">The apartment</a>
+    <a href="/luz/#amenities" style="font-size:16px; color:var(--cs-umber); padding:12px 0; border-bottom:0.5px solid rgba(153,60,29,0.14); text-decoration:none;">Amenities</a>
+    <p style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.26em; text-transform:uppercase; color:var(--cs-terracotta); margin:20px 0 2px;">Guide</p>
+    <a href="/burgau/" style="font-size:16px; color:var(--cs-umber); padding:12px 0; border-bottom:0.5px solid rgba(153,60,29,0.14); text-decoration:none;">Burgau guide</a>
+    <a href="/luz/#guide" style="font-size:16px; color:var(--cs-umber); padding:12px 0; border-bottom:0.5px solid rgba(153,60,29,0.14); text-decoration:none;">Praia da Luz guide</a>
+    <a href="/winter-long-stays-burgau-algarve/" style="font-family:'Trebuchet MS',sans-serif; font-size:13px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; color:var(--cs-umber); padding:16px 0; border-bottom:0.5px solid rgba(153,60,29,0.14); text-decoration:none; margin-top:14px;">Winter stays</a>
+    <a href="/blog/" style="font-family:'Trebuchet MS',sans-serif; font-size:13px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; color:var(--cs-umber); padding:16px 0; border-bottom:0.5px solid rgba(153,60,29,0.14); text-decoration:none; border-bottom:0; padding-bottom:20px;">Blog</a>
+    <a href="/reservations/" style="text-align:center; font-family:'Trebuchet MS',sans-serif; font-size:12px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--cs-parchment); background:var(--cs-terracotta); padding:15px; border-radius:3px; text-decoration:none;">Check availability</a>
+  
   <div style="display:flex; gap:22px; padding:16px 0; border-bottom:0.5px solid rgba(153,60,29,0.14);">
     <span style="font-family:'Trebuchet MS',sans-serif; font-size:12px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; color:var(--cs-terracotta);">English</span>
     <a href="/pt/inverno-estadias-longas-burgau-algarve/" lang="pt-PT" style="font-family:'Trebuchet MS',sans-serif; font-size:12px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; color:var(--color-text-secondary);">Português</a>
   </div>
-  <a href="/reservations/" style="margin-top:20px; text-align:center; font-family:'Trebuchet MS',sans-serif; font-size:12px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--cs-parchment); background:var(--cs-terracotta); padding:15px; border-radius:3px;">Check winter availability</a>
 </div>
 </sc-if>
 
@@ -178,19 +232,19 @@
   </section>
 
   <div class="ws-wrap ws-body" style="max-width:784px; margin:0 auto; padding:30px 32px 24px; color:rgba(74,27,12,0.86);">
+    <p class="ws-cap" style="margin:0 0 22px; font-size:13px; line-height:1.5; color:rgba(74,27,12,0.6);">Burgau beach, October. All outdoor photos on this page were taken between October and April.</p>
 
     <header style="margin:0 0 36px;">
-      <nav aria-label="Breadcrumb" style="margin:0 0 30px;">
-        <ol style="list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:8px; font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.18em; text-transform:uppercase; color:rgba(74,27,12,0.6);">
-          <li><a href="/" style="color:rgba(74,27,12,0.6);" style-hover="color:var(--cs-terracotta);">Home</a></li>
+      <nav aria-label="Breadcrumb" class="ws-crumb" style="margin:0 0 14px;">
+        <ol style="list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:6px; font-size:12px; line-height:1.4; color:rgba(74,27,12,0.55);">
+          <li><a href="/burgau/apartment/" style="color:rgba(74,27,12,0.6);" style-hover="color:var(--cs-terracotta);">Home</a></li>
           <li aria-hidden="true">/</li>
-          <li aria-current="page" style="color:var(--cs-terracotta);">Winter &amp; long stays</li>
+          <li aria-current="page" style="color:rgba(74,27,12,0.55);">Winter &amp; long stays</li>
         </ol>
       </nav>
-      <p style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.32em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 16px;">Winter &amp; long stays · October–April</p>
-      <h1 class="ws-h1" style="font-family:'Cormorant Garamond',Georgia,serif; font-weight:700; font-size:42px; line-height:1.16; letter-spacing:0.02em; color:var(--cs-umber); text-transform:uppercase; margin:0 0 18px; text-wrap:balance;">Overwintering in Burgau, Western Algarve: a sunny base from October to April</h1>
+      <h1 class="ws-h1" style="font-family:'Cormorant Garamond',Georgia,serif; font-weight:700; font-size:44px; line-height:1.14; letter-spacing:0; color:var(--cs-umber); margin:0 0 16px; text-wrap:balance;">Overwintering in Burgau, Western Algarve: a sunny base from October to April</h1>
       <p class="ws-dek" style="font-family:'Cormorant Garamond',Georgia,serif; font-size:24px; line-height:1.45; color:rgba(74,27,12,0.8); margin:0 0 24px; text-wrap:pretty;">Mild days, quiet villages and a house set up for staying a month or more.</p>
-      <ul style="list-style:none; margin:0; padding:14px 0; display:flex; flex-wrap:wrap; gap:8px 26px; border-top:0.5px solid rgba(153,60,29,0.18); border-bottom:0.5px solid rgba(153,60,29,0.18); font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; color:var(--cs-umber);">
+      <ul class="ws-facts" style="list-style:none; margin:0; padding:12px 0; display:flex; flex-wrap:wrap; gap:6px 22px; border-top:0.5px solid rgba(153,60,29,0.18); border-bottom:0.5px solid rgba(153,60,29,0.18); font-family:'Trebuchet MS',sans-serif; font-size:13px; font-weight:bold; letter-spacing:0.02em; color:var(--cs-umber);">
         <li>October–April</li>
         <li style="color:var(--cs-terracotta);">15–20% off long stays</li>
         <li>Pool open all year</li>
@@ -308,28 +362,43 @@
     </section>
 
     <section id="faq" style="scroll-margin-top:90px;">
-      <h2 style="font-family:'Cormorant Garamond',Georgia,serif; font-weight:700; font-size:30px; line-height:1.25; letter-spacing:0.03em; text-transform:uppercase; color:var(--cs-umber); margin:0 0 14px; text-wrap:balance;">Frequently asked questions</h2>
+      <h2 style="font-family:'Cormorant Garamond',Georgia,serif; font-weight:700; font-size:30px; line-height:1.25; letter-spacing:0.03em; text-transform:uppercase; color:var(--cs-umber); margin:0 0 6px; text-wrap:balance;">Frequently asked questions</h2>
       <div style="display:flex; flex-direction:column; margin:0 0 24px;">
-        <div style="padding:22px 0; border-bottom:0.5px solid rgba(153,60,29,0.18);">
-          <h3 style="font-size:18px; line-height:1.45; font-weight:bold; color:var(--cs-umber); margin:0 0 8px;">Can I book for a month or longer?</h3>
-          <p style="font-size:17px; line-height:1.8; margin:0;">Yes. Send us your dates and we will reply with a quote, usually within a day.</p>
-        </div>
-        <div style="padding:22px 0; border-bottom:0.5px solid rgba(153,60,29,0.18);">
-          <h3 style="font-size:18px; line-height:1.45; font-weight:bold; color:var(--cs-umber); margin:0 0 8px;">Is there a discount for long stays?</h3>
-          <p style="font-size:17px; line-height:1.8; margin:0;">Yes. From October to April, long stays are 15–20% below the standard rate, depending on length.</p>
-        </div>
-        <div style="padding:22px 0; border-bottom:0.5px solid rgba(153,60,29,0.18);">
-          <h3 style="font-size:18px; line-height:1.45; font-weight:bold; color:var(--cs-umber); margin:0 0 8px;">Can I work remotely from Casa Solaris?</h3>
-          <p style="font-size:17px; line-height:1.8; margin:0;">Yes. There is a dedicated desk with a monitor and laptop stand, and free Wi-Fi throughout the apartment.</p>
-        </div>
-        <div style="padding:22px 0; border-bottom:0.5px solid rgba(153,60,29,0.18);">
-          <h3 style="font-size:18px; line-height:1.45; font-weight:bold; color:var(--cs-umber); margin:0 0 8px;">Is the pool open in winter?</h3>
-          <p style="font-size:17px; line-height:1.8; margin:0;">The shared pool is open all year, from 07:00 to 22:00.</p>
-        </div>
-        <div style="padding:22px 0; border-bottom:0.5px solid rgba(153,60,29,0.18);">
-          <h3 style="font-size:18px; line-height:1.45; font-weight:bold; color:var(--cs-umber); margin:0 0 8px;">How is the apartment heated?</h3>
-          <p style="font-size:17px; line-height:1.8; margin:0;">With air conditioning and heating, plus a wood-burning fireplace in the living room.</p>
-        </div>
+        <details style="border-bottom:0.5px solid rgba(153,60,29,0.18);">
+          <summary style="list-style:none; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:20px; padding:20px 0; min-height:44px;">
+            <h3 style="font-size:18px; line-height:1.45; font-weight:bold; color:var(--cs-umber); margin:0;">Can I book for a month or longer?</h3>
+            <span class="faq-plus" aria-hidden="true" style="flex:none; font-family:'Trebuchet MS',sans-serif; font-size:24px; line-height:1; color:var(--cs-terracotta); transition:transform 200ms cubic-bezier(0.22,0.61,0.36,1);">+</span>
+          </summary>
+          <p style="font-size:17px; line-height:1.8; margin:0 0 22px;">Yes. Send us your dates and we will reply with a quote, usually within a day.</p>
+        </details>
+        <details style="border-bottom:0.5px solid rgba(153,60,29,0.18);">
+          <summary style="list-style:none; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:20px; padding:20px 0; min-height:44px;">
+            <h3 style="font-size:18px; line-height:1.45; font-weight:bold; color:var(--cs-umber); margin:0;">Is there a discount for long stays?</h3>
+            <span class="faq-plus" aria-hidden="true" style="flex:none; font-family:'Trebuchet MS',sans-serif; font-size:24px; line-height:1; color:var(--cs-terracotta); transition:transform 200ms cubic-bezier(0.22,0.61,0.36,1);">+</span>
+          </summary>
+          <p style="font-size:17px; line-height:1.8; margin:0 0 22px;">Yes. From October to April, long stays are 15–20% below the standard rate, depending on length.</p>
+        </details>
+        <details style="border-bottom:0.5px solid rgba(153,60,29,0.18);">
+          <summary style="list-style:none; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:20px; padding:20px 0; min-height:44px;">
+            <h3 style="font-size:18px; line-height:1.45; font-weight:bold; color:var(--cs-umber); margin:0;">Can I work remotely from Casa Solaris?</h3>
+            <span class="faq-plus" aria-hidden="true" style="flex:none; font-family:'Trebuchet MS',sans-serif; font-size:24px; line-height:1; color:var(--cs-terracotta); transition:transform 200ms cubic-bezier(0.22,0.61,0.36,1);">+</span>
+          </summary>
+          <p style="font-size:17px; line-height:1.8; margin:0 0 22px;">Yes. There is a dedicated desk with a monitor and laptop stand, and free Wi-Fi throughout the apartment.</p>
+        </details>
+        <details style="border-bottom:0.5px solid rgba(153,60,29,0.18);">
+          <summary style="list-style:none; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:20px; padding:20px 0; min-height:44px;">
+            <h3 style="font-size:18px; line-height:1.45; font-weight:bold; color:var(--cs-umber); margin:0;">Is the pool open in winter?</h3>
+            <span class="faq-plus" aria-hidden="true" style="flex:none; font-family:'Trebuchet MS',sans-serif; font-size:24px; line-height:1; color:var(--cs-terracotta); transition:transform 200ms cubic-bezier(0.22,0.61,0.36,1);">+</span>
+          </summary>
+          <p style="font-size:17px; line-height:1.8; margin:0 0 22px;">The shared pool is open all year, from 07:00 to 22:00.</p>
+        </details>
+        <details style="border-bottom:0.5px solid rgba(153,60,29,0.18);">
+          <summary style="list-style:none; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:20px; padding:20px 0; min-height:44px;">
+            <h3 style="font-size:18px; line-height:1.45; font-weight:bold; color:var(--cs-umber); margin:0;">How is the apartment heated?</h3>
+            <span class="faq-plus" aria-hidden="true" style="flex:none; font-family:'Trebuchet MS',sans-serif; font-size:24px; line-height:1; color:var(--cs-terracotta); transition:transform 200ms cubic-bezier(0.22,0.61,0.36,1);">+</span>
+          </summary>
+          <p style="font-size:17px; line-height:1.8; margin:0 0 22px;">With air conditioning and heating, plus a wood-burning fireplace in the living room.</p>
+        </details>
       </div>
     </section>
   </div>
@@ -346,7 +415,7 @@
         <p style="font-size:17px; line-height:1.75; color:rgba(250,246,238,0.85); margin:0 0 28px; text-wrap:pretty;">Send us your dates between October and April and we will reply with availability and a long-stay quote.</p>
         <div style="display:flex; flex-wrap:wrap; gap:14px; margin:0 0 20px;">
           <a href="/reservations/" style="font-family:'Trebuchet MS',sans-serif; font-size:12px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--cs-parchment); background:var(--cs-terracotta); padding:16px 30px; border-radius:3px;" style-hover="background:var(--cs-sunset); color:var(--cs-parchment);">Check winter availability</a>
-          <a href="/" style="font-family:'Trebuchet MS',sans-serif; font-size:12px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--cs-parchment); border:1px solid rgba(250,246,238,0.5); padding:15px 28px; border-radius:3px;" style-hover="border-color:var(--cs-parchment); color:var(--cs-parchment);">See the house</a>
+          <a href="/burgau/apartment/" style="font-family:'Trebuchet MS',sans-serif; font-size:12px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--cs-parchment); border:1px solid rgba(250,246,238,0.5); padding:15px 28px; border-radius:3px;" style-hover="border-color:var(--cs-parchment); color:var(--cs-parchment);">See the house</a>
         </div>
         <p style="font-size:14px; line-height:1.6; color:rgba(250,246,238,0.72); margin:0;"><span style="color:var(--cs-amber); letter-spacing:0.1em;">★★★★★</span> 5.0 from 16 guest reviews on Google, Booking.com and Airbnb</p>
       </div>
@@ -365,9 +434,10 @@
     <div>
       <p style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.22em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 18px;">Explore</p>
       <div style="display:flex; flex-direction:column; gap:12px;">
-        <a href="/" style="font-size:14px; color:var(--color-text-secondary);" style-hover="color:var(--cs-terracotta);">The House</a>
-        <a href="/amenities/" style="font-size:14px; color:var(--color-text-secondary);" style-hover="color:var(--cs-terracotta);">Amenities</a>
-        <a href="/burgau/" style="font-size:14px; color:var(--color-text-secondary);" style-hover="color:var(--cs-terracotta);">Why Burgau</a>
+        <a href="/burgau/apartment/" style="font-size:14px; color:var(--color-text-secondary);" style-hover="color:var(--cs-terracotta);">Burgau apartment</a>
+        <a href="/burgau/amenities/" style="font-size:14px; color:var(--color-text-secondary);" style-hover="color:var(--cs-terracotta);">Amenities</a>
+        <a href="/burgau/" style="font-size:14px; color:var(--color-text-secondary);" style-hover="color:var(--cs-terracotta);">Burgau guide</a>
+          <a href="/luz/" style="font-size:14px; color:var(--color-text-secondary);" style-hover="color:var(--cs-terracotta);">Praia da Luz apartment</a>
         <a href="/winter-long-stays-burgau-algarve/" style="font-size:14px; color:var(--color-text-secondary);" style-hover="color:var(--cs-terracotta);">Winter &amp; long stays</a>
         <a href="/blog/" style="font-size:14px; color:var(--color-text-secondary);" style-hover="color:var(--cs-terracotta);">Blog</a>
         <a href="/reservations/" style="font-size:14px; color:var(--color-text-secondary);" style-hover="color:var(--cs-terracotta);">Reservations</a>

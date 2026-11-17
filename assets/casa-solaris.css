@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
+
+/* tokens/fonts.css */
+/* ================================================================
+   CASA SOLARIS — Web Fonts
+   Display: Cormorant Garamond (Google Fonts) — always Bold + ALL CAPS
+   Supporting: Trebuchet MS — system font declared via local() below.
+     No external file is shipped; the browser resolves it from the OS.
+   For production use, consider DSType's Andrade Pro (the most authentically
+   Portuguese serif) or Ventura as premium alternatives to Cormorant Garamond.
+   ================================================================ */
+
+
+
+/* Trebuchet MS — universal system font.
+   Declared via local() so the compiler can register it.
+   No file is fetched; the OS-installed copy is used directly. */
+@font-face {
+  font-family: 'Trebuchet MS';
+  src: local('Trebuchet MS'), local('TrebuchetMS');
+  font-weight: 400 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Trebuchet MS';
+  src: local('Trebuchet MS Italic'), local('TrebuchetMS-Italic');
+  font-weight: 400 700;
+  font-style: italic;
+}
+
+/* tokens/colors.css */
+/* ================================================================
+   CASA SOLARIS — Color Tokens
+   Warm Algarvian palette: terracotta · sunset · amber · parchment
+   Inspired by the whitewashed walls, terracotta roofs, and Atlantic
+   sunsets of Burgau, Western Algarve.
+   ================================================================ */
+
+:root {
+  /* ── BASE BRAND PALETTE ── */
+  --cs-umber:       #4A1B0C;   /* Richest dark — primary text, deep surfaces */
+  --cs-terracotta:  #993C1D;   /* Brand signature — terracotta roof tile */
+  --cs-sunset:      #D85A30;   /* Warm sienna — Atlantic sunset */
+  --cs-amber:       #E8A33D;   /* Sun gold — midday light, compass centre */
+  --cs-parchment:   #FAF6EE;   /* Aged paper — primary light surface */
+  --cs-sand:        #C8C2B8;   /* Warm dune — page background */
+  --cs-warm-white:  #FFFDF8;   /* Sun-bleached linen — card / paper surface */
+  --cs-stone:       #F2EDE0;   /* Dry stone — tinted card on parchment */
+
+  /* ── GRADIENT ACCENT (terracotta → sunset → amber sweep) ── */
+  /* Usage: 2–3px accent bars, subtle on CTAs. Never as full-bleed bg. */
+  --cs-grad:    linear-gradient(90deg,  #993C1D, #D85A30, #E8A33D); /* @kind other */
+  --cs-grad-v:  linear-gradient(180deg, #993C1D, #D85A30, #E8A33D); /* @kind other */
+  --cs-grad-d:  linear-gradient(135deg, #993C1D, #D85A30, #E8A33D); /* @kind other */
+
+  /* ── SEMANTIC FOREGROUND ── */
+  --color-text-primary:    var(--cs-umber);
+  --color-text-secondary:  rgba(74,27,12,0.60);
+  --color-text-tertiary:   rgba(74,27,12,0.35);
+  --color-text-accent:     var(--cs-terracotta);
+  --color-text-gold:       var(--cs-amber);
+  --color-text-on-dark:    var(--cs-parchment);
+  --color-text-on-dark-2:  rgba(250,246,238,0.65);
+  --color-text-on-dark-3:  rgba(250,246,238,0.38);
+
+  /* ── SEMANTIC BACKGROUND ── */
+  --color-bg:              var(--cs-sand);
+  --color-bg-light:        var(--cs-parchment);
+  --color-bg-dark:         var(--cs-umber);
+  --color-surface:         var(--cs-warm-white);
+  --color-surface-tinted:  var(--cs-stone);
+
+  /* ── BORDERS ── */
+  --color-border:         rgba(153,60,29,0.18);
+  --color-border-light:   rgba(153,60,29,0.10);
+  --color-border-strong:  rgba(74,27,12,0.22);
+  --color-border-dark:    rgba(250,246,238,0.12);
+
+  /* ── TINTS (accent washes for hover states / highlight cards) ── */
+  --cs-terracotta-08: rgba(153,60,29,0.08);
+  --cs-terracotta-14: rgba(153,60,29,0.14);
+  --cs-amber-08:      rgba(232,163,61,0.08);
+  --cs-amber-14:      rgba(232,163,61,0.14);
+}
+
+/* tokens/typography.css */
+/* ================================================================
+   CASA SOLARIS — Typography Tokens
+   ──────────────────────────────────────────────────────────────
+   RULE: Cormorant Garamond is ALWAYS weight 700 + ALL CAPS.
+         Never set it at regular weight. Never sentence case.
+   RULE: Trebuchet MS is ALWAYS bold + ALL CAPS with generous
+         letter-spacing. Never set it at regular weight.
+   ================================================================ */
+
+:root {
+  /* ── FONT FAMILIES ── */
+  --font-display:   'Cormorant Garamond', Garamond, Georgia, serif;
+  --font-sans:      'Trebuchet MS', 'Gill Sans', Helvetica, sans-serif;
+
+  /* ── LETTER SPACING (tracking) ── */
+  --tracking-display:   0.14em;   /* Cormorant Garamond primary headings */
+  --tracking-label:     0.22em;   /* metadata, section eyebrows */
+  --tracking-location:  0.38em;   /* "WESTERN ALGARVE" style sub-labels */
+  --tracking-wider:     0.50em;   /* "BURGAU" sub-location text */
+
+  /* ── TYPE SCALE ── */
+  --text-2xs: 6px;
+  --text-xs:  7px;
+  --text-sm:  9px;
+  --text-base:11px;
+  --text-md:  13px;
+  --text-lg:  16px;
+  --text-xl:  20px;
+  --text-2xl: 26px;
+  --text-3xl: 36px;
+  --text-4xl: 48px;
+  --text-5xl: 64px;
+  --text-6xl: 80px;
+
+  /* ── LINE HEIGHTS ── */
+  --leading-tight:    1.0;
+  --leading-snug:     1.2;
+  --leading-normal:   1.5;
+  --leading-relaxed:  1.65;
+  --leading-loose:    1.85;
+}
+
+/* tokens/spacing.css */
+/* ================================================================
+   CASA SOLARIS — Spacing, Radii & Elevation Tokens
+   8pt base grid. Radii are restrained — 2–3px for cards/panels.
+   Shadows are warm-tinted and low-contrast.
+   ================================================================ */
+
+:root {
+  /* ── SPACING (8pt grid) ── */
+  --s-1:   4px;
+  --s-2:   8px;
+  --s-3:   12px;
+  --s-4:   16px;
+  --s-5:   24px;
+  --s-6:   32px;
+  --s-7:   48px;
+  --s-8:   64px;
+  --s-9:   96px;
+  --s-10:  128px;
+
+  /* ── CORNER RADII ── */
+  /* Brand note: very restrained. Stationery uses 2–3px. Never pill-heavy. */
+  --r-xs:   2px;
+  --r-sm:   3px;
+  --r-md:   6px;
+  --r-lg:   12px;
+  --r-xl:   16px;
+  --r-pill: 100px;
+
+  /* ── SHADOWS (warm-tinted, low contrast, umber-based) ── */
+  --shadow-sm:  0 1px 3px rgba(74,27,12,0.10);
+  --shadow-md:  0 2px 8px rgba(74,27,12,0.12);
+  --shadow-lg:  0 3px 12px rgba(74,27,12,0.18);
+  --shadow-xl:  0 8px 32px rgba(74,27,12,0.14);
+}
+
+/* tokens/motion.css */
+/* ================================================================
+   CASA SOLARIS — Motion Tokens
+   Calm, restful — no bounces, no springs, no urgency.
+   Ease-out on entry; ease-in-out for state changes.
+   ================================================================ */
+
+:root {
+  --ease:         cubic-bezier(0.22, 0.61, 0.36, 1);   /* @kind other */
+  --ease-in-out:  cubic-bezier(0.65, 0.00, 0.35, 1);   /* @kind other */
+  --dur-fast:     140ms;   /* @kind other */
+  --dur:          220ms;   /* @kind other */
+  --dur-slow:     400ms;   /* @kind other */
+}
+
+/* styles.css */
+/* ================================================================
+   CASA SOLARIS — Design System root entry
+   Western Algarve · Burgau · Portugal
+   Single stylesheet for consumers to link.
+   Import order: fonts → colors → type → spacing → motion
+   ================================================================ */
+
+
+
+
+
+

@@ -2,6 +2,28 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<script>
+(function () {
+  try {
+    if (!/casasolarisalgarve\.com$/.test(location.hostname)) return;
+    var q = new URLSearchParams(location.search).get('lang');
+    if (q === 'en' || q === 'pt') localStorage.setItem('cs_lang', q);
+    if (/bot|crawl|spider|slurp|lighthouse/i.test(navigator.userAgent)) return;
+    var saved = localStorage.getItem('cs_lang');
+    var langs = (navigator.languages || [navigator.language || '']).join(',').toLowerCase();
+    var tz = (Intl.DateTimeFormat().resolvedOptions().timeZone || '');
+    var inPT = /^(Europe\/Lisbon|Atlantic\/Madeira|Atlantic\/Azores)$/.test(tz);
+    var wantsPT = saved ? saved === 'pt' : (/(^|,)pt/.test(langs) || inPT);
+    if (wantsPT) {
+      var map = { '/burgau/apartment/': '/pt/', '/burgau/amenities/': '/pt/apartamento-com-piscina-burgau/', '/burgau/': '/pt/o-que-fazer-em-burgau/', '/reservations/': '/pt/reservar-alojamento-burgau/', '/winter-long-stays-burgau-algarve/': '/pt/inverno-estadias-longas-burgau-algarve/' };
+      var p = location.pathname.replace(/index\.html$/, ''); if (p.slice(-1) !== '/') p += '/';
+      var h = (location.hash || '').replace(/^#\/?/, '');
+      var hp = { 'amenities': map['/amenities/'], 'burgau': map['/burgau/'], 'reservations': map['/reservations/'] };
+      if (map[p]) location.replace(map[p] + (location.hash || ''));
+    }
+  } catch (e) {}
+})();
+</script>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KV9BSFQJ');</script>
 <!-- End Google Tag Manager -->
@@ -45,12 +67,7 @@
   <meta name="twitter:image" content="https://www.casasolarisalgarve.com/images/blog-burgau-harbour-boats-sunset.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-  <link rel="stylesheet" href="/_ds/casa-solaris-design-system-84226e24-443e-4cc1-a89a-d78c1b6a1fcd/tokens/fonts.css">
-  <link rel="stylesheet" href="/_ds/casa-solaris-design-system-84226e24-443e-4cc1-a89a-d78c1b6a1fcd/tokens/colors.css">
-  <link rel="stylesheet" href="/_ds/casa-solaris-design-system-84226e24-443e-4cc1-a89a-d78c1b6a1fcd/tokens/typography.css">
-  <link rel="stylesheet" href="/_ds/casa-solaris-design-system-84226e24-443e-4cc1-a89a-d78c1b6a1fcd/tokens/spacing.css">
-  <link rel="stylesheet" href="/_ds/casa-solaris-design-system-84226e24-443e-4cc1-a89a-d78c1b6a1fcd/tokens/motion.css">
-  <link rel="stylesheet" href="/_ds/casa-solaris-design-system-84226e24-443e-4cc1-a89a-d78c1b6a1fcd/styles.css">
+  <link rel="stylesheet" href="/assets/casa-solaris.css">
   <style>
     body { margin: 0; background: var(--cs-parchment); -webkit-font-smoothing: antialiased; }
     a { color: var(--cs-terracotta); text-decoration: none; }
@@ -73,15 +90,24 @@
     @media (max-width: 600px) {
       .bp-wrap { padding-left: 20px !important; padding-right: 20px !important; }
       .bp-hero { height: 52vh !important; min-height: 300px !important; }
-      .bp-h1 { font-size: 27px !important; line-height: 1.2 !important; letter-spacing: 0.01em !important; }
-      .bp-dek { font-size: 20px !important; }
+      .bp-h1 { font-size: 30px !important; line-height: 1.16 !important; letter-spacing: 0 !important; }
+      .bp-dek { font-size: 19px !important; margin-bottom: 18px !important; }
+      .bp-body .bp-crumb li { font-size: 12px !important; }
       .bp-lead { font-size: 22px !important; }
       .bp-h2 { font-size: 24px !important; }
-      .bp-body p, .bp-body li { font-size: 17px !important; }
+      .bp-body p:not([style*="uppercase"]), .bp-body li { font-size: 17px !important; }
       .bp-wide { width: calc(100vw - 0px) !important; }
       .bp-table th, .bp-table td { padding: 12px 10px !important; font-size: 14px !important; }
     }
-  </style>
+  
+    summary::-webkit-details-marker { display: none; }
+    details[open] > summary .faq-plus { transform: rotate(45deg); }
+
+    @media (max-width: 1080px) { .cs-nav-links { display: none !important; } .cs-nav-toggle { display: flex !important; } }
+
+    .cs-dd-menu { display: none; }
+    .cs-dd:hover > .cs-dd-menu, .cs-dd:focus-within > .cs-dd-menu { display: flex; }
+</style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -154,14 +180,33 @@
           <circle cx="0" cy="0" r="2.6" fill="#E8A33D"></circle>
         </g>
       </svg>
-      <span translate="no" style="font-family:'Cormorant Garamond',Georgia,serif; font-weight:700; font-size:22px; letter-spacing:0.18em; color:var(--cs-umber); text-transform:uppercase;">Casa Solaris</span>
+      <span translate="no" style="white-space:nowrap; font-family:'Cormorant Garamond',Georgia,serif; font-weight:700; font-size:22px; letter-spacing:0.18em; color:var(--cs-umber); text-transform:uppercase;">Casa Solaris</span>
     </a>
-    <nav class="cs-nav-links" style="display:flex; align-items:center; gap:34px;">
-      <a href="/" style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--cs-umber);" style-hover="color:var(--cs-terracotta);">The House</a>
-      <a href="/amenities/" style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--cs-umber);" style-hover="color:var(--cs-terracotta);">Amenities</a>
-      <a href="/burgau/" style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--cs-umber);" style-hover="color:var(--cs-terracotta);">Why Burgau</a>
-      <a href="/blog/" aria-current="page" style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--cs-terracotta);">Blog</a>
-      <a href="/reservations/" style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--cs-parchment); background:var(--cs-terracotta); padding:11px 22px; border-radius:3px;" style-hover="background:var(--cs-sunset); color:var(--cs-parchment);">Reservations</a>
+    <nav class="cs-nav-links" style="display:flex; align-items:center; gap:28px;">
+      <div class="cs-dd" style="position:relative;">
+        <a href="/burgau/apartment/" aria-haspopup="true" style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; white-space:nowrap; color:var(--cs-umber); display:flex; align-items:center; gap:6px; padding:12px 0;" style-hover="color:var(--cs-terracotta);">Burgau<svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5 L5 6.5 L8 3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+        <div class="cs-dd-menu" role="menu" style="position:absolute; top:100%; left:-20px; min-width:220px; flex-direction:column; background:#FFFDF8; border:0.5px solid rgba(153,60,29,0.18); border-radius:3px; box-shadow:0 3px 12px rgba(74,27,12,0.18); padding:8px 0; z-index:60;">
+          <a role="menuitem" href="/burgau/apartment/" style="display:block; padding:11px 20px; font-size:15px; color:var(--cs-umber); white-space:nowrap;" style-hover="color:var(--cs-terracotta); background:var(--cs-stone);">The apartment</a>
+          <a role="menuitem" href="/burgau/amenities/" style="display:block; padding:11px 20px; font-size:15px; color:var(--cs-umber); white-space:nowrap;" style-hover="color:var(--cs-terracotta); background:var(--cs-stone);">Amenities</a>
+        </div>
+      </div>
+      <div class="cs-dd" style="position:relative;">
+        <a href="/luz/#apartment" aria-haspopup="true" style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; white-space:nowrap; color:var(--cs-umber); display:flex; align-items:center; gap:6px; padding:12px 0;" style-hover="color:var(--cs-terracotta);">Praia da Luz<svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5 L5 6.5 L8 3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+        <div class="cs-dd-menu" role="menu" style="position:absolute; top:100%; left:-20px; min-width:220px; flex-direction:column; background:#FFFDF8; border:0.5px solid rgba(153,60,29,0.18); border-radius:3px; box-shadow:0 3px 12px rgba(74,27,12,0.18); padding:8px 0; z-index:60;">
+          <a role="menuitem" href="/luz/#apartment" style="display:block; padding:11px 20px; font-size:15px; color:var(--cs-umber); white-space:nowrap;" style-hover="color:var(--cs-terracotta); background:var(--cs-stone);">The apartment</a>
+          <a role="menuitem" href="/luz/#amenities" style="display:block; padding:11px 20px; font-size:15px; color:var(--cs-umber); white-space:nowrap;" style-hover="color:var(--cs-terracotta); background:var(--cs-stone);">Amenities</a>
+        </div>
+      </div>
+      <a href="/winter-long-stays-burgau-algarve/" style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; white-space:nowrap; color:var(--cs-umber);" style-hover="color:var(--cs-terracotta);">Winter stays</a>
+      <div class="cs-dd" style="position:relative;">
+        <a href="/burgau/" aria-haspopup="true" style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; white-space:nowrap; color:var(--cs-umber); display:flex; align-items:center; gap:6px; padding:12px 0;" style-hover="color:var(--cs-terracotta);">Guide<svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5 L5 6.5 L8 3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+        <div class="cs-dd-menu" role="menu" style="position:absolute; top:100%; left:-20px; min-width:220px; flex-direction:column; background:#FFFDF8; border:0.5px solid rgba(153,60,29,0.18); border-radius:3px; box-shadow:0 3px 12px rgba(74,27,12,0.18); padding:8px 0; z-index:60;">
+          <a role="menuitem" href="/burgau/" style="display:block; padding:11px 20px; font-size:15px; color:var(--cs-umber); white-space:nowrap;" style-hover="color:var(--cs-terracotta); background:var(--cs-stone);">Burgau guide</a>
+          <a role="menuitem" href="/luz/#guide" style="display:block; padding:11px 20px; font-size:15px; color:var(--cs-umber); white-space:nowrap;" style-hover="color:var(--cs-terracotta); background:var(--cs-stone);">Praia da Luz guide</a>
+        </div>
+      </div>
+      <a href="/blog/" style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; white-space:nowrap; color:var(--cs-terracotta);" style-hover="color:var(--cs-terracotta);">Blog</a>
+      <a href="/reservations/" style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; white-space:nowrap; color:var(--cs-parchment); background:var(--cs-terracotta); padding:11px 22px; border-radius:3px;" style-hover="background:var(--cs-sunset); color:var(--cs-parchment);">Check availability</a>
     </nav>
     <span class="cs-nav-toggle" onClick="{{ toggleMenu }}" aria-label="Menu" style="align-items:center; justify-content:center; width:42px; height:42px; margin:-8px -8px -8px 0; cursor:pointer; color:var(--cs-umber);">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="7" x2="21" y2="7"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="17" x2="21" y2="17"></line></svg>
@@ -170,13 +215,20 @@
 </header>
 
 <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
-<div style="position:fixed; top:63px; left:0; right:0; z-index:49; background:rgba(250,246,238,0.98); backdrop-filter:blur(10px); border-bottom:0.5px solid rgba(153,60,29,0.18); box-shadow:0 10px 26px rgba(74,27,12,0.16); padding:8px 24px 22px; display:flex; flex-direction:column;">
-  <a href="/" style="font-family:'Trebuchet MS',sans-serif; font-size:13px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; color:var(--cs-umber); padding:16px 0; border-bottom:0.5px solid rgba(153,60,29,0.14);">The House</a>
-  <a href="/amenities/" style="font-family:'Trebuchet MS',sans-serif; font-size:13px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; color:var(--cs-umber); padding:16px 0; border-bottom:0.5px solid rgba(153,60,29,0.14);">Amenities</a>
-  <a href="/burgau/" style="font-family:'Trebuchet MS',sans-serif; font-size:13px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; color:var(--cs-umber); padding:16px 0; border-bottom:0.5px solid rgba(153,60,29,0.14);">Why Burgau</a>
-  <a href="/blog/" style="font-family:'Trebuchet MS',sans-serif; font-size:13px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; color:var(--cs-terracotta); padding:16px 0; border-bottom:0.5px solid rgba(153,60,29,0.14);">Blog</a>
-  <a href="/reservations/" style="font-family:'Trebuchet MS',sans-serif; font-size:13px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; color:var(--cs-umber); padding:16px 0 20px;">Reservations</a>
-  <a href="/reservations/" style="text-align:center; font-family:'Trebuchet MS',sans-serif; font-size:12px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--cs-parchment); background:var(--cs-terracotta); padding:15px; border-radius:3px;">Book Direct</a>
+<div style="max-height:calc(100vh - 63px); overflow-y:auto; position:fixed; top:63px; left:0; right:0; z-index:49; background:rgba(250,246,238,0.98); backdrop-filter:blur(10px); border-bottom:0.5px solid rgba(153,60,29,0.18); box-shadow:0 10px 26px rgba(74,27,12,0.16); padding:8px 24px 22px; display:flex; flex-direction:column;">
+    <p style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.26em; text-transform:uppercase; color:var(--cs-terracotta); margin:20px 0 2px;">Burgau</p>
+    <a href="/burgau/apartment/" style="font-size:16px; color:var(--cs-umber); padding:12px 0; border-bottom:0.5px solid rgba(153,60,29,0.14); text-decoration:none;">The apartment</a>
+    <a href="/burgau/amenities/" style="font-size:16px; color:var(--cs-umber); padding:12px 0; border-bottom:0.5px solid rgba(153,60,29,0.14); text-decoration:none;">Amenities</a>
+    <p style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.26em; text-transform:uppercase; color:var(--cs-terracotta); margin:20px 0 2px;">Praia da Luz</p>
+    <a href="/luz/#apartment" style="font-size:16px; color:var(--cs-umber); padding:12px 0; border-bottom:0.5px solid rgba(153,60,29,0.14); text-decoration:none;">The apartment</a>
+    <a href="/luz/#amenities" style="font-size:16px; color:var(--cs-umber); padding:12px 0; border-bottom:0.5px solid rgba(153,60,29,0.14); text-decoration:none;">Amenities</a>
+    <p style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.26em; text-transform:uppercase; color:var(--cs-terracotta); margin:20px 0 2px;">Guide</p>
+    <a href="/burgau/" style="font-size:16px; color:var(--cs-umber); padding:12px 0; border-bottom:0.5px solid rgba(153,60,29,0.14); text-decoration:none;">Burgau guide</a>
+    <a href="/luz/#guide" style="font-size:16px; color:var(--cs-umber); padding:12px 0; border-bottom:0.5px solid rgba(153,60,29,0.14); text-decoration:none;">Praia da Luz guide</a>
+    <a href="/winter-long-stays-burgau-algarve/" style="font-family:'Trebuchet MS',sans-serif; font-size:13px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; color:var(--cs-umber); padding:16px 0; border-bottom:0.5px solid rgba(153,60,29,0.14); text-decoration:none; margin-top:14px;">Winter stays</a>
+    <a href="/blog/" style="font-family:'Trebuchet MS',sans-serif; font-size:13px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; color:var(--cs-umber); padding:16px 0; border-bottom:0.5px solid rgba(153,60,29,0.14); text-decoration:none; border-bottom:0; padding-bottom:20px;">Blog</a>
+    <a href="/reservations/" style="text-align:center; font-family:'Trebuchet MS',sans-serif; font-size:12px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--cs-parchment); background:var(--cs-terracotta); padding:15px; border-radius:3px; text-decoration:none;">Check availability</a>
+  
 </div>
 </sc-if>
 
@@ -189,20 +241,19 @@
   <article ref="{{ articleRef }}" class="bp-wrap bp-body" style="max-width:784px; margin:0 auto; padding:30px 32px 24px; color:rgba(74,27,12,0.86);">
 
     <header style="margin:0 0 34px;">
-      <nav aria-label="Breadcrumb" style="margin:0 0 30px;">
-        <ol style="list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:8px; font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.18em; text-transform:uppercase; color:rgba(74,27,12,0.6);">
-          <li><a href="/" style="color:rgba(74,27,12,0.6);" style-hover="color:var(--cs-terracotta);">Home</a></li>
+      <nav aria-label="Breadcrumb" class="bp-crumb" style="margin:0 0 14px;">
+        <ol style="list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:6px; font-size:12px; line-height:1.4; color:rgba(74,27,12,0.55);">
+          <li><a href="/burgau/apartment/" style="color:rgba(74,27,12,0.6);" style-hover="color:var(--cs-terracotta);">Home</a></li>
           <li aria-hidden="true">/</li>
           <li><a href="/blog/" style="color:rgba(74,27,12,0.6);" style-hover="color:var(--cs-terracotta);">Blog</a></li>
           <li aria-hidden="true">/</li>
-          <li aria-current="page" style="color:var(--cs-terracotta);">Winter sun in the Western Algarve</li>
+          <li aria-current="page" style="color:rgba(74,27,12,0.55);">Winter sun in the Western Algarve</li>
         </ol>
       </nav>
-      <p style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.32em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 16px;">Seasons · Western Algarve</p>
-      <h1 class="bp-h1" style="font-family:'Cormorant Garamond',Georgia,serif; font-weight:700; font-size:42px; line-height:1.16; letter-spacing:0.02em; color:var(--cs-umber); text-transform:uppercase; margin:0 0 18px; text-wrap:balance;">Winter Sun in the Western Algarve: Why Burgau and Luz Shine from November to February</h1>
+      <h1 class="bp-h1" style="font-family:'Cormorant Garamond',Georgia,serif; font-weight:700; font-size:44px; line-height:1.14; letter-spacing:0; color:var(--cs-umber); margin:0 0 16px; text-wrap:balance;">Winter sun in the Western Algarve: why Burgau and Luz shine from November to February</h1>
       <p class="bp-dek" style="font-family:'Cormorant Garamond',Georgia,serif; font-size:24px; line-height:1.45; color:rgba(74,27,12,0.8); margin:0 0 24px; text-wrap:pretty;">Mild afternoons, nearly ten hours of daylight and a coastline made for walking, cycling and golf.</p>
-      <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px 22px; padding:14px 0; border-top:0.5px solid rgba(153,60,29,0.18); border-bottom:0.5px solid rgba(153,60,29,0.18); font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; color:rgba(74,27,12,0.6);">
-        <span style="color:var(--cs-umber);">By the Casa Solaris hosts</span>
+      <div style="display:flex; flex-wrap:wrap; align-items:center; gap:4px 18px; padding:12px 0; border-top:0.5px solid rgba(153,60,29,0.18); border-bottom:0.5px solid rgba(153,60,29,0.18); font-size:13px; line-height:1.5; color:rgba(74,27,12,0.6);">
+        <span style="color:var(--cs-umber); font-weight:bold;">By the Casa Solaris hosts</span>
         <time datetime="2026-11-08">8 November 2026</time>
         <span>6 min read</span>
       </div>
@@ -284,12 +335,12 @@
 
     <section id="fishermens-trail" style="scroll-margin-top:90px;">
       <h2 class="bp-h2" style="font-family:'Cormorant Garamond',Georgia,serif; font-weight:700; font-size:30px; line-height:1.25; letter-spacing:0.03em; text-transform:uppercase; color:var(--cs-umber); margin:0 0 22px; text-wrap:balance;">Walk the coast on the Fishermen’s Trail</h2>
-      <p style="font-size:18px; line-height:1.85; margin:0 0 20px; text-wrap:pretty;">Burgau lies directly on the Fishermen’s Trail (Trilho dos Pescadores), the coastal route of the <a href="https://rotavicentina.com/" target="_blank" rel="noopener" style="text-decoration:underline; text-underline-offset:3px;">Rota Vicentina</a>, waymarked with blue and green stripes. The stretch between Burgau and Praia da Luz is among the gentlest: mostly flat, with a single hill and cliff-top views all the way. Short loops around Burgau and the Cliffs of Luz run to roughly 3.5–5 km and take one to one-and-a-half hours at a relaxed pace.</p>
-      <p style="font-size:18px; line-height:1.85; margin:0 0 40px; text-wrap:pretty;">Want a longer day? Luz to Lagos is about 12 km (three to four hours), while the section from Burgau towards Salema is steeper, with more ups and downs. Walkers generally rate autumn as the best season for the trail; winter is quieter and still very pleasant, as long as you keep an eye on the weather, the wind and the cliff edges. There is no fee and no permit.</p>
-      <figure class="bp-wide" style="position:relative; left:50%; transform:translateX(-50%); width:min(1120px, calc(100vw - 48px)); margin:0 0 56px;">
+      <figure class="bp-wide" style="position:relative; left:50%; transform:translateX(-50%); width:min(1120px, calc(100vw - 48px)); margin:0 0 32px;">
         <img src="/images/blog-burgau-coast-cliffs-cove.jpg" alt="Golden cliffs above a quiet cove on the coast near Burgau" width="1800" height="1350" loading="lazy" decoding="async" style="display:block; width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; object-position:center 55%; border-radius:3px;">
         <figcaption style="max-width:720px; margin:12px auto 0; padding:0 20px; font-size:13px; line-height:1.5; color:rgba(74,27,12,0.6);">The coast near Burgau.</figcaption>
       </figure>
+      <p style="font-size:18px; line-height:1.85; margin:0 0 20px; text-wrap:pretty;">Burgau lies directly on the Fishermen’s Trail (Trilho dos Pescadores), the coastal route of the <a href="https://rotavicentina.com/" target="_blank" rel="noopener" style="text-decoration:underline; text-underline-offset:3px;">Rota Vicentina</a>, waymarked with blue and green stripes. The stretch between Burgau and Praia da Luz is among the gentlest: mostly flat, with a single hill and cliff-top views all the way. Short loops around Burgau and the Cliffs of Luz run to roughly 3.5–5 km and take one to one-and-a-half hours at a relaxed pace.</p>
+      <p style="font-size:18px; line-height:1.85; margin:0 0 40px; text-wrap:pretty;">Want a longer day? Luz to Lagos is about 12 km (three to four hours), while the section from Burgau towards Salema is steeper, with more ups and downs. Walkers generally rate autumn as the best season for the trail; winter is quieter and still very pleasant, as long as you keep an eye on the weather, the wind and the cliff edges. There is no fee and no permit.</p>
     </section>
 
     <section id="cycling" style="scroll-margin-top:90px;">
@@ -311,19 +362,17 @@
 
     <section id="quiet-season" style="scroll-margin-top:90px;">
       <h2 class="bp-h2" style="font-family:'Cormorant Garamond',Georgia,serif; font-weight:700; font-size:30px; line-height:1.25; letter-spacing:0.03em; text-transform:uppercase; color:var(--cs-umber); margin:0 0 22px; text-wrap:balance;">Two villages in their quiet season</h2>
-      <p style="font-size:18px; line-height:1.85; margin:0 0 40px; text-wrap:pretty;">Without the crowds, Burgau and Luz show their everyday character: fishermen’s boats on the sand, a coffee in the sun, a long lunch with no queue. To be honest about it, a few seasonal beach bars close for the winter and Burgau is the more seasonal of the two, so check opening hours before you set out. In Luz most shops and restaurants stay open, and Lagos, about 15 minutes away, has its marina, old town and year-round restaurants.</p>
-      <figure class="bp-wide" style="position:relative; left:50%; transform:translateX(-50%); width:min(1120px, calc(100vw - 48px)); margin:0 0 40px;">
+      <figure class="bp-wide" style="position:relative; left:50%; transform:translateX(-50%); width:min(1120px, calc(100vw - 48px)); margin:0 0 32px;">
         <img src="/images/blog-burgau-december-sunset.jpg" alt="Sunset over the Atlantic from a rooftop terrace in Burgau in December" width="1800" height="1350" loading="lazy" decoding="async" style="display:block; width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; object-position:center 45%; border-radius:3px;">
         <figcaption style="max-width:720px; margin:12px auto 0; padding:0 20px; font-size:13px; line-height:1.5; color:rgba(74,27,12,0.6);">Sunset over Burgau in December.</figcaption>
       </figure>
+      <p style="font-size:18px; line-height:1.85; margin:0 0 40px; text-wrap:pretty;">Without the crowds, Burgau and Luz show their everyday character: fishermen’s boats on the sand, a coffee in the sun, a long lunch with no queue. To be honest about it, a few seasonal beach bars close for the winter and Burgau is the more seasonal of the two, so check opening hours before you set out. In Luz most shops and restaurants stay open, and Lagos, about 15 minutes away, has its marina, old town and year-round restaurants.</p>
       <p style="font-size:18px; line-height:1.85; margin:0 0 52px; text-wrap:pretty;">The winter calendar has its own highlights. From mid-January the almond trees begin to blossom across the Algarve countryside (the region’s Almond Blossom Festival is held in Alta Mora, at the eastern end, so it makes a day trip by car). February brings the Loulé Carnival and the Volta ao Algarve. Vila do Bispo, the municipality Burgau belongs to, has also hosted a late-winter festival of astronomy and music, and the dark skies here are made for stargazing. Dates change from year to year; the regional 365 Algarve programme (<a href="https://365algarve.pt/" target="_blank" rel="noopener" style="text-decoration:underline; text-underline-offset:3px;">365algarve.pt</a>) is the place to check.</p>
     </section>
 
     <section id="winter-base" style="scroll-margin-top:90px;">
       <h2 class="bp-h2" style="font-family:'Cormorant Garamond',Georgia,serif; font-weight:700; font-size:30px; line-height:1.25; letter-spacing:0.03em; text-transform:uppercase; color:var(--cs-umber); margin:0 0 22px; text-wrap:balance;">A winter base with a fireplace and a desk</h2>
-      <p style="font-size:18px; line-height:1.85; margin:0 0 20px; text-wrap:pretty;"><a href="/" style="text-decoration:underline; text-underline-offset:3px;">Casa Solaris</a> is a two-bedroom, ground-floor apartment for up to five guests, about an eight-minute walk from Burgau beach. It has air conditioning and heating, a wood-burning fireplace, a fully equipped kitchen, a private terrace, a dedicated desk, free Wi-Fi and a private garage space. The shared pool is open all year.</p>
-      <p style="font-size:18px; line-height:1.85; margin:0 0 36px; text-wrap:pretty;">On a wet afternoon, light the fire. On a bright one, take your laptop out to the terrace, then walk down to the sea before sunset.</p>
-      <div class="bp-pair bp-wide" style="position:relative; left:50%; transform:translateX(-50%); width:min(960px, calc(100vw - 48px)); display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:0 0 36px;">
+      <div class="bp-pair bp-wide" style="position:relative; left:50%; transform:translateX(-50%); width:min(960px, calc(100vw - 48px)); display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:0 0 32px;">
         <figure style="margin:0;">
           <img src="/images/blog-burgau-coffee-in-the-sun.jpg" alt="Coffee in the sun outside a café in Burgau" width="1350" height="1800" loading="lazy" decoding="async" style="display:block; width:100%; height:auto; aspect-ratio:4/5; object-fit:cover; border-radius:3px;">
           <figcaption style="margin:10px 0 0; font-size:13px; line-height:1.5; color:rgba(74,27,12,0.6);">Coffee in the sun.</figcaption>
@@ -333,29 +382,43 @@
           <figcaption style="margin:10px 0 0; font-size:13px; line-height:1.5; color:rgba(74,27,12,0.6);">Walking down to the sea.</figcaption>
         </figure>
       </div>
+      <p style="font-size:18px; line-height:1.85; margin:0 0 20px; text-wrap:pretty;"><a href="/burgau/apartment/" style="text-decoration:underline; text-underline-offset:3px;">Casa Solaris</a> is a two-bedroom, ground-floor apartment for up to five guests, about an eight-minute walk from Burgau beach. It has air conditioning and heating, a wood-burning fireplace, a fully equipped kitchen, a private terrace, a dedicated desk, free Wi-Fi and a private garage space. The shared pool is open all year.</p>
+      <p style="font-size:18px; line-height:1.85; margin:0 0 36px; text-wrap:pretty;">On a wet afternoon, light the fire. On a bright one, take your laptop out to the terrace, then walk down to the sea before sunset.</p>
       <p style="font-size:17px; line-height:1.7; margin:0 0 20px;"><a href="/winter-long-stays-burgau-algarve/" style="font-weight:bold; text-decoration:underline; text-underline-offset:3px;">Staying a month or more? See winter and long stays at Casa Solaris →</a></p>
       <p style="font-size:18px; line-height:1.85; margin:0 0 56px; text-wrap:pretty;">Planning to leave the dark months behind? Check availability and ask about our direct-booking rate on the <a href="/reservations/" style="font-weight:bold; text-decoration:underline; text-underline-offset:3px;">Reservations page</a>.</p>
     </section>
 
     <section id="faq" style="scroll-margin-top:90px;">
-      <h2 class="bp-h2" style="font-family:'Cormorant Garamond',Georgia,serif; font-weight:700; font-size:30px; line-height:1.25; letter-spacing:0.03em; text-transform:uppercase; color:var(--cs-umber); margin:0 0 14px; text-wrap:balance;">Frequently asked questions</h2>
+      <h2 class="bp-h2" style="font-family:'Cormorant Garamond',Georgia,serif; font-weight:700; font-size:30px; line-height:1.25; letter-spacing:0.03em; text-transform:uppercase; color:var(--cs-umber); margin:0 0 6px; text-wrap:balance;">Frequently asked questions</h2>
       <div style="display:flex; flex-direction:column; margin:0 0 48px;">
-        <div style="padding:22px 0; border-bottom:0.5px solid rgba(153,60,29,0.18);">
-          <h3 style="font-size:18px; line-height:1.45; font-weight:bold; color:var(--cs-umber); margin:0 0 8px;">Can you swim in the sea in winter?</h3>
-          <p style="font-size:17px; line-height:1.8; margin:0;">The Atlantic is about 15–18 °C, so it is cool rather than warm. Most winter visitors prefer to walk the beach and take the occasional bold dip.</p>
-        </div>
-        <div style="padding:22px 0; border-bottom:0.5px solid rgba(153,60,29,0.18);">
-          <h3 style="font-size:18px; line-height:1.45; font-weight:bold; color:var(--cs-umber); margin:0 0 8px;">How rainy is winter in the Algarve?</h3>
-          <p style="font-size:17px; line-height:1.8; margin:0;">December is the wettest month, with rain on eight to twelve days, often as short showers. Sunny spells are frequent, and February is usually brighter.</p>
-        </div>
-        <div style="padding:22px 0; border-bottom:0.5px solid rgba(153,60,29,0.18);">
-          <h3 style="font-size:18px; line-height:1.45; font-weight:bold; color:var(--cs-umber); margin:0 0 8px;">Are restaurants and shops open in winter?</h3>
-          <p style="font-size:17px; line-height:1.8; margin:0;">Most remain open in Luz and Lagos; a few seasonal places in Burgau and on the beaches close. Check opening hours in advance.</p>
-        </div>
-        <div style="padding:22px 0; border-bottom:0.5px solid rgba(153,60,29,0.18);">
-          <h3 style="font-size:18px; line-height:1.45; font-weight:bold; color:var(--cs-umber); margin:0 0 8px;">Do I need a car?</h3>
-          <p style="font-size:17px; line-height:1.8; margin:0;">Burgau’s beach, restaurants and the coastal path are walkable. A car makes Lagos, the golf courses and Sagres much easier.</p>
-        </div>
+        <details style="border-bottom:0.5px solid rgba(153,60,29,0.18);">
+          <summary style="list-style:none; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:20px; padding:20px 0; min-height:44px;">
+            <h3 style="font-size:18px; line-height:1.45; font-weight:bold; color:var(--cs-umber); margin:0;">Can you swim in the sea in winter?</h3>
+            <span class="faq-plus" aria-hidden="true" style="flex:none; font-family:'Trebuchet MS',sans-serif; font-size:24px; line-height:1; color:var(--cs-terracotta); transition:transform 200ms cubic-bezier(0.22,0.61,0.36,1);">+</span>
+          </summary>
+          <p style="font-size:17px; line-height:1.8; margin:0 0 22px;">The Atlantic is about 15–18 °C, so it is cool rather than warm. Most winter visitors prefer to walk the beach and take the occasional bold dip.</p>
+        </details>
+        <details style="border-bottom:0.5px solid rgba(153,60,29,0.18);">
+          <summary style="list-style:none; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:20px; padding:20px 0; min-height:44px;">
+            <h3 style="font-size:18px; line-height:1.45; font-weight:bold; color:var(--cs-umber); margin:0;">How rainy is winter in the Algarve?</h3>
+            <span class="faq-plus" aria-hidden="true" style="flex:none; font-family:'Trebuchet MS',sans-serif; font-size:24px; line-height:1; color:var(--cs-terracotta); transition:transform 200ms cubic-bezier(0.22,0.61,0.36,1);">+</span>
+          </summary>
+          <p style="font-size:17px; line-height:1.8; margin:0 0 22px;">December is the wettest month, with rain on eight to twelve days, often as short showers. Sunny spells are frequent, and February is usually brighter.</p>
+        </details>
+        <details style="border-bottom:0.5px solid rgba(153,60,29,0.18);">
+          <summary style="list-style:none; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:20px; padding:20px 0; min-height:44px;">
+            <h3 style="font-size:18px; line-height:1.45; font-weight:bold; color:var(--cs-umber); margin:0;">Are restaurants and shops open in winter?</h3>
+            <span class="faq-plus" aria-hidden="true" style="flex:none; font-family:'Trebuchet MS',sans-serif; font-size:24px; line-height:1; color:var(--cs-terracotta); transition:transform 200ms cubic-bezier(0.22,0.61,0.36,1);">+</span>
+          </summary>
+          <p style="font-size:17px; line-height:1.8; margin:0 0 22px;">Most remain open in Luz and Lagos; a few seasonal places in Burgau and on the beaches close. Check opening hours in advance.</p>
+        </details>
+        <details style="border-bottom:0.5px solid rgba(153,60,29,0.18);">
+          <summary style="list-style:none; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:20px; padding:20px 0; min-height:44px;">
+            <h3 style="font-size:18px; line-height:1.45; font-weight:bold; color:var(--cs-umber); margin:0;">Do I need a car?</h3>
+            <span class="faq-plus" aria-hidden="true" style="flex:none; font-family:'Trebuchet MS',sans-serif; font-size:24px; line-height:1; color:var(--cs-terracotta); transition:transform 200ms cubic-bezier(0.22,0.61,0.36,1);">+</span>
+          </summary>
+          <p style="font-size:17px; line-height:1.8; margin:0 0 22px;">Burgau’s beach, restaurants and the coastal path are walkable. A car makes Lagos, the golf courses and Sagres much easier.</p>
+        </details>
       </div>
     </section>
 
@@ -416,7 +479,7 @@
             <p style="font-size:15px; line-height:1.7; color:rgba(74,27,12,0.7); margin:0;">Beaches, cliff walks, food by the harbour, day trips and the climate month by month.</p>
           </div>
         </a>
-        <a href="/amenities/" style="display:flex; flex-direction:column; background:var(--cs-parchment); border:0.5px solid rgba(153,60,29,0.18); border-radius:3px; overflow:hidden; box-shadow:0 2px 8px rgba(74,27,12,0.12); color:inherit;" style-hover="box-shadow:0 3px 12px rgba(74,27,12,0.18);">
+        <a href="/burgau/amenities/" style="display:flex; flex-direction:column; background:var(--cs-parchment); border:0.5px solid rgba(153,60,29,0.18); border-radius:3px; overflow:hidden; box-shadow:0 2px 8px rgba(74,27,12,0.12); color:inherit;" style-hover="box-shadow:0 3px 12px rgba(74,27,12,0.18);">
           <img src="/images/living-wide.jpg" alt="The living room with fireplace and dining area at Casa Solaris" width="1800" height="1350" loading="lazy" decoding="async" style="display:block; width:100%; height:auto; aspect-ratio:16/9; object-fit:cover;">
           <div style="padding:22px 24px 26px;">
             <p style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.22em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 8px;">The house</p>
@@ -441,9 +504,11 @@
       <div>
         <p style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.22em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 18px;">Explore</p>
         <div style="display:flex; flex-direction:column; gap:12px;">
-          <a href="/" style="font-size:14px; color:var(--color-text-secondary);" style-hover="color:var(--cs-terracotta);">The House</a>
-          <a href="/amenities/" style="font-size:14px; color:var(--color-text-secondary);" style-hover="color:var(--cs-terracotta);">Amenities</a>
-          <a href="/burgau/" style="font-size:14px; color:var(--color-text-secondary);" style-hover="color:var(--cs-terracotta);">Why Burgau</a>
+          <a href="/burgau/apartment/" style="font-size:14px; color:var(--color-text-secondary);" style-hover="color:var(--cs-terracotta);">Burgau apartment</a>
+          <a href="/burgau/amenities/" style="font-size:14px; color:var(--color-text-secondary);" style-hover="color:var(--cs-terracotta);">Amenities</a>
+          <a href="/burgau/" style="font-size:14px; color:var(--color-text-secondary);" style-hover="color:var(--cs-terracotta);">Burgau guide</a>
+          <a href="/luz/" style="font-size:14px; color:var(--color-text-secondary);" style-hover="color:var(--cs-terracotta);">Praia da Luz apartment</a>
+          <a href="/winter-long-stays-burgau-algarve/" style="font-size:14px; color:var(--color-text-secondary);" style-hover="color:var(--cs-terracotta);">Winter &amp; long stays</a>
           <a href="/blog/" style="font-size:14px; color:var(--color-text-secondary);" style-hover="color:var(--cs-terracotta);">Blog</a>
           <a href="/reservations/" style="font-size:14px; color:var(--color-text-secondary);" style-hover="color:var(--cs-terracotta);">Reservations</a>
         </div>
