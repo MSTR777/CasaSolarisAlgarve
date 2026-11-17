@@ -148,6 +148,8 @@
 
     .cs-dd-menu { display: none; }
     .cs-dd:hover > .cs-dd-menu, .cs-dd:focus-within > .cs-dd-menu { display: flex; }
+
+    @media (max-width: 860px) { .cs-foot5 { grid-template-columns: 1fr 1fr !important; gap: 32px 24px !important; } .cs-foot5 > :first-child { grid-column: 1 / -1 !important; } }
 </style>
 </helmet>
 
@@ -399,10 +401,11 @@
         <h2 class="cs-h2" style="font-family:'Cormorant Garamond',Georgia,serif; font-size:42px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--cs-umber); margin:0 0 20px; line-height:1.15; text-wrap:balance; margin:0;">One of the Western Algarve's best-loved beach resorts</h2>
         <p style="font-size:17px; line-height:1.85; color:var(--color-text-secondary); margin:20px auto 0; max-width:720px; text-wrap:pretty;">Praia da Luz sits on a sheltered bay between the old Fortaleza da Luz and the black cliffs of Rocha Negra, about 10 minutes from Lagos. A former fishing village with Roman remains and a 16th-century church, it has grown into one of the most popular resort towns on this coast, with a Blue Flag beach, a mosaic promenade and calm, shallow water that suits families.</p>
       </div>
-      <div class="lz-guide" style="display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:10px; margin:0 0 48px;">
+      <div class="lz-guide" style="display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:10px; margin:0 0 48px;">
         <figure style="margin:0;"><img loading="lazy" decoding="async" src="/images/web/luz-beach.jpg" alt="The beach at Praia da Luz under the Rocha Negra cliff" style="width:100%; height:380px; object-fit:cover; display:block; border-radius:3px; object-position:center 62%;"><figcaption style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--color-text-secondary); margin-top:8px;">The beach</figcaption></figure>
         <figure style="margin:0;"><img loading="lazy" decoding="async" src="/images/web/luz-promenade.jpg" alt="The mosaic promenade along the seafront at Praia da Luz" style="width:100%; height:380px; object-fit:cover; display:block; border-radius:3px;"><figcaption style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--color-text-secondary); margin-top:8px;">The promenade</figcaption></figure>
         <figure style="margin:0;"><img loading="lazy" decoding="async" src="/images/web/luz-city.jpg" alt="Restaurant terrace by the sea in Praia da Luz" style="width:100%; height:380px; object-fit:cover; display:block; border-radius:3px;"><figcaption style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--color-text-secondary); margin-top:8px;">Restaurants by the sea</figcaption></figure>
+        <figure style="margin:0;"><img loading="lazy" decoding="async" src="/images/web/luz-downtown.jpg" alt="Palm trees and the bay from the village centre" style="width:100%; height:380px; object-fit:cover; display:block; border-radius:3px;"><figcaption style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--color-text-secondary); margin-top:8px;">The village centre</figcaption></figure>
       </div>
       <div class="lz-3" style="display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:40px;">
         <div>
@@ -437,8 +440,9 @@
           <a href="https://www.google.com/maps/dir/?api=1&amp;origin=St+James+Resort+Praia+da+Luz+Portugal&amp;destination=Burgau,Portugal&amp;travelmode=driving" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; min-height:44px; font-family:'Trebuchet MS',sans-serif; font-size:12px; font-weight:bold; letter-spacing:0.12em; text-transform:uppercase; color:var(--cs-terracotta); border:1px solid rgba(153,60,29,0.35); padding:0 16px; border-radius:3px;" style-hover="color:var(--cs-sunset); border-color:var(--cs-sunset);">Route to Burgau ↗</a>
         </div>
       </div>
-      <div class="lz-loc" style="display:grid; grid-template-columns:1fr; gap:10px;">
-        <figure style="margin:0;"><img loading="lazy" decoding="async" src="/images/web/luz-building.jpg" alt="The apartment building at St. James Resort" style="width:100%; height:420px; object-fit:cover; display:block; border-radius:3px;"><figcaption style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--color-text-secondary); margin-top:8px;">The building</figcaption></figure>
+      <div class="lz-loc" style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+        <figure style="margin:0;"><img loading="lazy" decoding="async" src="/images/web/luz-building.jpg" alt="The apartment building at St. James Resort" style="width:100%; height:340px; object-fit:cover; display:block; border-radius:3px;"><figcaption style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--color-text-secondary); margin-top:8px;">The building</figcaption></figure>
+        <figure style="margin:0;"><img loading="lazy" decoding="async" src="/images/web/luz-entrance.jpg" alt="The path from the resort entrance down towards the sea" style="width:100%; height:340px; object-fit:cover; display:block; border-radius:3px;"><figcaption style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--color-text-secondary); margin-top:8px;">From the gate to the sea</figcaption></figure>
       </div>
     </div>
   </section>
@@ -463,38 +467,56 @@
 </div>
 
 <footer style="background:var(--cs-warm-white); padding:64px 32px 40px; border-top:4px solid transparent; border-image:var(--cs-grad) 1;">
-  <div class="cs-foot" style="max-width:1160px; margin:0 auto; display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr; gap:40px;">
+  <div class="cs-foot5" style="max-width:1160px; margin:0 auto; display:grid; grid-template-columns:minmax(0,1.8fr) repeat(4, minmax(0,1fr)); gap:40px;">
     <div>
-      <img loading="lazy" decoding="async" src="/images/casa-solaris-lockup-light.png" alt="Casa Solaris — Western Algarve" style="width:100%; max-width:320px; height:auto; display:block;">
+      <a href="/" style="display:block;"><img src="/images/casa-solaris-lockup-light.png" alt="Casa Solaris — Western Algarve" style="width:100%; max-width:280px; height:auto; display:block;"></a>
+      <p style="font-size:13.5px; line-height:1.75; color:var(--color-text-secondary); margin:14px 0 0; margin-top:20px;">Casa Solaris Burgau, Western Algarve, is a cozy, highest-rated, modern, spacious apartment with two bedrooms and two bathrooms. The ground-floor unit features a pool, terrace, and garden views.</p>
+      <p style="font-size:13.5px; line-height:1.75; color:var(--color-text-secondary); margin:14px 0 0;">Casa Solaris Luz is a two-bedroom, two-bathroom apartment in St. James Resort, Praia da Luz, with ocean views from every room, two pools and a gym. Burgau and Praia da Luz are five minutes apart by car.</p>
     </div>
     <div>
       <p style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.22em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 18px;">Burgau</p>
       <div style="display:flex; flex-direction:column; gap:12px;">
         <a href="/burgau/apartment/" style="font-size:14px; color:var(--color-text-secondary);" style-hover="color:var(--cs-terracotta);">The apartment</a>
         <a href="/burgau/amenities/" style="font-size:14px; color:var(--color-text-secondary);" style-hover="color:var(--cs-terracotta);">Amenities</a>
-        <a href="/burgau/" style="font-size:14px; color:var(--color-text-secondary);" style-hover="color:var(--cs-terracotta);">Burgau and beyond</a>
+        <a href="/burgau/" style="font-size:14px; color:var(--color-text-secondary);" style-hover="color:var(--cs-terracotta);">Burgau guide</a>
       </div>
     </div>
     <div>
       <p style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.22em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 18px;">Praia da Luz</p>
       <div style="display:flex; flex-direction:column; gap:12px;">
         <a href="#apartment" style="font-size:14px; color:var(--color-text-secondary);" style-hover="color:var(--cs-terracotta);">The apartment</a>
+        <a href="#amenities" style="font-size:14px; color:var(--color-text-secondary);" style-hover="color:var(--cs-terracotta);">Amenities</a>
         <a href="#guide" style="font-size:14px; color:var(--color-text-secondary);" style-hover="color:var(--cs-terracotta);">Praia da Luz guide</a>
       </div>
     </div>
     <div>
       <p style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.22em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 18px;">Plan</p>
       <div style="display:flex; flex-direction:column; gap:12px;">
-        <a href="/#both" style="font-size:14px; color:var(--color-text-secondary);" style-hover="color:var(--cs-terracotta);">Stay at both</a>
-        <a href="/winter-long-stays-burgau-algarve/" style="font-size:14px; color:var(--color-text-secondary);" style-hover="color:var(--cs-terracotta);">Winter and long stays</a>
+        <a href="/" style="font-size:14px; color:var(--color-text-secondary);" style-hover="color:var(--cs-terracotta);">Both homes</a>
+        <a href="/winter-long-stays-burgau-algarve/" style="font-size:14px; color:var(--color-text-secondary);" style-hover="color:var(--cs-terracotta);">Winter &amp; long stays</a>
         <a href="/blog/" style="font-size:14px; color:var(--color-text-secondary);" style-hover="color:var(--cs-terracotta);">Blog</a>
         <a href="/reservations/" style="font-size:14px; color:var(--color-text-secondary);" style-hover="color:var(--cs-terracotta);">Reservations</a>
       </div>
     </div>
+    <div>
+      <p style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.22em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 18px;">Contact</p>
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <a href="/reservations/" style="font-size:14px; color:var(--color-text-secondary);" style-hover="color:var(--cs-terracotta);">Send an enquiry</a>
+        <a href="https://www.booking.com/hotel/pt/casa-solaris-algarve.html" target="_blank" rel="noopener" style="font-size:14px; color:var(--color-text-secondary); display:inline-flex; align-items:center;" style-hover="color:var(--cs-terracotta);"><span style="display:inline-flex; align-items:center; justify-content:center; width:15px; height:15px; border-radius:3px; background:#003580; margin-right:6px; flex:none;"><span style="font-family:Georgia,serif; font-weight:700; font-size:9.5px; color:#fff; line-height:1;">B</span></span>Booking.com</a>
+        <a href="https://www.airbnb.pl/h/casasolarisalgarve" target="_blank" rel="noopener" style="font-size:14px; color:var(--color-text-secondary); display:inline-flex; align-items:center;" style-hover="color:var(--cs-terracotta);"><span style="display:inline-flex; align-items:center; justify-content:center; width:15px; height:15px; border-radius:3px; background:#FF385C; margin-right:6px; flex:none;"><svg width="9" height="9" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2C9 6 4 12.5 4 16.5A8 5.5 0 0 0 12 22a8 5.5 0 0 0 8-5.5C20 12.5 15 6 12 2z"></path></svg></span>Airbnb</a>
+      </div>
+    </div>
   </div>
-  <div style="max-width:1160px; margin:40px auto 0; padding-top:24px; border-top:0.5px solid rgba(153,60,29,0.18); display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;">
+  <div style="max-width:1160px; margin:40px auto 0; padding-top:24px; border-top:0.5px solid var(--color-border); display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;">
     <p style="font-size:12px; color:var(--color-text-tertiary); margin:0;">© {{ year }} Casa Solaris. All rights reserved.</p>
-    <p style="font-size:12px; color:var(--color-text-tertiary); margin:0;">Burgau · Praia da Luz · Western Algarve</p>
+    <p style="font-size:12px; color:var(--color-text-tertiary); margin:0;">Burgau · Praia da Luz · Western Algarve. Made with the warmth of the Algarve.</p>
+  </div>
+  <div style="max-width:1160px; margin:14px auto 0; display:flex; justify-content:center; flex-wrap:wrap; gap:16px;">
+    <a href="/sitemap.xml" style="font-size:11px; color:var(--color-text-tertiary); text-decoration:underline;" style-hover="color:var(--cs-terracotta);">Sitemap</a>
+    <a href="/llms.txt" style="font-size:11px; color:var(--color-text-tertiary); text-decoration:underline;" style-hover="color:var(--cs-terracotta);">llms.txt</a>
+    <a href="/llms-full.txt" style="font-size:11px; color:var(--color-text-tertiary); text-decoration:underline;" style-hover="color:var(--cs-terracotta);">llms-full.txt</a>
+    <a href="/agent-guide-en.txt" style="font-size:11px; color:var(--color-text-tertiary); text-decoration:underline;" style-hover="color:var(--cs-terracotta);">Agent-friendly version (EN)</a>
+    <a href="/agent-guide-pl.txt" style="font-size:11px; color:var(--color-text-tertiary); text-decoration:underline;" style-hover="color:var(--cs-terracotta);">Wersja dla agentów AI (PL)</a>
   </div>
 </footer>
 </x-dc>
