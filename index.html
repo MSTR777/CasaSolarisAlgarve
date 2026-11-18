@@ -78,6 +78,8 @@
       .cs-ov-title { top: 14px !important; padding: 0 12px !important; }
       .cs-ov-plate { max-width: none !important; width: 100% !important; background: rgba(18,78,128,0.42) !important; -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); text-shadow: 0 1px 6px rgba(6,30,52,0.5); padding: 18px 16px 20px !important; }
       .cs-split > a:first-child .cs-half-photo { height: 78vh !important; min-height: 540px !important; }
+      .cs-ov-sec .cs-split { gap: 0 !important; background: var(--cs-parchment) !important; }
+      .cs-ov-sec .cs-split > a + a { margin-top: 28px !important; border-top: 0.5px solid rgba(153,60,29,0.18) !important; box-shadow: 0 -2px 8px rgba(74,27,12,0.06); }
             .cs-ov-sec { display: flex !important; flex-direction: column !important; }
       .cs-2 { grid-template-columns: 1fr !important; }
       .cs-3 { grid-template-columns: 1fr !important; }
@@ -855,7 +857,7 @@ class Component extends DCLogic {
     const layout = this.props.heroLayout ?? 'overlay';
     const headlines = {
       'Relax, enjoy, be pampered': ['Relax, enjoy, be pampered', 'Two homes on the Western Algarve. Which one will you choose?'],
-      'Relax. Swim. Sunbathe.': ['Relax. Swim. Sunbathe.', 'Two homes by the sea in Burgau and Praia da Luz. Which one will you choose?'],
+      'Relax. Swim. Sunbathe.': ['Relax. Swim. Sunbathe.', 'Two homes. Same joy. Which one will you choose?'],
       'Relax. Swim. Unwind.': ['Relax. Swim. Unwind.', 'Two homes by the sea in Burgau and Praia da Luz. Which one is yours?'],
       'Sun, sea and slow days': ['Sun, sea and slow days', 'Burgau or Praia da Luz, five minutes apart. Which one is yours?'],
       'Pool mornings, ocean evenings': ['Pool mornings, ocean evenings', 'Two homes in Burgau and Praia da Luz. Choose your village.'],
