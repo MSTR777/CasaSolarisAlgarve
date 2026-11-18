@@ -75,8 +75,9 @@
       .cs-split { grid-template-columns: 1fr !important; height: auto !important; min-height: 0 !important; }
       .cs-split > a { height: auto !important; min-height: 0 !important; }
       .cs-half-photo { flex: none !important; height: 42vh !important; min-height: 260px !important; }
-      .cs-ov-title { position: relative !important; top: 0 !important; padding: 0 !important; order: -1; }
-      .cs-ov-plate { border-radius: 0 !important; max-width: none !important; width: 100% !important; background: var(--cs-umber) !important; padding: 36px 20px 30px !important; }
+      .cs-ov-title { top: 14px !important; padding: 0 12px !important; }
+      .cs-ov-plate { max-width: none !important; width: 100% !important; background: rgba(18,78,128,0.42) !important; -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); text-shadow: 0 1px 6px rgba(6,30,52,0.5); padding: 18px 16px 20px !important; }
+      .cs-split > a:first-child .cs-half-photo { height: 78vh !important; min-height: 540px !important; }
             .cs-ov-sec { display: flex !important; flex-direction: column !important; }
       .cs-2 { grid-template-columns: 1fr !important; }
       .cs-3 { grid-template-columns: 1fr !important; }
@@ -299,18 +300,6 @@
   <sc-if value="{{ heroOverlay }}" hint-placeholder-val="{{ true }}">
     <section class="cs-ov-sec" style="position:relative; background:var(--cs-parchment);">
       <div class="cs-split" style="display:grid; grid-template-columns:1fr 1fr; gap:3px; height:90vh; min-height:680px;">
-        <a href="#burgau" style="display:flex; flex-direction:column; min-width:0; background:var(--cs-warm-white); color:var(--cs-umber); transition:background 200ms cubic-bezier(0.22,0.61,0.36,1);" style-hover="background:var(--cs-stone); color:var(--cs-umber);">
-          <div class="cs-half-photo" style="position:relative; flex:1; min-height:0; overflow:hidden;">
-            <img class="cs-hero-bur" src="/images/pool-loungers-hero.jpg" alt="Sun loungers beside the pool at Casa Solaris Burgau" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 95%; transition:transform 600ms cubic-bezier(0.22,0.61,0.36,1);" style-hover="transform:scale(1.03);">
-          </div>
-          <div class="cs-half-cap" style="display:flex; flex-direction:column; align-items:flex-start; gap:14px; min-height:132px; padding:22px 28px 24px; border-bottom:0.5px solid rgba(153,60,29,0.18);">
-            <div>
-              <p style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.3em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 8px;">Burgau · Vila do Bispo</p>
-              <p style="font-family:'Cormorant Garamond',Georgia,serif; font-size:30px; font-weight:500; letter-spacing:0.06em; text-transform:uppercase; color:var(--cs-umber); margin:0; line-height:1.05;">Casa Solaris <strong style="font-weight:700; -webkit-text-stroke:0.7px currentColor; color:var(--cs-umber);">Burgau</strong></p>
-            </div>
-            <span style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--cs-terracotta); border-bottom:2px solid var(--cs-terracotta); padding-bottom:4px; white-space:nowrap;">Explore&nbsp;→</span>
-          </div>
-        </a>
         <a href="/luz/" style="display:flex; flex-direction:column; min-width:0; background:var(--cs-warm-white); color:var(--cs-umber); transition:background 200ms cubic-bezier(0.22,0.61,0.36,1);" style-hover="background:var(--cs-stone); color:var(--cs-umber);">
           <div class="cs-half-photo" style="position:relative; flex:1; min-height:0; overflow:hidden;">
             <img src="/images/luz/luz-balcony-ocean-view.avif" alt="Balcony at Casa Solaris Luz with a glass of wine and a view over the rooftops to the ocean" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:42% 55%; transition:transform 600ms cubic-bezier(0.22,0.61,0.36,1);" style-hover="transform:scale(1.03);">
@@ -319,6 +308,18 @@
             <div>
               <p style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.3em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 8px;">Praia da Luz · Lagos</p>
               <p style="font-family:'Cormorant Garamond',Georgia,serif; font-size:30px; font-weight:500; letter-spacing:0.06em; text-transform:uppercase; color:var(--cs-umber); margin:0; line-height:1.05;">Casa Solaris <strong style="font-weight:700; -webkit-text-stroke:0.7px currentColor; color:var(--cs-umber);">Luz</strong></p>
+            </div>
+            <span style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--cs-terracotta); border-bottom:2px solid var(--cs-terracotta); padding-bottom:4px; white-space:nowrap;">Explore&nbsp;→</span>
+          </div>
+        </a>
+        <a href="#burgau" style="display:flex; flex-direction:column; min-width:0; background:var(--cs-warm-white); color:var(--cs-umber); transition:background 200ms cubic-bezier(0.22,0.61,0.36,1);" style-hover="background:var(--cs-stone); color:var(--cs-umber);">
+          <div class="cs-half-photo" style="position:relative; flex:1; min-height:0; overflow:hidden;">
+            <img class="cs-hero-bur" src="/images/pool-loungers-hero.jpg" alt="Sun loungers beside the pool at Casa Solaris Burgau" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 95%; transition:transform 600ms cubic-bezier(0.22,0.61,0.36,1);" style-hover="transform:scale(1.03);">
+          </div>
+          <div class="cs-half-cap" style="display:flex; flex-direction:column; align-items:flex-start; gap:14px; min-height:132px; padding:22px 28px 24px; border-bottom:0.5px solid rgba(153,60,29,0.18);">
+            <div>
+              <p style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.3em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 8px;">Burgau · Vila do Bispo</p>
+              <p style="font-family:'Cormorant Garamond',Georgia,serif; font-size:30px; font-weight:500; letter-spacing:0.06em; text-transform:uppercase; color:var(--cs-umber); margin:0; line-height:1.05;">Casa Solaris <strong style="font-weight:700; -webkit-text-stroke:0.7px currentColor; color:var(--cs-umber);">Burgau</strong></p>
             </div>
             <span style="font-family:'Trebuchet MS',sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--cs-terracotta); border-bottom:2px solid var(--cs-terracotta); padding-bottom:4px; white-space:nowrap;">Explore&nbsp;→</span>
           </div>
