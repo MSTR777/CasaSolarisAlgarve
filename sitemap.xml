@@ -2,12 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.casasolarisalgarve.com/</loc>
-    <lastmod>2026-11-17</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.casasolarisalgarve.com/burgau/apartment/</loc>
-    <lastmod>2026-11-17</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.casasolarisalgarve.com/burgau/apartment/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.casasolarisalgarve.com/pt/"/>
@@ -15,7 +15,7 @@
   </url>
   <url>
     <loc>https://www.casasolarisalgarve.com/luz/</loc>
-    <lastmod>2026-11-17</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
@@ -36,7 +36,7 @@
   </url>
   <url>
     <loc>https://www.casasolarisalgarve.com/reservations/</loc>
-    <lastmod>2026-11-17</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.casasolarisalgarve.com/reservations/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.casasolarisalgarve.com/pt/reservar-alojamento-burgau/"/>
@@ -52,12 +52,17 @@
   </url>
   <url>
     <loc>https://www.casasolarisalgarve.com/blog/</loc>
-    <lastmod>2026-11-17</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.casasolarisalgarve.com/blog/winter-sun-algarve-burgau-luz/</loc>
     <lastmod>2026-11-17</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.casasolarisalgarve.com/blog/where-to-stay-near-lagos-praia-da-luz-burgau/</loc>
+    <lastmod>2026-11-18</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
