@@ -1298,6 +1298,30 @@
         </sc-if>
       </div>
       <p style="display:flex; align-items:flex-start; justify-content:center; gap:10px; max-width:640px; margin:20px auto 0; font-size:15px; line-height:1.7; color:var(--cs-umber); text-align:left;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#993C1D" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none; margin-top:3px;"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg><span>This calendar shows <strong>Casa Solaris Burgau</strong> only. For <strong>Casa Solaris Luz</strong>, please send us an enquiry with your dates.</span></p>
+      <div id="ask-us" style="max-width:1120px; margin:40px auto 0; background:var(--cs-warm-white); border:0.5px solid var(--color-border); border-radius:4px; box-shadow:0 3px 14px rgba(74,27,12,0.12); overflow:hidden; scroll-margin-top:76px;">
+      <div style="height:5px; background:var(--cs-grad);"></div>
+      <div style="padding:40px;">
+        <p style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.24em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 10px;">Still Have a Question?</p>
+        <h2 style="font-family:'Cormorant Garamond',Georgia,serif; font-size:28px; font-weight:700; color:var(--cs-umber); margin:0 0 8px;">Ask us</h2>
+        <p style="font-size:14px; line-height:1.7; color:var(--color-text-secondary); margin:0 0 28px;">Send a note and we'll reply before you book — usually within a day.</p>
+
+        <div class="cs-grid-2" style="display:grid; grid-template-columns:1fr 1fr; gap:18px;">
+          <div>
+            <label style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--color-text-tertiary); display:block; margin-bottom:7px;">Your name</label>
+            <input type="text" ref="{{ askNameRef }}" placeholder="Your name" style="width:100%; font-family:'Trebuchet MS',sans-serif; font-size:14px; color:var(--cs-umber); padding:11px 12px; border:1px solid var(--color-border); border-radius:3px; background:var(--cs-parchment);">
+          </div>
+          <div>
+            <label style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--color-text-tertiary); display:block; margin-bottom:7px;">Your email</label>
+            <input type="email" ref="{{ askEmailRef }}" placeholder="you@email.com" style="width:100%; font-family:'Trebuchet MS',sans-serif; font-size:14px; color:var(--cs-umber); padding:11px 12px; border:1px solid var(--color-border); border-radius:3px; background:var(--cs-parchment);">
+          </div>
+        </div>
+        <div style="margin-top:18px;">
+          <label style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--color-text-tertiary); display:block; margin-bottom:7px;">Message</label>
+          <textarea rows="4" ref="{{ askMessageRef }}" placeholder="Anything you'd like to ask about the house or the area." style="width:100%; font-family:'Trebuchet MS',sans-serif; font-size:14px; color:var(--cs-umber); padding:11px 12px; border:1px solid var(--color-border); border-radius:3px; background:var(--cs-parchment); resize:vertical;"></textarea>
+        </div>
+        <button type="button" onClick="{{ sendAsk }}" style="margin-top:18px; width:100%; text-align:center; font-family:'Trebuchet MS',sans-serif; font-size:12px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--cs-parchment); background:var(--cs-terracotta); padding:15px; border-radius:3px; border:none; cursor:pointer;" style-hover="background:var(--cs-sunset);">Send message</button>
+      </div>
+    </div>
     </div>
   </section>
 
@@ -1370,31 +1394,7 @@
 
     </div>
 
-    <!-- Ask us — below FAQ, full width -->
-    <div id="ask-us" style="max-width:1120px; margin:40px auto 0; background:var(--cs-warm-white); border:0.5px solid var(--color-border); border-radius:4px; box-shadow:0 3px 14px rgba(74,27,12,0.12); overflow:hidden; scroll-margin-top:76px;">
-      <div style="height:5px; background:var(--cs-grad);"></div>
-      <div style="padding:40px;">
-        <p style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.24em; text-transform:uppercase; color:var(--cs-terracotta); margin:0 0 10px;">Still Have a Question?</p>
-        <h2 style="font-family:'Cormorant Garamond',Georgia,serif; font-size:28px; font-weight:700; color:var(--cs-umber); margin:0 0 8px;">Ask us</h2>
-        <p style="font-size:14px; line-height:1.7; color:var(--color-text-secondary); margin:0 0 28px;">Send a note and we'll reply before you book — usually within a day.</p>
-
-        <div class="cs-grid-2" style="display:grid; grid-template-columns:1fr 1fr; gap:18px;">
-          <div>
-            <label style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--color-text-tertiary); display:block; margin-bottom:7px;">Your name</label>
-            <input type="text" ref="{{ askNameRef }}" placeholder="Your name" style="width:100%; font-family:'Trebuchet MS',sans-serif; font-size:14px; color:var(--cs-umber); padding:11px 12px; border:1px solid var(--color-border); border-radius:3px; background:var(--cs-parchment);">
-          </div>
-          <div>
-            <label style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--color-text-tertiary); display:block; margin-bottom:7px;">Your email</label>
-            <input type="email" ref="{{ askEmailRef }}" placeholder="you@email.com" style="width:100%; font-family:'Trebuchet MS',sans-serif; font-size:14px; color:var(--cs-umber); padding:11px 12px; border:1px solid var(--color-border); border-radius:3px; background:var(--cs-parchment);">
-          </div>
-        </div>
-        <div style="margin-top:18px;">
-          <label style="font-family:'Trebuchet MS',sans-serif; font-size:10px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--color-text-tertiary); display:block; margin-bottom:7px;">Message</label>
-          <textarea rows="4" ref="{{ askMessageRef }}" placeholder="Anything you'd like to ask about the house or the area." style="width:100%; font-family:'Trebuchet MS',sans-serif; font-size:14px; color:var(--cs-umber); padding:11px 12px; border:1px solid var(--color-border); border-radius:3px; background:var(--cs-parchment); resize:vertical;"></textarea>
-        </div>
-        <button type="button" onClick="{{ sendAsk }}" style="margin-top:18px; width:100%; text-align:center; font-family:'Trebuchet MS',sans-serif; font-size:12px; font-weight:bold; letter-spacing:0.16em; text-transform:uppercase; color:var(--cs-parchment); background:var(--cs-terracotta); padding:15px; border-radius:3px; border:none; cursor:pointer;" style-hover="background:var(--cs-sunset);">Send message</button>
-      </div>
-    </div>
+    
   </section>
 
   <!-- ══════════ FINDING US / MAP ══════════ -->
